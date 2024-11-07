@@ -1,0 +1,5 @@
+<template>
+    <div class="w-[68px] -ml-3">
+        <img src="@/assets/8.png" alt="Logo">
+    </div>
+</template>
