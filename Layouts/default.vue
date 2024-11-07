@@ -1,9 +1,9 @@
 <template>
-    <div class="mx-20">
+    <div>
         <div>
             <Header></Header>
         </div>
-        <div>
+        <div class="mx-20">
             <slot></slot>
         </div>
     </div>
