@@ -6,7 +6,7 @@ export const ArrayMenu = () => {
         } ,
         {
             title : "خدمات",
-            path : ""
+            path : "",
         } ,
         {
             title : "نمونه کارها",

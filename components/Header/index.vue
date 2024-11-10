@@ -1,6 +1,10 @@
 <template>
-    <div class="flex items-center justify-between py-2.5 px-20 border-b-2 ">
+    <div class="flex items-center justify-between py-2.5 px-4 md:px-20 border-b-[1.5px] border-[#CDCFCD] ">
        
+        <div class="md:hidden">
+            <IconsMenuIcon></IconsMenuIcon>
+        </div>
+
         <div class="font-customFont">
             <HeaderMenuDesktop></HeaderMenuDesktop>
         </div>
