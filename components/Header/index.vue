@@ -9,8 +9,11 @@ const openMenu = ref(false)
             <IconsMenuIcon></IconsMenuIcon>
         </div>
 
-        <div class="font-customFont">
+        <div >
             <HeaderMenuDesktop></HeaderMenuDesktop>
+        </div>
+
+        <div>
         </div>
 
         <div>
