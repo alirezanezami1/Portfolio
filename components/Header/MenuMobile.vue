@@ -1,29 +1,9 @@
 <script setup>
 const list = ArrayMenu()
-
-const socialMedia = ref([
-    {
-        url : '~/assets/mediaIcons/Elemento (1).png',
-        mediaLink : ''
-    },
-    {
-        url : '../../assets/mediaIcons/Elemento.png',
-        mediaLink : ''
-    },
-    {
-        url : '../../assets/mediaIcons/Linkedin.png',
-        mediaLink : ''
-    },
-    {
-        url : '../../assets/mediaIcons/Telegram.png',
-        mediaLink : ''
-    }
-])
-
 </script>
 
 <template>
-    <div class="flex flex-col items-center w-full">
+    <div class="flex flex-col items-center w-full h-dvh">
 
         <div class="bg-Bg/3 flex flex-col items-start text-right gap-5 p-3 pt-8 pl-10">
 
@@ -38,17 +18,28 @@ const socialMedia = ref([
 
         </div>
 
-        <div class=" flex flex-col gap-3 items-start text-right w-[208px] p-3 mt-2">
+        <div class="bg-Bg/1 flex flex-col gap-3 items-start text-right w-[208px] p-3 pt-6">
             <p class="text-[10px] font-light leading-[17.58px] text-txt3">منو</p>
-            <NuxtLink v-for="item in list" :key="item" class="text-sm text-txt1 cursor-pointer flex gap-1 mb-3 text-[16px] text-right font-medium leading-[19.2px]">
-                {{ item.title }} <img v-if="item.title === 'خدمات' " src="../../assets/icons/Size=16px, Icon=Arrows-Down (1).svg" alt="icon"  class="w-[16px]">
+            <NuxtLink v-for="item in list" :key="item" class="text-sm text-txt1 cursor-pointer flex flex-col gap-1 mb-3 text-[16px] text-right font-medium leading-[19.2px]">
+             <div class="flex gap-1">
+                   {{ item.title }} <img v-if="item.title === 'خدمات' " src="../../assets/icons/Size=16px, Icon=Arrows-Down (1).svg" alt="icon"  class="w-[16px]">
+             </div>
+             <div class="w-[69px] h-[4px] bg-[#13144E] rounded-full"></div>
             </NuxtLink>
         </div>
-
-
-        <div class="w-[208px] flex gap-4">
-            <NuxtLink v-for="item in socialMedia" :key="item" :href="item.mediaLink">
-                <img :src="item.url" alt="socialMedia" class="w-[40px]">
+       
+        <div class="bg-Bg/1 w-[208px] flex items-center justify-center pt-20">
+            <NuxtLink>
+                <img src="../../assets/mediaIcons/whatsapp.png" alt="socialMedia" class="w-[40px] h-[40px] cursor-pointer">
+            </NuxtLink>
+            <NuxtLink>
+                <img src="../../assets/mediaIcons/instagram.png" alt="socialMedia" class="w-[40px] h-[40px] cursor-pointer">
+            </NuxtLink>
+            <NuxtLink>
+                <img src="../../assets/mediaIcons/Telegram.png" alt="socialMedia" class="w-[40px] h-[40px] cursor-pointer">
+            </NuxtLink>
+            <NuxtLink>
+                <img src="../../assets/mediaIcons/Linkedin.png" alt="socialMedia" class="w-[40px] h-[40px] cursor-pointer">
             </NuxtLink>
         </div>
 
