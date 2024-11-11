@@ -15,8 +15,15 @@ export default {
       }
     },
     colors: {
+      //// text color
       'txt1' : '#050D05',
-      'txt2' : '#828682'
+      'txt2' : '#828682',
+      'txt3' : '#B4B6B4',
+
+      //// background 
+      'Bg/1' : '#FFFFFF',
+      'Bg/3' : '#F8F8F8',
+      'test' : 'red'
     }
   },
   plugins: [],

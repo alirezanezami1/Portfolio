@@ -1,5 +1,5 @@
 <template>
-    <div class="font-customFont">
+    <div class="font-customFont text-txt1">
         <div>
             <Header></Header>
         </div>
