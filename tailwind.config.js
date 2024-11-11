@@ -14,6 +14,10 @@ export default {
           customFont : ['"Estedad"' ]
       }
     },
+    colors: {
+      'txt1' : '#050D05',
+      'txt2' : '#828682'
+    }
   },
   plugins: [],
 }

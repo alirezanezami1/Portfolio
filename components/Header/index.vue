@@ -13,7 +13,8 @@ const openMenu = ref(false)
             <HeaderMenuDesktop></HeaderMenuDesktop>
         </div>
 
-        <div>
+        <div class="absolute z-50 w-full h-fit">
+            <HeaderMenuMobile></HeaderMenuMobile>
         </div>
 
         <div>
