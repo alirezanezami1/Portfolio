@@ -10,15 +10,15 @@ export const ArrayMenu = () => {
         } ,
         {
             title : "نمونه کارها",
-            path : ""
+            path : "/portfolio"
         },
         {
             title : "درباره من",
-            path : ""
+            path : "/about"
         },
         {
             title : "ارتباط با من",
-            path : ""
+            path : "/contact"
         }
     ]
   }
