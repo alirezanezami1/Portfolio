@@ -2,30 +2,6 @@
 const list = ArrayMenu()
 
 
-const selected = ref(list[0]);
-const underlineWidth = ref(0);
-const underlineLeft = ref(0);
-const router = useRouter();
-
-const selectItem = (item) => {
-  selected.value = item;
-  const itemElement = document.querySelector('.nav-item.active');
-  if (itemElement) {
-    underlineWidth.value = itemElement.offsetWidth;
-    underlineLeft.value = itemElement.offsetLeft;
-  }
-  router.push(item.path);
-};
-
-onMounted(() => {
-  const itemElement = document.querySelector('.nav-item.active');
-  if (itemElement) {
-    underlineWidth.value = itemElement.offsetWidth;
-    underlineLeft.value = itemElement.offsetLeft;
-  }
-});
-
-
 </script>
 
 <template>
@@ -46,20 +22,16 @@ onMounted(() => {
 
         <div class="bg-Bg/1 flex flex-col gap-3 items-start text-right w-[208px] p-3 pt-6">
             <p class="text-[10px] font-light leading-[17.58px] text-txt3">منو</p>
-            <NuxtLink v-for="item in list" :key="item" class="text-sm text-txt1 cursor-pointer flex flex-col gap-1 mb-3 text-[16px] text-right font-medium leading-[19.2px]" @click="selectItem(item)" :class="['cursor-pointer' , 'relative', selected === item ? 'text-blue-500' : 'text-gray-700']" >
+            <NuxtLink v-for="item in list" :key="item" class="text-sm text-txt1 cursor-pointer flex flex-col gap-1 mb-3 text-[16px] text-right font-medium leading-[19.2px] "  >
              <div class="flex gap-1">
                    {{ item.title }} <img v-if="item.title === 'خدمات' " src="../../assets/icons/Size=16px, Icon=Arrows-Down (1).svg" alt="icon"  class="w-[16px]">
              </div>
              <!-- <div class="w-[69px] h-[4px] bg-[#13144E] rounded-full"></div> -->
-             <div
-          v-if="selected === item"
-          class="absolute left-0 right-0 h-1 bg-blue-500 transition-all duration-300"
-          :style="{ width: underlineWidth + 'px', transform: `translateX(${underlineLeft}px)` }"
-        ></div>
+            
             </NuxtLink>
         </div>
        
-        <div class="bg-Bg/1 w-[208px] flex items-center justify-center pt-20">
+        <div class="bg-Bg/1 w-[208px] flex items-center justify-center pt-20 gap-2">
             <NuxtLink>
                 <img src="../../assets/mediaIcons/whatsapp.png" alt="socialMedia" class="w-[40px] h-[40px] cursor-pointer">
             </NuxtLink>
