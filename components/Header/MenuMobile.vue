@@ -5,7 +5,7 @@ const list = ArrayMenu()
 </script>
 
 <template>
-    <div class="flex flex-col items-center w-full h-dvh">
+    <div class="flex flex-col items-center w-full h-dvh ">
 
         <div class="bg-Bg/3 flex flex-col items-start text-right gap-5 p-3 pt-8 pl-10">
 
