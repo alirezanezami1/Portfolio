@@ -1,9 +1,8 @@
 <script setup>
-const { toggleMenu } = useMenu()
 </script>
 
 <template>
-    <div class="relative mr-48">
-        <button @click="toggleMenu">click me</button>
+    <div class="w-[500px] h-3/6 bg-test">
+        hi
     </div>
 </template>
