@@ -1,0 +1,109 @@
+<script setup>
+
+const listItems = servicesArray()
+
+const list = [
+        {
+            'title' : 'سئو سایت',
+            'description' : 'با سئو در گوگل دیده شو و فروشت رو چند برابر کن',
+            'url' : '~/assets/10.png',
+        },
+        {
+            'title' : 'مشاوره سایت',
+            'description' : 'با گرفتن مشاوره سئو، عیب و ایرادهای فعلی سایتت رو برطرف کن',
+            'url' : '../assets/4.png',
+        },
+        {
+            'title' : 'منتورینگ سئو',
+            'description' : 'اگه هنوز اعتماد به نفس گرفتن پروژه سئو نداری، حتما از یه منتورسئو کمک بگیر',
+            'url' : '../assets/2.png',
+        },
+        {
+            'title' : 'تدوین استراتژی محتوا',
+            'description' : 'اگه نمیدونی معماری و چیدمان صفحات سایتت چطور باید باشه، نیاز به تدوین استراتژی داری',
+            'url' : '../assets/3.png',
+        },
+        {
+            'title' : 'طراحی سایت',
+            'description' : 'اگه دنبال یه سایت شیک و حرفه ای واسه خودت هستی، خوب جایی اومدی',
+            'url' : '../assets/12.png',
+        },
+        {
+            'title' : 'گوگل ادز',
+            'description' : 'اگه خیلی عجله داری که سایتت به رتبه 1 گوگل برسه، گوگل ادز رو امتحان کن',
+            'url' : '../assets/9.png',
+        },
+    ]
+
+</script>
+
+<template>
+    <div class="flex flex-col justify-center items-center text-txt1">
+        <!-- //// Introduction -->
+        <div class="flex grid-flow-row grid-cols-3 justify-center items-center my-12">
+            
+            <div class="flex flex-col justify-center items-center gap-[84px] w-[146px]" dir="ltr">
+    
+                <div class="flex flex-col justify-center items-center gap-1 w-full h-[116px]">
+                    <h1 class="text-[56px] leading-[120%] font-bold">+ 88</h1>
+                    <p class="text-[32px] font-medium leading-[140%] text-txt2">نمونه کار</p>
+                </div>
+    
+                <div class="flex flex-col justify-center items-center gap-1 w-full h-[116px]">
+                    <h1 class="text-[56px] leading-[120%] font-bold">+ 8</h1>
+                    <p class="text-[32px] font-medium leading-[140%] text-txt2">سال سابقه</p>
+                </div>
+    
+                <div class="flex flex-col justify-center items-center gap-1 w-full h-[116px]">
+                    <h1 class="text-[56px] leading-[120%] font-bold">+ 94</h1>
+                    <p class="text-[32px] font-medium leading-[140%] text-txt2">رضایتمندی</p>
+                </div>
+    
+            </div>
+    
+            <div class="w-[606.89px] h-[664px]">
+                <img src="../assets/adminPhoto/Main image and text container.png" alt="mainPhoto" class="object-cover w-[606.89px] h-[664px]">
+            </div>
+    
+            <div class="text-right grid gap-[48px] w-[500px]">
+                <div class="flex flex-col gap-[40px]">
+                    <p class="text-[16px] leading-[160%] font-normal">سلام  👋 من رقیه رنجبری هستم، یه </p>
+                <h1 class="text-[64px] font-bold leading-[120%]">کارشناس سئو </h1>
+                <p class="text-txt2 text-[16px] leading-[160%] font-normal">سؤالات زیادی توی ذهنت هست که دوست داری جواب دقیقشون رو بدونی؟ 😎 کافیه شماره‌ت رو بذاری تا با هم صحبت کنیم و کسب‌وکارت رو بررسی کنیم. ببینیم که آیا سئو برای رشد و موفقیت کار تو مناسب هست یا نه. 🔍📈</p>
+                </div>
+               <div>
+                <button class="bg-btn1 p-3 flex text-white justify-center items-center gap-3 rounded-lg">
+                    <img src="../assets/icons/Icon pack - Linear.png" alt="icon" class="w-[32px]">
+                    <span class="text-[18px] leading-[120%] font-medium">مشاوره رایگان</span>
+                </button>
+               </div>
+            </div>
+    
+        </div>
+
+        <!-- //// Services -->
+         <div class="flex flex-col justify-center items-center gap-10 w-[958px]">
+
+            <div class="flex flex-col gap-6 justify-center items-center">
+
+                <div class="w-[80px] h-[36px] bg-Bg/3 flex gap-[5px] justify-center items-center text-[14px] leading-[24] font-medium rounded-full"><IconsDot></IconsDot> خدمات</div>
+
+                <div class="flex flex-col gap-4 justify-center items-center">
+                    <h6 class="text-[18px] leading-[140%] font-bold">از سئو تا طراحی سایت ؛ خدمات کامل برای موفقیت دیجیتال شما</h6>
+
+                    <p class="text-[16px] leading-[160%] font-medium text-txt2 text-center">از بهینه‌سازی سئو و مشاوره‌های تخصصی تا تدوین استراتژی محتوا و تبلیغات هدفمند گوگل ادز، تمامی ابزارهای لازم برای موفقیت دیجیتال شما را در یک پکیج جامع ارائه می‌دهیم</p>
+                </div>
+
+            </div>
+
+            <div>
+                <div v-for="item in list" :key="item">
+                    <NuxtImg src="../assets/2.png" alt="img" ></NuxtImg>
+                </div>
+            </div>
+
+         </div>
+
+
+    </div>
+</template>
