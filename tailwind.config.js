@@ -15,6 +15,11 @@ export default {
       }
     },
     colors: {
+
+      //// white / black
+      'white': "#FFFFFF",
+      'black': "#000000",
+
       //// text color
       'txt1' : '#050D05',
       'txt2' : '#828682',
@@ -23,7 +28,10 @@ export default {
       //// background 
       'Bg/1' : '#FFFFFF',
       'Bg/3' : '#F8F8F8',
-      'test' : 'red'
+      'test' : 'red',
+
+      //// button
+      'btn1' : '#13144E'
     }
   },
   plugins: [],
