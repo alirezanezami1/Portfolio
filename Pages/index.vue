@@ -1,10 +1,46 @@
 <script setup>
+
+const listItems = servicesArray()
+
+const list = [
+        {
+            'title' : 'سئو سایت',
+            'description' : 'با سئو در گوگل دیده شو و فروشت رو چند برابر کن',
+            'url' : '../assets/10.png',
+        },
+        {
+            'title' : 'مشاوره سایت',
+            'description' : 'با گرفتن مشاوره سئو، عیب و ایرادهای فعلی سایتت رو برطرف کن',
+            'url' : '../assets/4.png',
+        },
+        {
+            'title' : 'منتورینگ سئو',
+            'description' : 'اگه هنوز اعتماد به نفس گرفتن پروژه سئو نداری، حتما از یه منتورسئو کمک بگیر',
+            'url' : '../assets/2.png',
+        },
+        {
+            'title' : 'تدوین استراتژی محتوا',
+            'description' : 'اگه نمیدونی معماری و چیدمان صفحات سایتت چطور باید باشه، نیاز به تدوین استراتژی داری',
+            'url' : '../assets/3.png',
+        },
+        {
+            'title' : 'طراحی سایت',
+            'description' : 'اگه دنبال یه سایت شیک و حرفه ای واسه خودت هستی، خوب جایی اومدی',
+            'url' : '../assets/12.png',
+        },
+        {
+            'title' : 'گوگل ادز',
+            'description' : 'اگه خیلی عجله داری که سایتت به رتبه 1 گوگل برسه، گوگل ادز رو امتحان کن',
+            'url' : '../assets/9.png',
+        },
+    ]
+
 </script>
 
 <template>
     <div class="flex flex-col justify-center items-center text-txt1">
         <!-- //// Introduction -->
-        <div class="flex grid-flow-row grid-cols-3 justify-center items-center my-20">
+        <div class="flex grid-flow-row grid-cols-3 justify-center items-center my-12">
             
             <div class="flex flex-col justify-center items-center gap-[84px] w-[146px]" dir="ltr">
     
@@ -45,6 +81,28 @@
     
         </div>
 
+        <!-- //// Services -->
+         <div class="flex flex-col justify-center items-center gap-10 w-[958px]">
+
+            <div class="flex flex-col gap-6 justify-center items-center">
+
+                <div class="w-[80px] h-[36px] bg-Bg/3 flex gap-[5px] justify-center items-center text-[14px] leading-[24] font-medium rounded-full"><IconsDot></IconsDot> خدمات</div>
+
+                <div class="flex flex-col gap-4 justify-center items-center">
+                    <h6 class="text-[18px] leading-[140%] font-bold">از سئو تا طراحی سایت ؛ خدمات کامل برای موفقیت دیجیتال شما</h6>
+
+                    <p class="text-[16px] leading-[160%] font-medium text-txt2 text-center">از بهینه‌سازی سئو و مشاوره‌های تخصصی تا تدوین استراتژی محتوا و تبلیغات هدفمند گوگل ادز، تمامی ابزارهای لازم برای موفقیت دیجیتال شما را در یک پکیج جامع ارائه می‌دهیم</p>
+                </div>
+
+            </div>
+
+            <div>
+                <div v-for="item in list" :key="item">
+                    <img :src="item.url" alt="img">
+                </div>
+            </div>
+
+         </div>
 
 
     </div>
