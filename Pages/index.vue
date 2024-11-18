@@ -176,7 +176,7 @@ const list = [
 
 
             <!-- //// left  -->
-             <div class="flex flex-col gap-6 w-[630px]">
+            <div class="flex flex-col gap-6 w-[630px]">
                 <!-- //// top  -->
                 <div class="flex flex-col justify-between items-center text-[16px] leading-[160%] font-thin text-txt2 h-[182px]">
                     <p><span class="text-txt1">یک کارشناس سئو با 8 سال تجربه در بهینه سازی وبسایت‌ها برای موتورهای جستجو.</span> علاقه من به دنیای دیجیتال و کمک به کسب‌وکارها برای رشد آنلاین، انگیزه‌ای قوی برای من بوده تا در این حوزه فعالیت کنم.</p>
@@ -185,7 +185,10 @@ const list = [
                 </div>
 
                 <!-- //// bottom  -->
-                <div></div>
+                <div>
+                    <button class=""></button>
+                </div>
+
              </div>
 
           </div>
