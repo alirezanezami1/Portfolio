@@ -82,7 +82,7 @@ const list = [
         </div>
 
         <!-- //// Services -->
-         <div class="flex flex-col justify-center items-center gap-10 w-[958px]">
+         <div class="flex flex-col justify-center items-center gap-10 w-[958px] my-12">
 
             <div class="flex flex-col gap-6 justify-center items-center">
 
@@ -96,7 +96,7 @@ const list = [
 
             </div>
 
-            <div class="flex flex-col justify-center items-center">
+            <div class="flex flex-col justify-center items-center gap-4">
                 <!-- //// up -->
                 <div class="flex gap-4 justify-center items-center">
 
@@ -127,7 +127,33 @@ const list = [
                 </div>
 
                 <!-- //// bottom  -->
-                 <div></div>
+                 <div class="flex gap-4 justify-center items-center">
+
+                    <div class="flex flex-col justify-center items-center gap-[14px] text-center w-[308px] h-[284px] bg-Bg/3 p-6 rounded-2xl">
+                        <img src="../assets/images/9.png" alt="img">
+                        <div class="grid gap-4">
+                            <h5 class="text-[20px] leading-[140%] font-bold">گوگل ادز</h5>
+                            <p class="text-[16px] leading-[160%] font-normal text-txt2">اگه خیلی عجله داری که سایتت به رتبه 1 گوگل برسه، گوگل ادز رو امتحان کن</p>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col justify-center items-center gap-[14px] text-center w-[308px] h-[284px] bg-Bg/3 p-6 rounded-2xl">
+                        <img src="../assets/images/12.png" alt="img">
+                        <div class="grid gap-4">
+                            <h5 class="text-[20px] leading-[140%] font-bold">طراحی سایت</h5>
+                            <p class="text-[16px] leading-[160%] font-normal text-txt2">اگه دنبال یه سایت شیک و حرفه ای واسه خودت هستی، خوب جایی اومدی</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex flex-col justify-center items-center gap-[14px] text-center w-[308px] h-[284px] bg-Bg/3 p-6 rounded-2xl">
+                        <img src="../assets/images/3.png" alt="img">
+                        <div class="grid gap-4">
+                            <h5 class="text-[20px] leading-[140%] font-bold">تدوین استراتژی محتوا</h5>
+                            <p class="text-[16px] leading-[160%] font-normal text-txt2">اگه نمیدونی معماری و چیدمان صفحات سایتت چطور باید باشه، نیاز به تدوین استراتژی داری</p>
+                        </div>
+                    </div>
+
+                 </div>
 
             </div>
 
