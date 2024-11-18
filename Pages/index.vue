@@ -159,6 +159,36 @@ const list = [
 
          </div>
 
+         <!-- //// aboute  -->
+          <div class="flex justify-between gap-[307px] my-16">
+
+            <!-- //// right  -->
+             <div class="flex flex-col gap-6 w-[343px]">
+
+                <div class="w-[80px] h-[36px] bg-Bg/3 flex gap-[5px] justify-center items-center text-[14px] leading-[24] font-medium rounded-full"><IconsDot></IconsDot> درباره من</div>
+
+                <div class="text-right flex flex-col gap-4">
+                    <p class="text-[16px] leading-[120%] font-normal">سلام 👋 دوستان ، من </p>
+                    <h1 class="text-[56px] leading-[120%] font-bold">رقیه رنجبری ام </h1>
+                </div>
+
+             </div>
+
+
+            <!-- //// left  -->
+             <div class="flex flex-col gap-6 w-[630px]">
+                <!-- //// top  -->
+                <div class="flex flex-col justify-between items-center text-[16px] leading-[160%] font-thin text-txt2 h-[182px]">
+                    <p><span class="text-txt1">یک کارشناس سئو با 8 سال تجربه در بهینه سازی وبسایت‌ها برای موتورهای جستجو.</span> علاقه من به دنیای دیجیتال و کمک به کسب‌وکارها برای رشد آنلاین، انگیزه‌ای قوی برای من بوده تا در این حوزه فعالیت کنم.</p>
+
+                    <p>من به عنوان یک کارشناس سئو، <span class="text-txt1">به طور مداوم در حال یادگیری آخرین الگوریتم‌ها و بهترین روش‌های سئو هستم.</span> با استفاده از دانش و تجربه خود، <span class="text-txt1">به کسب‌وکارها کمک می‌کنم تا در نتایج جستجوی گوگل رتبه بالاتری کسب کنند</span> و ترافیک ارگانیک خود را افزایش دهند.</p>
+                </div>
+
+                <!-- //// bottom  -->
+                <div></div>
+             </div>
+
+          </div>
 
     </div>
 </template>
