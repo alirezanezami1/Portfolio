@@ -6,32 +6,32 @@ const list = [
         {
             'title' : 'سئو سایت',
             'description' : 'با سئو در گوگل دیده شو و فروشت رو چند برابر کن',
-            'url' : '../assets/10.png',
+            'url' : '../assets/images/10.png',
         },
         {
             'title' : 'مشاوره سایت',
             'description' : 'با گرفتن مشاوره سئو، عیب و ایرادهای فعلی سایتت رو برطرف کن',
-            'url' : '../assets/4.png',
+            'url' : '../assets/images/10.png',
         },
         {
             'title' : 'منتورینگ سئو',
             'description' : 'اگه هنوز اعتماد به نفس گرفتن پروژه سئو نداری، حتما از یه منتورسئو کمک بگیر',
-            'url' : '../assets/2.png',
+            'url' : '../assets/images/10.png',
         },
         {
             'title' : 'تدوین استراتژی محتوا',
             'description' : 'اگه نمیدونی معماری و چیدمان صفحات سایتت چطور باید باشه، نیاز به تدوین استراتژی داری',
-            'url' : '../assets/3.png',
+            'url' : '../assets/images/10.png',
         },
         {
             'title' : 'طراحی سایت',
             'description' : 'اگه دنبال یه سایت شیک و حرفه ای واسه خودت هستی، خوب جایی اومدی',
-            'url' : '../assets/12.png',
+            'url' : '../assets/images/10.png',
         },
         {
             'title' : 'گوگل ادز',
             'description' : 'اگه خیلی عجله داری که سایتت به رتبه 1 گوگل برسه، گوگل ادز رو امتحان کن',
-            'url' : '../assets/9.png',
+            'url' : '../assets/images/10.png',
         },
     ]
 
@@ -96,10 +96,39 @@ const list = [
 
             </div>
 
-            <div>
-                <div v-for="item in list" :key="item">
-                    <img :src="item.url" alt="img">
+            <div class="flex flex-col justify-center items-center">
+                <!-- //// up -->
+                <div class="flex gap-4 justify-center items-center">
+
+                    <div class="flex flex-col justify-center items-center gap-[14px] text-center w-[308px] h-[284px] bg-Bg/3 p-6 rounded-2xl">
+                        <img src="../assets/images/2.png" alt="img">
+                        <div class="grid gap-4">
+                            <h5 class="text-[20px] leading-[140%] font-bold">منتورینگ سئو</h5>
+                            <p class="text-[16px] leading-[160%] font-normal text-txt2"> اگه هنوز اعتماد به نفس گرفتن پروژه سئو نداری، حتما از یه منتورسئو کمک بگیر</p>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col justify-center items-center gap-[14px] text-center w-[308px] h-[284px] bg-Bg/3 p-6 rounded-2xl">
+                        <img src="../assets/images/4.png" alt="img">
+                        <div class="grid gap-4">
+                            <h5 class="text-[20px] leading-[140%] font-bold">مشاوره سئو</h5>
+                            <p class="text-[16px] leading-[160%] font-normal text-txt2">با گرفتن مشاوره سئو، عیب و ایرادهای فعلی سایتت رو برطرف کن</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex flex-col justify-center items-center gap-[14px] text-center w-[308px] h-[284px] bg-Bg/3 p-6 rounded-2xl">
+                        <img src="../assets/images/10.png" alt="img">
+                        <div class="grid gap-4">
+                            <h5 class="text-[20px] leading-[140%] font-bold">سئو سایت</h5>
+                            <p class="text-[16px] leading-[160%] font-normal text-txt2">با سئو در گوگل دیده شو و فروشت رو چند برابر کن</p>
+                        </div>
+                    </div>
+
                 </div>
+
+                <!-- //// bottom  -->
+                 <div></div>
+
             </div>
 
          </div>
