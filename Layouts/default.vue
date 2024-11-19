@@ -12,7 +12,7 @@ const receivedOpcao =  () => {
         <div>
             <Header @opcao-emit="receivedOpcao"></Header>
         </div>
-        <div class="mx-20" >
+        <div>
             <slot></slot>
         </div>
     </div>

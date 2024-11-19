@@ -9,7 +9,7 @@
         </div>
 
         <!-- //// Introduction -->
-        <div class="flex grid-flow-row grid-cols-3 justify-center items-center my-12">
+        <div class="flex grid-flow-row grid-cols-3 justify-center items-center my-12 mx-20">
             
             <div class="flex flex-col justify-center items-center gap-[84px] w-[146px]" dir="ltr">
     
@@ -51,7 +51,7 @@
         </div>
 
         <!-- //// Services -->
-         <div class="flex flex-col justify-center items-center gap-10 w-[958px] my-12">
+         <div class="flex flex-col justify-center items-center gap-10 w-[958px] my-12 mx-20">
 
             <div class="flex flex-col gap-6 justify-center items-center">
 
@@ -129,7 +129,7 @@
          </div>
 
          <!-- //// aboute  -->
-          <div class="flex justify-between gap-[307px] my-16">
+          <div class="flex justify-between gap-[307px] my-16 mx-20">
 
             <!-- //// right  -->
              <div class="flex flex-col gap-6 w-[343px]">
@@ -163,7 +163,29 @@
           </div>
 
           <!-- //// call  -->
-           <div></div>
+           <div class="flex justify-center gap-10 items-center text-white bg-Bg/2 w-full h-[290px] mb-16 mt-48">
+
+            <div class="flex flex-col gap-6 justify-center items-center text-center w-[739px] h-[192px]">
+
+                <div class="flex flex-col gap-6 justify-center items-center">
+                    <p class="text-[28px] leading-[160%] font-medium">سؤالی دارید؟ تماس بگیرید</p>
+
+                    <p class="text-[18px] leading-[160%] opacity-80 font-thin">برای دریافت مشاوره تخصصی در زمینه سئو، شروع همکاری یا هرگونه پرسش، با من تماس بگیرید و با راهکارهای مؤثر به کسب‌وکار آنلاین خود رونق ببخشید</p>
+                </div>
+
+                <div>
+                    <NuxtLink class="text-[32px] leading-[140%] font-bold cursor-pointer">
+                        ۰۹۳۸۰۲۸۶۲۳۰
+                    </NuxtLink>
+                </div>
+
+            </div>
+
+            <div class="relative bottom-[103px]">
+                <img src="../assets/adminPhoto/5792119494850758350 2.png" alt="admin">
+            </div>
+
+           </div>
 
     </div>
     
@@ -175,7 +197,7 @@
   background-size: cover; /* برای پوشش کامل */
   background-position: center; /* برای ثابت نگه داشتن تصویر */
   top: 0;
-  left: 0;
+  left: -5%;
   width: 100%;
   height: 100%;
   z-index: -10; /* برای قرار دادن تصویر در پس‌زمینه */

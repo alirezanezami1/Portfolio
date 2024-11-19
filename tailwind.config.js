@@ -28,6 +28,7 @@ export default {
 
       //// background 
       'Bg/1' : '#FFFFFF',
+      'Bg/2' : '#13144E',
       'Bg/3' : '#F8F8F8',
       'test' : 'red',
 
