@@ -187,6 +187,21 @@
 
            </div>
 
+
+           <!-- //// experience  -->
+            <div class="flex flex-col justify-center items-center">
+
+                <div class="flex flex-col gap-6 justify-center items-center">
+                    <div class="w-[80px] h-[36px] bg-Bg/3 flex gap-[5px] justify-center items-center text-[14px] leading-[24] font-medium rounded-full ">
+                        <IconsDot></IconsDot><span>نمونه کارها</span>
+                    </div>
+                </div>
+
+
+                <div></div>
+
+            </div>
+
     </div>
     
 </template>
