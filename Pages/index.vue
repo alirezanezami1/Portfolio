@@ -134,7 +134,7 @@
             <!-- //// right  -->
              <div class="flex flex-col gap-6 w-[343px]">
 
-                <div class="w-[80px] h-[36px] bg-Bg/3 flex gap-[5px] justify-center items-center text-[14px] leading-[24] font-medium rounded-full"><IconsDot></IconsDot> درباره من</div>
+                <div class="w-[91px] h-[36px] bg-Bg/3 flex gap-[5px] justify-center items-center text-[14px] leading-[24] font-medium rounded-full"><IconsDot></IconsDot> درباره من</div>
 
                 <div class="text-right flex flex-col gap-4">
                     <p class="text-[16px] leading-[120%] font-normal">سلام 👋 دوستان ، من </p>
@@ -189,12 +189,18 @@
 
 
            <!-- //// experience  -->
-            <div class="flex flex-col justify-center items-center">
+            <div class="flex flex-col justify-center items-center my-20">
 
-                <div class="flex flex-col gap-6 justify-center items-center">
-                    <div class="w-[80px] h-[36px] bg-Bg/3 flex gap-[5px] justify-center items-center text-[14px] leading-[24] font-medium rounded-full ">
-                        <IconsDot></IconsDot><span>نمونه کارها</span>
+                <div class="flex flex-col gap-6 justify-center items-center w-[753px]">
+                    <div class="w-[101px] h-[36px] bg-Bg/3 flex gap-[5px] justify-center items-center text-[14px] leading-[24] font-medium rounded-full">
+                        <IconsDot></IconsDot>نمونه کارها
                     </div>
+
+                    <div class="flex flex-col justify-center items-center gap-4 text-center">
+                        <h6 class="text-[18px] leading-[140%] font-bold">پروژه‌های سئو که به رتبه‌های برتر رسیده‌اند</h6>
+                        <p class="text-[16px] leading-[160%] font-medium text-txt2">نگاهی جامع به پروژه‌های موفق سئو که با بهبود رتبه‌بندی، افزایش ترافیک ارگانیک و رشد فروش، کسب‌وکارهای مختلف را به سطح بالاتری رسانده‌اند</p>
+                    </div>
+
                 </div>
 
 
