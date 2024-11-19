@@ -1,44 +1,13 @@
 <script setup>
-
-const listItems = servicesArray()
-
-const list = [
-        {
-            'title' : 'سئو سایت',
-            'description' : 'با سئو در گوگل دیده شو و فروشت رو چند برابر کن',
-            'url' : '../assets/images/10.png',
-        },
-        {
-            'title' : 'مشاوره سایت',
-            'description' : 'با گرفتن مشاوره سئو، عیب و ایرادهای فعلی سایتت رو برطرف کن',
-            'url' : '../assets/images/10.png',
-        },
-        {
-            'title' : 'منتورینگ سئو',
-            'description' : 'اگه هنوز اعتماد به نفس گرفتن پروژه سئو نداری، حتما از یه منتورسئو کمک بگیر',
-            'url' : '../assets/images/10.png',
-        },
-        {
-            'title' : 'تدوین استراتژی محتوا',
-            'description' : 'اگه نمیدونی معماری و چیدمان صفحات سایتت چطور باید باشه، نیاز به تدوین استراتژی داری',
-            'url' : '../assets/images/10.png',
-        },
-        {
-            'title' : 'طراحی سایت',
-            'description' : 'اگه دنبال یه سایت شیک و حرفه ای واسه خودت هستی، خوب جایی اومدی',
-            'url' : '../assets/images/10.png',
-        },
-        {
-            'title' : 'گوگل ادز',
-            'description' : 'اگه خیلی عجله داری که سایتت به رتبه 1 گوگل برسه، گوگل ادز رو امتحان کن',
-            'url' : '../assets/images/10.png',
-        },
-    ]
-
 </script>
 
 <template>
     <div class="flex flex-col justify-center items-center text-txt1">
+
+        <div class="background">
+            <img src="../Public/backgrounds/Home page - Desktop (1).png" alt="background img">
+        </div>
+
         <!-- //// Introduction -->
         <div class="flex grid-flow-row grid-cols-3 justify-center items-center my-12">
             
@@ -197,4 +166,18 @@ const list = [
            <div></div>
 
     </div>
+    
 </template>
+
+<style>
+.background {
+  position: absolute;
+  background-size: cover; /* برای پوشش کامل */
+  background-position: center; /* برای ثابت نگه داشتن تصویر */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -10; /* برای قرار دادن تصویر در پس‌زمینه */
+}
+</style>
