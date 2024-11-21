@@ -189,7 +189,7 @@
 
 
            <!-- //// experience  -->
-            <div class="flex flex-col justify-center items-center my-20">
+            <div class="flex flex-col justify-center items-center gap-12 my-20 mx-20">
 
                 <div class="flex flex-col gap-6 justify-center items-center w-[753px]">
                     <div class="w-[101px] h-[36px] bg-Bg/3 flex gap-[5px] justify-center items-center text-[14px] leading-[24] font-medium rounded-full">
@@ -204,8 +204,14 @@
                 </div>
 
 
-                <div>
+                <div class="flex flex-col justify-center items-center gap-2">
                     
+
+                    <div class="flex justify-between items-center gap-4">
+
+                    </div>
+
+
                 </div>
 
                 
