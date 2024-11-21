@@ -5,7 +5,7 @@ const testFunc = () => {
     openMenu.value = true
 }
 console.log(console.log(emit));
-
+const drawer = ref(null)
 
 </script>
 
@@ -13,7 +13,7 @@ console.log(console.log(emit));
     <div class="flex items-center  justify-between py-2.5 px-4 md:px-20 border-b-[1.5px] border-[#CDCFCD] " @click="emit('opcao-emit')" v-auto-animate>
        
         <div class="md:hidden">
-            <IconsMenuIcon @click="testFunc"></IconsMenuIcon>
+            <IconsMenuIcon @click="testFunc"></IconsMenuIcon> 
         </div>
 
         <div >

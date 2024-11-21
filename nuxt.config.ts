@@ -7,12 +7,7 @@ export default defineNuxtConfig({
     transpile: ['vuetify'],
   },
   css: ['~/assets/css/main.css'],
-  modules: ['@formkit/auto-animate/nuxt', '@nuxt/image' ,(_options, nuxt) => {
-    nuxt.hooks.hook('vite:extendConfig', (config) => {
-      // @ts-expect-error
-      config.plugins.push(vuetify({ autoImport: true }))
-    })
-  }, ],
+  modules: ['@formkit/auto-animate/nuxt', '@nuxt/image'],
   vite: {
     vue: {
       template: {
