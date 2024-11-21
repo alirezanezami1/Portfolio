@@ -189,7 +189,7 @@
 
 
            <!-- //// experience  -->
-            <div class="flex flex-col justify-center items-center gap-12 my-20 mx-20">
+            <div class="flex flex-col justify-center items-center gap-20 my-20 mx-20">
 
                 <div class="flex flex-col gap-6 justify-center items-center w-[753px]">
                     <div class="w-[101px] h-[36px] bg-Bg/3 flex gap-[5px] justify-center items-center text-[14px] leading-[24] font-medium rounded-full">
@@ -204,10 +204,52 @@
                 </div>
 
 
-                <div class="flex flex-col justify-center items-center gap-2">
+                <div class="flex flex-col justify-center items-center w-[1281px] mx-20 gap-2">
                     
+                    <div class="flex flex-col w-full p-6 bg-Bg/3 rounded-2xl">
 
-                    <div class="flex justify-between items-center gap-4">
+                        <div class="flex justify-between items-center ">
+
+                            <div class="flex justify-center items-center gap-[153px]">
+
+    <div class="flex justify-start items-center gap-8 text-start">
+
+        <div class="text-[40px] font-medium leading-[160%] text-center">
+            <span>01</span>
+        </div>
+
+        <div class="flex flex-col gap-1">
+            <p class="text-[20px] leading-[160%] font-medium">نام پروژه: ایلیا صنعت</p>
+            <p class="text-[16px] leading-[160%] font-light text-txt2">زمینه فعالیت : فروشگاه الکترود و سیم جوش جوشکاری</p>
+        </div>
+
+    </div>
+
+    <div class="flex justify-center items-center gap-[10px] px-6 py-3 rounded-full border-2 border-Bg/2 text-txt4">
+        نوع پروژه : <span>فروشگاهی</span>
+    </div>
+
+                            </div>
+
+
+                            <div class="cursor-pointer w-[48px] h-[48px] bg-Bg/2 rounded-full flex justify-center items-center">
+                                <IconsDownBg></IconsDownBg>
+                            </div>
+
+
+                        </div>
+
+
+                        <div class="flex flex-col gap-6 justify-center items-start w-full px-20 pt-2 pb-6">
+
+                            <div class="flex gap-2 text-[16px] leading-[160%] font-light text-txt2 text-start">
+                                <img src="../assets/icons/Clock Circle.svg" alt="time">
+                                <p>مدت زمان : <span>6 ماه</span></p>
+                            </div>
+
+
+
+                        </div>
 
                     </div>
 

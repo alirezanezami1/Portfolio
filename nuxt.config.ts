@@ -7,7 +7,7 @@ export default defineNuxtConfig({
     transpile: ['vuetify'],
   },
   css: ['~/assets/css/main.css'],
-  modules: ['@formkit/auto-animate/nuxt', '@nuxt/image'],
+  modules: ['@formkit/auto-animate/nuxt', '@nuxt/image', 'nuxt-swiper'],
   vite: {
     vue: {
       template: {
