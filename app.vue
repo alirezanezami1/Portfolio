@@ -1,5 +1,7 @@
 <template >
   <NuxtLayout dir="rtl">
-    <NuxtPage></NuxtPage>
+    <v-app>
+      <NuxtPage dir="rtl"></NuxtPage>
+    </v-app>
   </NuxtLayout>
 </template>
