@@ -36,9 +36,6 @@ export default {
       //// button
       'btn1' : '#13144E'
     }
-  },
-  plugins: [
-    require('flowbite/plugin')
-  ],
+  }
 }
 
