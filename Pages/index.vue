@@ -155,7 +155,7 @@
 
                 <!-- //// bottom  -->
                 <div>
-                    <button class="flex p-3 gap-3 text-txt4 rounded-lg border-2 border-btn1 cursor-pointer"> با من بیشتر آشنا شوید<IconsArrowLeft class="w-[32px]"></IconsArrowLeft></button>
+                    <button class="flex justify-center items-center p-3 gap-3 text-txt4 rounded-lg bt1 cursor-pointer"> با من بیشتر آشنا شوید<IconsArrowLeft class="w-[32px]"></IconsArrowLeft></button>
                 </div>
 
              </div>

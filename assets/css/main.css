@@ -17,3 +17,7 @@
     font-family: "Estedad", system-ui, sans-serif;
   }
 }
+
+.bt1 {
+  border: 2px solid #13144E !important;
+}
