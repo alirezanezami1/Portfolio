@@ -9,7 +9,7 @@
         </div>
 
         <!-- //// Introduction -->
-        <div class="flex grid-flow-row grid-cols-3 justify-center items-center my-12 mx-20">
+        <div class="flex grid-flow-row grid-cols-3 gap-3 justify-center items-center my-11 mx-20">
             
             <div class="flex flex-col justify-center items-center gap-[84px] w-[146px]" dir="ltr">
     
@@ -34,7 +34,7 @@
                 <img src="../assets/adminPhoto/Main image and text container.png" alt="mainPhoto" class="object-cover w-[606.89px] h-[664px]">
             </div>
     
-            <div class="text-right grid gap-[48px] w-[500px]">
+            <div class="text-right grid gap-[48px] w-[524px]">
                 <div class="flex flex-col gap-[40px]">
                     <p class="text-[16px] leading-[160%] font-normal">سلام  👋 من رقیه رنجبری هستم، یه </p>
                 <h1 class="text-[64px] font-bold leading-[120%]">کارشناس سئو </h1>
@@ -222,8 +222,8 @@
   background-size: cover; 
   background-position: center; 
   top: 0;
-  left: -3%;
-  width: 100%;
+  left: -5%;
+  width: 100vw;
   height: 100%;
   z-index: -1000 ; 
 }
