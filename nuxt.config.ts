@@ -3,7 +3,7 @@ export default defineNuxtConfig({
   compatibilityDate: '2024-04-03',
   devtools: { enabled: true },
   css: ['~/assets/css/main.css'],
-  modules: ['@formkit/auto-animate/nuxt', '@nuxt/image'],
+  modules: ['@formkit/auto-animate/nuxt', '@nuxt/image' ],
   postcss: {
     plugins: {
       tailwindcss: {},
