@@ -1,11 +1,26 @@
-<script setup>
+<script setup lang="ts">
+const containerRef = ref(null)
+const slides = ref([
+    {title : 'همراه ایران' , type : 'فروشگاهی' , field : 'فروشگاه لوازم جانبی موبایل', time : '6ماه' , subtitle : 'لوازم جانبی یسیدو - لینک ۱' , images : ['/img/Component 10.png' , '/img/Component 10.png' , '/img/Component 10.png'] },
+    {title : 'همراه ایران' , type : 'فروشگاهی' , field : 'فروشگاه لوازم جانبی موبایل', time : '6ماه' , subtitle : 'لوازم جانبی یسیدو - لینک ۱' , images : ['/img/Component 10.png' , '/img/Component 10.png' , '/img/Component 10.png'] },
+    {title : 'همراه ایران' , type : 'فروشگاهی' , field : 'فروشگاه لوازم جانبی موبایل', time : '6ماه' , subtitle : 'لوازم جانبی یسیدو - لینک ۱' , images : ['/img/Component 10.png' , '/img/Component 10.png' , '/img/Component 10.png'] }
+])
+
+const accordionOpen = ref(null)
+
+const swiper = useSwiper(containerRef)
+
+function toggleAccordion (index) {
+    accordionOpen.value = accordionOpen.value === index ? null : index
+}
+
 </script>
 
 <template>
     <div class="flex flex-col justify-center items-center text-txt1">
 
         <div class="background">
-            <img src="../Public/backgrounds/Home page - Desktop (1).png" alt="background img">
+            <img src="/backgrounds/Home page - Desktop (1).png" alt="background img">
         </div>
 
         <!-- //// Introduction -->
@@ -155,7 +170,7 @@
 
                 <!-- //// bottom  -->
                 <div>
-                    <button class="flex justify-center items-center p-3 gap-3 text-txt4 rounded-lg bt1 cursor-pointer"> با من بیشتر آشنا شوید<IconsArrowLeft class="w-[32px]"></IconsArrowLeft></button>
+                    <button class="flex justify-center items-center p-3 gap-3 text-txt4 rounded-lg border-2 border-btn1 cursor-pointer"> با من بیشتر آشنا شوید<IconsArrowLeft class="w-[32px]"></IconsArrowLeft></button>
                 </div>
 
              </div>
@@ -204,50 +219,67 @@
                 </div>
 
 
-                <div class="flex flex-col justify-center items-center w-[1281px] mx-20 gap-2">
+                <div class="flex flex-col justify-center items-center w-[1281px] mx-20 gap-2" >
                     
-                    <div class="flex flex-col w-full p-6 bg-Bg/3 rounded-2xl">
+                    <div class="flex flex-col w-full bg-Bg/3 rounded-2xl" v-for="(slide , index) in slides" :key="index" >
 
-                        <div class="flex justify-between items-center ">
+                        <div class="flex justify-between items-center p-4">
 
                             <div class="flex justify-center items-center gap-[153px]">
 
-    <div class="flex justify-start items-center gap-8 text-start">
-
-        <div class="text-[40px] font-medium leading-[160%] text-center">
-            <span>01</span>
-        </div>
-
-        <div class="flex flex-col gap-1">
-            <p class="text-[20px] leading-[160%] font-medium">نام پروژه: ایلیا صنعت</p>
-            <p class="text-[16px] leading-[160%] font-light text-txt2">زمینه فعالیت : فروشگاه الکترود و سیم جوش جوشکاری</p>
-        </div>
-
-    </div>
-
-    <div class="flex justify-center items-center gap-[10px] px-6 py-3 rounded-full border-2 border-Bg/2 text-txt4">
-        نوع پروژه : <span>فروشگاهی</span>
-    </div>
+                                <div class="flex justify-start items-center gap-8 text-start">
+                                
+                                    <div class="text-[40px] font-medium leading-[160%] text-center">
+                                        <span>0{{ index + 1 }}</span>
+                                    </div>
+                                
+                                    <div class="flex flex-col gap-1">
+                                        <p class="text-[20px] leading-[160%] font-medium">نام پروژه: {{ slide.title }}</p>
+                                        <p class="text-[16px] leading-[160%] font-light text-txt2">زمینه فعالیت : {{ slide.field }}</p>
+                                    </div>
+                                
+                                </div>
+                            
+                                <div class="flex justify-center items-center gap-[10px] px-6 py-3 rounded-full border-2 border-Bg/2 text-txt4">
+                                    نوع پروژه : <span>{{ slide.type }}</span>
+                                </div>
 
                             </div>
 
 
-                            <div class="cursor-pointer w-[48px] h-[48px] bg-Bg/2 rounded-full flex justify-center items-center">
-                                <IconsDownBg></IconsDownBg>
+                            <div class="cursor-pointer w-[48px] h-[48px] bg-Bg/2 rounded-full flex justify-center items-center" >
+                                <IconsDownBg @click="() => toggleAccordion(index)" v-if="accordionOpen === null"></IconsDownBg>
+                                <IconsUpBg @click="() => toggleAccordion(index)" v-if="accordionOpen === index"></IconsUpBg>
                             </div>
 
 
                         </div>
 
 
-                        <div class="flex flex-col gap-6 justify-center items-start w-full px-20 pt-2 pb-6">
+                        <div class="flex flex-col gap-6 justify-center items-start w-full px-20 pt-2 pb-6 " v-if="accordionOpen === index">
 
                             <div class="flex gap-2 text-[16px] leading-[160%] font-light text-txt2 text-start">
                                 <img src="../assets/icons/Clock Circle.svg" alt="time">
-                                <p>مدت زمان : <span>6 ماه</span></p>
+                                <p>مدت زمان : <span>{{ slide.time }}</span></p>
                             </div>
 
-
+                            <div class="w-[1121px]">
+                                            <ClientOnly>
+                                                <swiper-container ref="containerRef" :spaceBetween="-300" :slidesPerView="1.2">
+                                                  <swiper-slide
+                                                    v-for="(img, idx) in slide.images"
+                                                    :key="idx"
+                                                  >
+                                                    <div class="flex flex-col gap-4">
+                                                        <img :src="img" class="w-[600px] h-[390px] rounded-xl" >
+                                                        <div class="text-[16px] leading-[160%] font-thin text-txt1">
+                                                            <p>{{ slide.subtitle }}</p>
+                                                        </div>
+                                                    </div>
+                                                  </swiper-slide>
+                                                </swiper-container>
+                                            </ClientOnly>
+                            </div>
 
                         </div>
 
@@ -255,16 +287,16 @@
 
 
                 </div>
-
                 
-
             </div>
+
+           
 
     </div>
     
 </template>
 
-<style>
+<style lang="css">
 .background {
   position: absolute;
   background-size: cover; 
@@ -275,4 +307,5 @@
   height: 100%;
   z-index: -1000 ; 
 }
+
 </style>

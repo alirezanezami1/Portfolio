@@ -2,7 +2,7 @@
     const openMenu = ref(false)
 const receivedOpcao =  () => {
     openMenu.value = false
-    console.log(openMenu.value);
+    // console.log(openMenu.value);
     return openMenu.value
 }
 </script>
