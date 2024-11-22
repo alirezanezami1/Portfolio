@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import Index from '~/components/Header/index.vue';
+
 const containerRef = ref(null)
 const slides = ref([
     {title : 'همراه ایران' , type : 'فروشگاهی' , field : 'فروشگاه لوازم جانبی موبایل', time : '6ماه' , subtitle : 'لوازم جانبی یسیدو - لینک ۱' , images : ['/img/Component 10.png' , '/img/Component 10.png' , '/img/Component 10.png'] },
@@ -10,7 +12,7 @@ const accordionOpen = ref(null)
 
 const swiper = useSwiper(containerRef)
 
-function toggleAccordion (index) {
+const toggleAccordion = function (index) {
     accordionOpen.value = accordionOpen.value === index ? null : index
 }
 
@@ -247,9 +249,9 @@ function toggleAccordion (index) {
                             </div>
 
 
-                            <div class="cursor-pointer w-[48px] h-[48px] bg-Bg/2 rounded-full flex justify-center items-center" >
-                                <IconsDownBg @click="() => toggleAccordion(index)" v-if="accordionOpen === null"></IconsDownBg>
-                                <IconsUpBg @click="() => toggleAccordion(index)" v-if="accordionOpen === index"></IconsUpBg>
+                            <div class="cursor-pointer w-[48px] h-[48px] bg-Bg/2 rounded-full flex justify-center items-center" @click="() => toggleAccordion(index)">
+                                <IconsDownBg v-if="accordionOpen !== index"></IconsDownBg>
+                                <IconsUpBg  v-if="accordionOpen === index"></IconsUpBg>
                             </div>
 
 
@@ -287,7 +289,14 @@ function toggleAccordion (index) {
 
 
                 </div>
-                
+
+                <div>
+                    <NuxtLink>
+                        <button class="flex justify-center items-center gap-3 p-3 text-white bg-Bg/2 rounded-lg cursor-pointer">
+                           مشاهده نمونه کارها <img src="../assets/icons/Icon pack - Linear 2.svg">
+                        </button>
+                    </NuxtLink>
+                </div>
             </div>
 
            
@@ -307,5 +316,4 @@ function toggleAccordion (index) {
   height: 100%;
   z-index: -1000 ; 
 }
-
 </style>
