@@ -1,12 +1,20 @@
 <script setup lang="ts">
-import Index from '~/components/Header/index.vue';
+const services = [
+        {title : 'منتورینگ سئو' , description : 'اگه هنوز اعتماد به نفس گرفتن پروژه سئو نداری، حتما از یه منتورسئو کمک بگیر' , img : '/img/2.png'},
+        {title : 'مشاوره سئو' , description : 'با گرفتن مشاوره سئو، عیب و ایرادهای فعلی سایتت رو برطرف کن' , img : '/img/4.png'},
+        {title : 'سئو سایت' , description : 'با سئو در گوگل دیده شو و فروشت رو چند برابر کن' , img : '/img/10.png'},
+        {title : 'گوگل ادز' , description : 'اگه خیلی عجله داری که سایتت به رتبه 1 گوگل برسه، گوگل ادز رو امتحان کن' , img : '/img/9.png'},
+        {title : 'طراحی سایت' , description : 'اگه دنبال یه سایت شیک و حرفه ای واسه خودت هستی، خوب جایی اومدی' , img : '/img/12.png'},
+        {title : 'تدوین استراتژی محتوا' , description : 'اگه نمیدونی معماری و چیدمان صفحات سایتت چطور باید باشه، نیاز به تدوین استراتژی داری' , img : '/img/3.png'}
+    ]
 
 const containerRef = ref(null)
-const slides = ref([
+
+const slides = [
     {title : 'همراه ایران' , type : 'فروشگاهی' , field : 'فروشگاه لوازم جانبی موبایل', time : '6ماه' , subtitle : 'لوازم جانبی یسیدو - لینک ۱' , images : ['/img/Component 10.png' , '/img/Component 10.png' , '/img/Component 10.png'] },
     {title : 'همراه ایران' , type : 'فروشگاهی' , field : 'فروشگاه لوازم جانبی موبایل', time : '6ماه' , subtitle : 'لوازم جانبی یسیدو - لینک ۱' , images : ['/img/Component 10.png' , '/img/Component 10.png' , '/img/Component 10.png'] },
     {title : 'همراه ایران' , type : 'فروشگاهی' , field : 'فروشگاه لوازم جانبی موبایل', time : '6ماه' , subtitle : 'لوازم جانبی یسیدو - لینک ۱' , images : ['/img/Component 10.png' , '/img/Component 10.png' , '/img/Component 10.png'] }
-])
+]
 
 const accordionOpen = ref(null)
 
@@ -82,70 +90,19 @@ const toggleAccordion = function (index) {
 
             </div>
 
-            <div class="flex flex-col justify-center items-center gap-4">
-                <!-- //// up -->
-                <div class="flex gap-4 justify-center items-center">
-
-                    <div class="flex flex-col justify-center items-center gap-[14px] text-center w-[308px] h-[284px] bg-Bg/3 p-6 rounded-2xl">
-                        <img src="../assets/images/2.png" alt="img">
-                        <div class="grid gap-4">
-                            <h5 class="text-[20px] leading-[140%] font-bold">منتورینگ سئو</h5>
-                            <p class="text-[16px] leading-[160%] font-normal text-txt2"> اگه هنوز اعتماد به نفس گرفتن پروژه سئو نداری، حتما از یه منتورسئو کمک بگیر</p>
-                        </div>
+            <div class="grid grid-cols-3 justify-center items-center gap-4">
+                <div class="flex flex-col justify-center items-center gap-[14px] text-center w-[308px] h-[284px] bg-Bg/3 p-6 rounded-2xl" v-for="item,index in services" :key="index">
+                    <img :src="item.img" alt="img">
+                    <div class="grid gap-4">
+                        <h5 class="text-[20px] leading-[140%] font-bold">{{ item.title }}</h5>
+                        <p class="text-[16px] leading-[160%] font-normal text-txt2">{{ item.description }}</p>
                     </div>
-
-                    <div class="flex flex-col justify-center items-center gap-[14px] text-center w-[308px] h-[284px] bg-Bg/3 p-6 rounded-2xl">
-                        <img src="../assets/images/4.png" alt="img">
-                        <div class="grid gap-4">
-                            <h5 class="text-[20px] leading-[140%] font-bold">مشاوره سئو</h5>
-                            <p class="text-[16px] leading-[160%] font-normal text-txt2">با گرفتن مشاوره سئو، عیب و ایرادهای فعلی سایتت رو برطرف کن</p>
-                        </div>
-                    </div>
-                    
-                    <div class="flex flex-col justify-center items-center gap-[14px] text-center w-[308px] h-[284px] bg-Bg/3 p-6 rounded-2xl">
-                        <img src="../assets/images/10.png" alt="img">
-                        <div class="grid gap-4">
-                            <h5 class="text-[20px] leading-[140%] font-bold">سئو سایت</h5>
-                            <p class="text-[16px] leading-[160%] font-normal text-txt2">با سئو در گوگل دیده شو و فروشت رو چند برابر کن</p>
-                        </div>
-                    </div>
-
                 </div>
-
-                <!-- //// bottom  -->
-                 <div class="flex gap-4 justify-center items-center">
-
-                    <div class="flex flex-col justify-center items-center gap-[14px] text-center w-[308px] h-[284px] bg-Bg/3 p-6 rounded-2xl">
-                        <img src="../assets/images/9.png" alt="img">
-                        <div class="grid gap-4">
-                            <h5 class="text-[20px] leading-[140%] font-bold">گوگل ادز</h5>
-                            <p class="text-[16px] leading-[160%] font-normal text-txt2">اگه خیلی عجله داری که سایتت به رتبه 1 گوگل برسه، گوگل ادز رو امتحان کن</p>
-                        </div>
-                    </div>
-
-                    <div class="flex flex-col justify-center items-center gap-[14px] text-center w-[308px] h-[284px] bg-Bg/3 p-6 rounded-2xl">
-                        <img src="../assets/images/12.png" alt="img">
-                        <div class="grid gap-4">
-                            <h5 class="text-[20px] leading-[140%] font-bold">طراحی سایت</h5>
-                            <p class="text-[16px] leading-[160%] font-normal text-txt2">اگه دنبال یه سایت شیک و حرفه ای واسه خودت هستی، خوب جایی اومدی</p>
-                        </div>
-                    </div>
-                    
-                    <div class="flex flex-col justify-center items-center gap-[14px] text-center w-[308px] h-[284px] bg-Bg/3 p-6 rounded-2xl">
-                        <img src="../assets/images/3.png" alt="img">
-                        <div class="grid gap-4">
-                            <h5 class="text-[20px] leading-[140%] font-bold">تدوین استراتژی محتوا</h5>
-                            <p class="text-[16px] leading-[160%] font-normal text-txt2">اگه نمیدونی معماری و چیدمان صفحات سایتت چطور باید باشه، نیاز به تدوین استراتژی داری</p>
-                        </div>
-                    </div>
-
-                 </div>
-
             </div>
 
          </div>
 
-         <!-- //// aboute  -->
+         <!-- //// about  -->
           <div class="flex justify-between gap-[307px] my-16 mx-20">
 
             <!-- //// right  -->
@@ -273,7 +230,7 @@ const toggleAccordion = function (index) {
                                                     :key="idx"
                                                   >
                                                     <div class="flex flex-col gap-4">
-                                                        <img :src="img" class="w-[600px] h-[390px] rounded-xl" >
+                                                        <img :src="img" class="w-[600px] rounded-xl" >
                                                         <div class="text-[16px] leading-[160%] font-thin text-txt1">
                                                             <p>{{ slide.subtitle }}</p>
                                                         </div>
@@ -299,6 +256,9 @@ const toggleAccordion = function (index) {
                 </div>
             </div>
 
+            <div class="flex justify-center items-center m-20">
+                <SwiperSlide></SwiperSlide>
+            </div>
            
 
     </div>

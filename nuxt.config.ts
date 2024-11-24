@@ -3,9 +3,6 @@ import vuetify, { transformAssetUrls } from 'vite-plugin-vuetify'
 export default defineNuxtConfig({
   compatibilityDate: '2024-04-03',
   devtools: { enabled: true },
-  build: {
-    transpile: ['vuetify'],
-  },
   css: ['~/assets/css/main.css'],
   modules: ['@formkit/auto-animate/nuxt', '@nuxt/image', 'nuxt-swiper'],
   vite: {
