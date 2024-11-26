@@ -8,7 +8,7 @@ const services = [
         {title : 'تدوین استراتژی محتوا' , description : 'اگه نمیدونی معماری و چیدمان صفحات سایتت چطور باید باشه، نیاز به تدوین استراتژی داری' , img : '/img/3.png'}
     ]
 
-const containerRef = ref(null)
+const containerRefTwo = ref(null)
 
 const slides = [
     {title : 'همراه ایران' , type : 'فروشگاهی' , field : 'فروشگاه لوازم جانبی موبایل', time : '6ماه' , subtitle : 'لوازم جانبی یسیدو - لینک ۱' , images : ['/img/Component 10.png' , '/img/Component 10.png' , '/img/Component 10.png'] },
@@ -18,7 +18,7 @@ const slides = [
 
 const accordionOpen = ref(null)
 
-const swiper = useSwiper(containerRef)
+const swiperTwo = useSwiper(containerRefTwo)
 
 const toggleAccordion = function (index) {
     accordionOpen.value = accordionOpen.value === index ? null : index
@@ -224,7 +224,7 @@ const toggleAccordion = function (index) {
 
                             <div class="w-[1121px]">
                                             <ClientOnly>
-                                                <swiper-container ref="containerRef" :spaceBetween="-300" :slidesPerView="1.2">
+                                                <swiper-container ref="containerRefTwo" :spaceBetween="-300" :slidesPerView="1.2">
                                                   <swiper-slide
                                                     v-for="(img, idx) in slide.images"
                                                     :key="idx"
@@ -257,7 +257,9 @@ const toggleAccordion = function (index) {
             </div>
 
             <div class="flex justify-center items-center m-20">
-                <SwiperSlide></SwiperSlide>
+                <ClientOnly>
+                    <KeenSlider></KeenSlider>
+                </ClientOnly>
             </div>
            
 

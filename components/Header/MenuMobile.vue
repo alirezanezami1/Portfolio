@@ -1,7 +1,5 @@
 <script setup>
 const list = ArrayMenu()
-
-
 </script>
 
 <template>
