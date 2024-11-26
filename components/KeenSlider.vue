@@ -11,7 +11,7 @@ const [container, slider] = useKeenSlider({
   mode: "free",
   slides: {
     perView: 3.5,
-    spacing: 15,
+    spacing: 35,
   },
 });
 
@@ -31,7 +31,7 @@ const [container, slider] = useKeenSlider({
                   </div>
 
                   <div class="w-full socialImg">
-                    <img :src="item.img" alt="image" class="translate-y-[25.21px] -translate-x-[15px] -rotate-[24deg]">
+                    <img :src="item.img" alt="image">
                   </div>
                   <div class="absolute bottom-0">
                     <img :src="item.ellipse" alt="ellipse">
@@ -46,7 +46,7 @@ const [container, slider] = useKeenSlider({
 
 </template>
 
-<style>
+<style scoped>
 [class^="number-slide"],
 [class*=" number-slide"] {
   display: flex;
@@ -71,9 +71,19 @@ const [container, slider] = useKeenSlider({
   height: 181px !important;
 }
 .keen-slider .socialImg img{
+  position: relative;
   width: 100% !important;
   height: 100% !important;
   object-fit: cover;
+  transform: unset !important;
+  top: 25px;
+  left: -10px;
+  transform: rotate(-24deg) !important;
+  transition: all .3s linear !important;
+}
+
+.keen-slider__slide:hover .socialImg img {
+  transform: rotate(12deg) !important;
 }
 
 </style>
