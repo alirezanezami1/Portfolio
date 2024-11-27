@@ -6,6 +6,11 @@ const socialMediaList = [
     {name : 'تلگرام' , url : '' , img : '/img/Telegram.png' , ellipse : '/img/Ellipse 8.svg'},
 ]
 
+const current = ref(0)
+const displayedItems = ref(socialMediaList.slice(2));
+console.log(displayedItems.value);
+
+
 const [container, slider] = useKeenSlider({
   loop: true,
   mode: "free",
@@ -13,6 +18,10 @@ const [container, slider] = useKeenSlider({
     perView: 3.5,
     spacing: 35,
   },
+  initial: current.value,
+      slideChanged: (s) => {
+        current.value = s.track.details.rel
+      },
 });
 
 </script>
@@ -40,8 +49,17 @@ const [container, slider] = useKeenSlider({
       </div>
 
 
+      <div class="flex gap-2">
+        <div v-if="slider" class="dots">
+      <button
+        v-for="(_slide, idx) in displayedItems"
+        @click="slider.moveToIdx(idx)"
+        :class="{ dot: true, active: current === idx }"
+        :key="idx"
+      ></button>
+    </div>
+      </div>
 
-        <div></div>
     </div>
 
 </template>
@@ -85,5 +103,27 @@ const [container, slider] = useKeenSlider({
 .keen-slider__slide:hover .socialImg img {
   transform: rotate(12deg) !important;
 }
-
+.dots {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
+}
+.dot {
+  border: none;
+  width: 16px;
+  height: 16px;
+  background: #CDCFCD;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.dot:focus {
+  outline: none;
+}
+.dot.active {
+  width: 30px;
+  height: 16px;
+  border-radius: 15px;
+  background-color: #13144E;
+}
 </style>

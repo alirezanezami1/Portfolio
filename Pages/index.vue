@@ -256,6 +256,7 @@ const toggleAccordion = function (index) {
                 </div>
             </div>
 
+            <!-- //// Social Media  -->
             <div class="flex justify-center items-center m-20">
                 <ClientOnly>
                     <KeenSlider></KeenSlider>
