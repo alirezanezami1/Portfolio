@@ -10,5 +10,8 @@
         <div>
             <slot></slot>
         </div>
+        <div class="mt-24">
+            <Footer></Footer>
+        </div>
     </div>
 </template>

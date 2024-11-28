@@ -26,6 +26,7 @@ export default {
       'txt2' : '#828682',
       'txt3' : '#B4B6B4',
       'txt4' : '#13144E',
+      'txt5' : '#CDCFCD',
 
       //// background 
       'Bg/1' : '#FFFFFF',
