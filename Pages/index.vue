@@ -1,4 +1,5 @@
 <script setup lang="ts">
+
 const services = [
         {title : 'منتورینگ سئو' , description : 'اگه هنوز اعتماد به نفس گرفتن پروژه سئو نداری، حتما از یه منتورسئو کمک بگیر' , img : '/img/2.png'},
         {title : 'مشاوره سئو' , description : 'با گرفتن مشاوره سئو، عیب و ایرادهای فعلی سایتت رو برطرف کن' , img : '/img/4.png'},
@@ -262,6 +263,47 @@ const toggleAccordion = function (index) {
                     <KeenSlider></KeenSlider>
                 </ClientOnly>
             </div>
+
+            <!-- //// comments  -->
+            <div class="flex flex-col justify-center items-center gap-8 m-20">
+
+                <div class="flex flex-col justify-center items-center gap-6 w-[753px]">
+                    <div class="flex gap-[5px] justify-center items-center px-3 py-2 rounded-full bg-Bg/3">
+                        <IconsDot></IconsDot> <span class="text-[14px] leading-[24%] font-thin">نظرات و توصیه نامه ها</span>
+                    </div>
+
+                    <div class="flex flex-col gap-4 justify-center items-center">
+                        <h6 class="text-[18px] leading-[140%] font-bold">آنچه همکاران و کارفرمایان درباره تعهد و حرفه‌ای‌ بودن من می‌گویند</h6>
+                        <p class="text-[16px] leading-[160%] font-light text-txt2 text-center">از زبان کارفرمایان، همکاران و رهبران پروژه؛ آنچه درباره همکاری با من و تأثیرگذاری بر نتایج کسب‌وکار می‌گویند، از تجربه‌های موفق تا توصیه‌های ارزشمند</p>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- //// faq -->
+             <div class="flex flex-col gap-16 justify-center items-center">
+
+                <div class="flex flex-col justify-center items-center gap-6 w-[753px]">
+                    <div class="flex gap-[5px] justify-center items-center px-3 py-2 rounded-full bg-Bg/3">
+                        <IconsDot></IconsDot> <span class="text-[14px] leading-[24%] font-thin">سوالات متداول</span>
+                    </div>
+
+                    <div class="flex flex-col gap-4 justify-center items-center">
+                        <h6 class="text-[18px] leading-[140%] font-bold">پاسخ به سوالاتی که ممکن است در ذهن شما باشد</h6>
+                        <p class="text-[16px] leading-[160%] font-light text-txt2 text-center">در اینجا به تمامی سوالات مهم شما پاسخ داده شده است تا بتوانید به راحتی تصمیم‌گیری کنید و از روند همکاری مطلع شوید؛ شفاف‌سازی هر آنچه که برای شما اهمیت دارد</p>
+                    </div>
+                </div>
+
+                <div>
+                    <!-- <FAQ></FAQ> -->
+                     <ClientOnly>
+                         <!-- <Tooltip></Tooltip> -->
+                          <Disclosure></Disclosure>
+                     </ClientOnly>
+                </div>
+
+             </div>
            
 
     </div>
