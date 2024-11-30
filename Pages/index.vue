@@ -1,5 +1,6 @@
 <script setup lang="ts">
 
+
 const services = [
         {title : 'منتورینگ سئو' , description : 'اگه هنوز اعتماد به نفس گرفتن پروژه سئو نداری، حتما از یه منتورسئو کمک بگیر' , img : '/img/2.png'},
         {title : 'مشاوره سئو' , description : 'با گرفتن مشاوره سئو، عیب و ایرادهای فعلی سایتت رو برطرف کن' , img : '/img/4.png'},
@@ -17,7 +18,7 @@ const slides = [
     {title : 'همراه ایران' , type : 'فروشگاهی' , field : 'فروشگاه لوازم جانبی موبایل', time : '6ماه' , subtitle : 'لوازم جانبی یسیدو - لینک ۱' , images : ['/img/Component 10.png' , '/img/Component 10.png' , '/img/Component 10.png'] }
 ]
 
-const accordionOpen = ref(null)
+const accordionOpen = ref(0)
 
 const swiperTwo = useSwiper(containerRefTwo)
 
@@ -276,6 +277,14 @@ const toggleAccordion = function (index) {
                         <h6 class="text-[18px] leading-[140%] font-bold">آنچه همکاران و کارفرمایان درباره تعهد و حرفه‌ای‌ بودن من می‌گویند</h6>
                         <p class="text-[16px] leading-[160%] font-light text-txt2 text-center">از زبان کارفرمایان، همکاران و رهبران پروژه؛ آنچه درباره همکاری با من و تأثیرگذاری بر نتایج کسب‌وکار می‌گویند، از تجربه‌های موفق تا توصیه‌های ارزشمند</p>
                     </div>
+
+                    <div>
+                        <button class="flex justify-center items-center gap-[5px] rounded-full bg-btn2 py-[6px] px-3 text-[14px] text-txt4"><img src="../assets/icons/Add Circle.svg">نظرات جدید</button>
+                    </div>
+                </div>
+
+                <div>
+                  <CommentSlider></CommentSlider>
                 </div>
 
             </div>
@@ -318,7 +327,7 @@ const toggleAccordion = function (index) {
   top: 0;
   left: -5%;
   width: 100vw;
-  height: 100%;
+  height: min-content !important;
   z-index: -1000 ; 
 }
 </style>

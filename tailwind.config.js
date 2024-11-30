@@ -35,7 +35,8 @@ export default {
       'Bg/4' : '#CDCFCD' ,
 
       //// button
-      'btn1' : '#13144E'
+      'btn1' : '#13144E',
+      'btn2' : 'rgba(19,20,78,.14)'
     }
   }
 }

@@ -14,6 +14,7 @@
     "@headlessui/vue": "^1.7.23",
     "@mdi/font": "^7.4.47",
     "@nuxt/image": "^1.8.1",
+    "keen-slider": "^6.8.6",
     "nuxt": "^3.14.159",
     "nuxt-swiper": "^2.0.0",
     "tw-elements": "^2.0.0",
