@@ -284,14 +284,16 @@ const toggleAccordion = function (index) {
                 </div>
 
                 <div>
-                  <CommentSlider></CommentSlider>
+                    <ClientOnly>
+                        <CommentSlider></CommentSlider>
+                    </ClientOnly>
                 </div>
 
             </div>
 
 
             <!-- //// faq -->
-             <div class="flex flex-col gap-16 justify-center items-center">
+             <div class="flex flex-col gap-16 justify-center items-center m-20">
 
                 <div class="flex flex-col justify-center items-center gap-6 w-[753px]">
                     <div class="flex gap-[5px] justify-center items-center px-3 py-2 rounded-full bg-Bg/3">
@@ -313,6 +315,8 @@ const toggleAccordion = function (index) {
                 </div>
 
              </div>
+
+             
            
 
     </div>

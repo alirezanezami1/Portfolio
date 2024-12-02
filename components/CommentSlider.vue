@@ -1,21 +1,33 @@
 <template>
-  <div ref="container" class="keen-slider">
-    <div
-      v-for="(chunk, index) in chunkedComments"
-      :key="index"
-      class="keen-slider__slide"
-    >
-      <div class="comments-container">
-        <div
-          v-for="(comment, idx) in chunk"
-          :key="idx"
-          class="comment"
-        >
-          {{ comment }}
+ <div class="flex flex-col justify-center items-center gap-8 m-20">
+  <div ref="container" class="keen-slider w-full">
+    <div v-for="(chunk, index) in chunkedComments" :key="index" class="keen-slider__slide flex flex-col justify-center items-center overflow-hidden w-full h-auto">
+      <div class="comments-container flex flex-col justify-center gap-4 w-full">
+        <div v-for="(comment, idx) in chunk" :key="idx" class="comment flex flex-col w-full justify-center gap-8 p-6 rounded-xl items-start bg-Bg/3">
+          <div class="flex justify-start items-center gap-4">
+            <img :src="comment.img" class="w-[58px] object-cover">
+            <div class="flex flex-col justify-center items-start gap-1">
+              <h5 class="text-[20px] leading-[140%] font-bold">{{ comment.employer }}</h5>
+              <p class="text-[16px] leading-[160%] text-txt2">{{ comment.loc }}</p>
+            </div>
+          </div>
+
+          <div class="text-right">
+            <p class="text-[14px] leading-[160%] text-txt2 font-thin">{{ comment.comment }}</p>
+          </div>
         </div>
       </div>
-    </div>
+    </div>  
   </div>
+  <div class="pagination">
+    <button
+      v-for="(chunk, index) in chunkedComments"
+      :key="index"
+      :class="['dot', { active: currentSlide === index }]"
+      @click="goToSlide(index)"
+    ></button>
+  </div>
+ </div>
 </template>
 
 <script>
@@ -25,14 +37,16 @@ import { useKeenSlider } from 'keen-slider/vue';
 export default {
   setup() {
     const comments = ref([
-      "کامنت اول",
-      "کامنت دوم",
-      "کامنت سوم",
-      "کامنت چهارم",
-      "کامنت پنجم",
-      "کامنت ششم",
-      // ... سایر کامنت‌ها
+      {comment : 'من از لحظه ای که کار سئو رو به شما دادم،با اطمینان تمام طی این دوسال تمام روند رودر سریعترین حالت ممکن طی کردید ،همیشه رتبه یک بودیم و تعهد ومسئولیت بالای شما ،نظم ودقت بالاتون برای من قابل تحسین بود. اینکه وقتی یک چالش پیش می اومد همگام با من دنبال ارائه راه حل وحل موضوع بودید وسر سری موضوع رو رد نمیکردیم واسم مهم بود. اینکه با افرادی در حوزه کارتون در ارتباط هستین که در سریعترین حالت خدمات مورد نظرم ون رو برای سایت اوکی میکنن خودش خیلی مهمه ودر وقت صرفه جویی میشه. حسی که دارم با آدم منصف ،خوش اخلاق وبا تجربه ودر مسیر پیشرفته دارم کار میکنم.' , employer : 'خانم بینایی ' , loc : 'مدیر سایت لبخند شاپ ' , img : '/img/9.png'},
+      {comment : 'من از لحظه ای که کار سئو رو به شما دادم،با اطمینان تمام طی این دوسال تمام روند رودر سریعترین حالت ممکن طی کردید ،همیشه رتبه یک بودیم و تعهد ومسئولیت بالای شما ،نظم ودقت بالاتون برای من قابل تحسین بود. اینکه وقتی یک چالش پیش می اومد همگام با من دنبال ارائه راه حل وحل موضوع بودید وسر سری موضوع رو رد نمیکردیم واسم مهم بود. اینکه با افرادی در حوزه کارتون در ارتباط هستین که در سریعترین حالت خدمات مورد نظرم ون رو برای سایت اوکی میکنن خودش خیلی مهمه ودر وقت صرفه جویی میشه. حسی که دارم با آدم منصف ،خوش اخلاق وبا تجربه ودر مسیر پیشرفته دارم کار میکنم.' , employer : 'خانم بینایی2 ' , loc : 'مدیر سایت لبخند شاپ ', img : '/img/9.png'},
+      {comment : 'من از لحظه ای که کار سئو رو به شما دادم،با اطمینان تمام طی این دوسال تمام روند رودر سریعترین حالت ممکن طی کردید ،همیشه رتبه یک بودیم و تعهد ومسئولیت بالای شما ،نظم ودقت بالاتون برای من قابل تحسین بود. اینکه وقتی یک چالش پیش می اومد همگام با من دنبال ارائه راه حل وحل موضوع بودید وسر سری موضوع رو رد نمیکردیم واسم مهم بود. اینکه با افرادی در حوزه کارتون در ارتباط هستین که در سریعترین حالت خدمات مورد نظرم ون رو برای سایت اوکی میکنن خودش خیلی مهمه ودر وقت صرفه جویی میشه. حسی که دارم با آدم منصف ،خوش اخلاق وبا تجربه ودر مسیر پیشرفته دارم کار میکنم.' , employer : '3خانم بینایی ' , loc : 'مدیر سایت لبخند شاپ ', img : '/img/9.png'},
+      {comment : 'من از لحظه ای که کار سئو رو به شما دادم،با اطمینان تمام طی این دوسال تمام روند رودر سریعترین حالت ممکن طی کردید ،همیشه رتبه یک بودیم و تعهد ومسئولیت بالای شما ،نظم ودقت بالاتون برای من قابل تحسین بود. اینکه وقتی یک چالش پیش می اومد همگام با من دنبال ارائه راه حل وحل موضوع بودید وسر سری موضوع رو رد نمیکردیم واسم مهم بود. اینکه با افرادی در حوزه کارتون در ارتباط هستین که در سریعترین حالت خدمات مورد نظرم ون رو برای سایت اوکی میکنن خودش خیلی مهمه ودر وقت صرفه جویی میشه. حسی که دارم با آدم منصف ،خوش اخلاق وبا تجربه ودر مسیر پیشرفته دارم کار میکنم.' , employer : '4خانم بینایی ' , loc : 'مدیر سایت لبخند شاپ ', img : '/img/9.png'},
+      {comment : 'من از لحظه ای که کار سئو رو به شما دادم،با اطمینان تمام طی این دوسال تمام روند رودر سریعترین حالت ممکن طی کردید ،همیشه رتبه یک بودیم و تعهد ومسئولیت بالای شما ،نظم ودقت بالاتون برای من قابل تحسین بود. اینکه وقتی یک چالش پیش می اومد همگام با من دنبال ارائه راه حل وحل موضوع بودید وسر سری موضوع رو رد نمیکردیم واسم مهم بود. اینکه با افرادی در حوزه کارتون در ارتباط هستین که در سریعترین حالت خدمات مورد نظرم ون رو برای سایت اوکی میکنن خودش خیلی مهمه ودر وقت صرفه جویی میشه. حسی که دارم با آدم منصف ،خوش اخلاق وبا تجربه ودر مسیر پیشرفته دارم کار میکنم.' , employer : '5خانم بینایی ' , loc : 'مدیر سایت لبخند شاپ ', img : '/img/9.png'},
+      {comment : 'من از لحظه ای که کار سئو رو به شما دادم،با اطمینان تمام طی این دوسال تمام روند رودر سریعترین حالت ممکن طی کردید ،همیشه رتبه یک بودیم و تعهد ومسئولیت بالای شما ،نظم ودقت بالاتون برای من قابل تحسین بود. اینکه وقتی یک چالش پیش می اومد همگام با من دنبال ارائه راه حل وحل موضوع بودید وسر سری موضوع رو رد نمیکردیم واسم مهم بود. اینکه با افرادی در حوزه کارتون در ارتباط هستین که در سریعترین حالت خدمات مورد نظرم ون رو برای سایت اوکی میکنن خودش خیلی مهمه ودر وقت صرفه جویی میشه. حسی که دارم با آدم منصف ،خوش اخلاق وبا تجربه ودر مسیر پیشرفته دارم کار میکنم.' , employer : '6خانم بینایی ' , loc : 'مدیر سایت لبخند شاپ ', img : '/img/9.png'},
+      {comment : 'من از لحظه ای که کار سئو رو به شما دادم،با اطمینان تمام طی این دوسال تمام روند رودر سریعترین حالت ممکن طی کردید ،همیشه رتبه یک بودیم و تعهد ومسئولیت بالای شما ،نظم ودقت بالاتون برای من قابل تحسین بود. اینکه وقتی یک چالش پیش می اومد همگام با من دنبال ارائه راه حل وحل موضوع بودید وسر سری موضوع رو رد نمیکردیم واسم مهم بود. اینکه با افرادی در حوزه کارتون در ارتباط هستین که در سریعترین حالت خدمات مورد نظرم ون رو برای سایت اوکی میکنن خودش خیلی مهمه ودر وقت صرفه جویی میشه. حسی که دارم با آدم منصف ،خوش اخلاق وبا تجربه ودر مسیر پیشرفته دارم کار میکنم.' , employer : '7خانم بینایی ' , loc : 'مدیر سایت لبخند شاپ ', img : '/img/9.png'},
     ]);
+
+    const currentSlide = ref(0)
 
     // تقسیم کامنت‌ها به گروه‌های دو تایی
     const chunkedComments = computed(() => {
@@ -45,14 +59,24 @@ export default {
     });
 
     const [container, slider] = useKeenSlider({
-      loop: true,
+      loop: false,
       slides: {
         perView: 1,
         spacing: 10,
+        origin : 1.55
+      },
+      slideChanged(s) {
+        currentSlide.value = s.details().relativeSlide; // به روز رسانی وضعیت اسلاید فعلی
       },
     });
 
-    return { container, chunkedComments };
+    const goToSlide = (index) => {
+      if(slider) {
+        slider.moveToSlide(index); // حرکت به اسلاید مشخص شده
+      }
+    };
+
+    return { container, chunkedComments,currentSlide, goToSlide };
   },
 };
 </script>
@@ -60,25 +84,28 @@ export default {
 <style scoped>
 .keen-slider {
   display: flex;
+  justify-content: center; /* مرکز کردن اسلایدها */
+  align-items: start; /* مرکز کردن عمودی */
+  height: 100%;
 }
-
-.keen-slider__slide {
+.pagination {
   display: flex;
-  justify-content: center;
-  align-items: flex-start; /* Aligns items to the start */
-  height: 200px; /* Adjust height as necessary */
-  overflow: hidden; /* Prevents overflow */
+  justify-content: center; /* مرکز کردن دکمه‌ها */
+  margin-top: 20px; /* فاصله بالای دکمه‌ها */
 }
 
-.comments-container {
-  max-height: 200px; /* Adjust height as necessary for scrolling */
-  overflow-y: auto; /* Enables vertical scrolling */
+.dot {
+  width: 12px; /* عرض دکمه */
+  height: 12px; /* ارتفاع دکمه */
+  border-radius: 50%; /* گرد کردن دکمه */
+  background-color: #ccc; /* رنگ پس‌زمینه عادی */
+  margin: 0 5px; /* فاصله بین دکمه‌ها */
+  border: none; /* حذف حاشیه */
+  cursor: pointer; /* نشانگر ماوس به شکل اشاره‌گر */
+  transition: background-color 0.3s; /* انیمیشن تغییر رنگ */
 }
 
-.comment {
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  margin-bottom: 10px; /* Space between comments */
+.dot.active {
+  background-color: #007bff; /* رنگ پس‌زمینه فعال */
 }
 </style>
