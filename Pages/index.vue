@@ -105,32 +105,32 @@ const toggleAccordion = function (index) {
          </div>
 
          <!-- //// about  -->
-          <div class="flex justify-between gap-[307px] my-16 mx-20">
+          <div class="flex flex-col justify-center items-center lg:flex-row lg:justify-between gap-8 lg:gap-[307px] my-16 mx-20 h-[570px] lg:h-auto">
 
             <!-- //// right  -->
-             <div class="flex flex-col gap-6 w-[343px]">
+             <div class="flex flex-col items-center lg:items-start gap-6 w-[343px] ">
 
                 <div class="w-[91px] h-[36px] bg-Bg/3 flex gap-[5px] justify-center items-center text-[14px] leading-[24] font-medium rounded-full"><IconsDot></IconsDot> درباره من</div>
 
-                <div class="text-right flex flex-col gap-4">
+                <div class="text-center lg:text-right flex flex-col gap-4">
                     <p class="text-[16px] leading-[120%] font-normal">سلام 👋 دوستان ، من </p>
-                    <h1 class="text-[56px] leading-[120%] font-bold">رقیه رنجبری ام </h1>
+                    <h1 class="text-[44px] leading-[140%] lg:text-[56px] lg:leading-[120%] font-bold">رقیه رنجبری ام </h1>
                 </div>
 
              </div>
 
 
             <!-- //// left  -->
-            <div class="flex flex-col gap-6 w-[630px]">
+            <div class="flex flex-col gap-6 w-fit lg:w-[630px]">
                 <!-- //// top  -->
-                <div class="flex flex-col justify-between items-center text-[16px] leading-[160%] font-thin text-txt2 h-[182px]">
+                <div class="flex flex-col justify-between items-center text-[16px] leading-[160%] font-thin text-txt2 text-center lg:text-right">
                     <p><span class="text-txt1">یک کارشناس سئو با 8 سال تجربه در بهینه سازی وبسایت‌ها برای موتورهای جستجو.</span> علاقه من به دنیای دیجیتال و کمک به کسب‌وکارها برای رشد آنلاین، انگیزه‌ای قوی برای من بوده تا در این حوزه فعالیت کنم.</p>
 
                     <p>من به عنوان یک کارشناس سئو، <span class="text-txt1">به طور مداوم در حال یادگیری آخرین الگوریتم‌ها و بهترین روش‌های سئو هستم.</span> با استفاده از دانش و تجربه خود، <span class="text-txt1">به کسب‌وکارها کمک می‌کنم تا در نتایج جستجوی گوگل رتبه بالاتری کسب کنند</span> و ترافیک ارگانیک خود را افزایش دهند.</p>
                 </div>
 
                 <!-- //// bottom  -->
-                <div>
+                <div class="flex justify-center lg:justify-start items-center">
                     <button class="flex justify-center items-center p-3 gap-3 text-txt4 rounded-lg border-2 border-btn1 cursor-pointer"> با من بیشتر آشنا شوید<IconsArrowLeft class="w-[32px]"></IconsArrowLeft></button>
                 </div>
 
