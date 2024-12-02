@@ -139,9 +139,9 @@ const toggleAccordion = function (index) {
           </div>
 
           <!-- //// call  -->
-           <div class="flex justify-center gap-10 items-center text-white bg-Bg/2 w-full h-[290px] mb-16 mt-48 ">
+           <div class="flex justify-center flex-col min-[1140px]:flex-row gap-10 items-center pt-14 min-[1140px]:pt-0 text-white bg-Bg/2 w-full h-auto min-[1140px]:h-[290px] mb-16 mt-48 ">
 
-            <div class="flex flex-col gap-6 justify-center items-center text-center w-[739px] h-[192px]">
+            <div class="flex flex-col gap-6 justify-center items-center text-center w-fit min-[1140px]:w-[739px] h-[192px]">
 
                 <div class="flex flex-col gap-6 justify-center items-center">
                     <p class="text-[28px] leading-[160%] font-medium">سؤالی دارید؟ تماس بگیرید</p>
@@ -157,7 +157,7 @@ const toggleAccordion = function (index) {
 
             </div>
 
-            <div class="relative bottom-[103px]">
+            <div class="relative min-[1140px]:bottom-[103px]">
                 <img src="../assets/adminPhoto/5792119494850758350 2.png" alt="admin">
             </div>
 
