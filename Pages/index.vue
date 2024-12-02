@@ -78,7 +78,7 @@ const toggleAccordion = function (index) {
         </div>
 
         <!-- //// Services -->
-         <div class="flex flex-col justify-center items-center gap-10 w-[958px] my-12 mx-20">
+         <div class="flex flex-col justify-center items-center text-center gap-10 w-[958px] max-[768px]:w-[328px] my-12 mx-20">
 
             <div class="flex flex-col gap-6 justify-center items-center">
 
@@ -92,7 +92,7 @@ const toggleAccordion = function (index) {
 
             </div>
 
-            <div class="grid grid-cols-3 justify-center items-center gap-4">
+            <div class="grid grid-cols-1 lg:grid-cols-3 justify-center items-center gap-4">
                 <div class="flex flex-col justify-center items-center gap-[14px] text-center w-[308px] h-[284px] bg-Bg/3 p-6 rounded-2xl" v-for="item,index in services" :key="index">
                     <img :src="item.img" alt="img">
                     <div class="grid gap-4">
