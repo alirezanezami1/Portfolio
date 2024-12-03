@@ -16,7 +16,7 @@ const [container, slider] = useKeenSlider({
   mode: "free",
   slides: {
     perView: 3.5,
-    spacing: 35,
+    spacing: 35
   },
   initial: current.value,
       slideChanged: (s) => {

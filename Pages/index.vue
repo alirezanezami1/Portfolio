@@ -238,7 +238,7 @@ const toggleAccordion = function (index) {
                                                     :key="idx"
                                                   >
                                                     <div class="flex flex-col gap-4">
-                                                        <img :src="img" class="w-fit h-[318px] min-[1303px]:h-auto min-[1303px]:w-[600px] object-contain rounded-xl"  style="width: 100%; height: auto;">
+                                                        <img :src="img" class="w-fit h-[318px] min-[1303px]:h-auto min-[1303px]:w-[600px] object-cover rounded-xl"  style="width: 100%; height: auto;">
                                                         <div class="text-[16px] leading-[160%] font-thin text-txt1">
                                                             <p>{{ slide.subtitle }}</p>
                                                         </div>
