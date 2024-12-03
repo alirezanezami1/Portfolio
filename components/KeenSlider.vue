@@ -16,7 +16,8 @@ const [container, slider] = useKeenSlider({
   mode: "free",
   slides: {
     perView: 3.5,
-    spacing: 35
+    spacing: 35,
+    origin  : window.innerWidth < 768 ? 'center' : 'auto'
   },
   initial: current.value,
       slideChanged: (s) => {
@@ -82,6 +83,16 @@ const [container, slider] = useKeenSlider({
     max-width: none !important;
     /* min-height: unset !important;
     max-width: none !important; */
+}
+
+@media screen and (max-width : 550px) {
+  .keen-slider__slide {
+    width: 328px !important;
+  }
+  .keen-slider .socialImg {
+  width: 136px !important;
+  height: 136px !important;
+  }
 }
 
 .keen-slider .socialImg {
