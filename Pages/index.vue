@@ -130,7 +130,7 @@ const toggleAccordion = function (index) {
                 </div>
 
                 <!-- //// bottom  -->
-                <div class="flex justify-center lg:justify-start items-center">
+                <div class="flex justify-center lg:justify-start items-center w-full">
                     <button class="flex justify-center items-center p-3 gap-3 text-txt4 rounded-lg border-2 border-btn1 cursor-pointer"> با من بیشتر آشنا شوید<IconsArrowLeft class="w-[32px]"></IconsArrowLeft></button>
                 </div>
 
@@ -165,9 +165,9 @@ const toggleAccordion = function (index) {
 
 
            <!-- //// experience  -->
-            <div class="flex flex-col justify-center items-center gap-20 my-20 mx-20">
+            <div class="flex flex-col justify-center items-center gap-20 m-20">
 
-                <div class="flex flex-col gap-6 justify-center items-center w-[753px]">
+                <div class="flex flex-col gap-6 justify-center items-center w-[328px] min-[1303px]:w-[753px]">
                     <div class="w-[101px] h-[36px] bg-Bg/3 flex gap-[5px] justify-center items-center text-[14px] leading-[24] font-medium rounded-full">
                         <IconsDot></IconsDot>نمونه کارها
                     </div>
@@ -180,7 +180,7 @@ const toggleAccordion = function (index) {
                 </div>
 
 
-                <div class="flex flex-col justify-center items-center w-[1281px] mx-20 gap-2" >
+                <div class="flex flex-col justify-center items-center w-[350px] min-[1303px]:w-[1281px] mx-20 gap-2" >
                     
                     <div class="flex flex-col w-full bg-Bg/3 rounded-2xl" v-for="(slide , index) in slides" :key="index" >
 
@@ -195,13 +195,13 @@ const toggleAccordion = function (index) {
                                     </div>
                                 
                                     <div class="flex flex-col gap-1">
-                                        <p class="text-[20px] leading-[160%] font-medium">نام پروژه: {{ slide.title }}</p>
-                                        <p class="text-[16px] leading-[160%] font-light text-txt2">زمینه فعالیت : {{ slide.field }}</p>
+                                        <p class="text-[16px] min-[1303px]:text-[20px] leading-[160%] font-medium">نام پروژه: {{ slide.title }}</p>
+                                        <p class="text-[14px] min-[1303px]:text-[16px] leading-[160%] font-light text-txt2 hidden min-[1303px]:block">زمینه فعالیت : {{ slide.field }}</p>
                                     </div>
                                 
                                 </div>
                             
-                                <div class="flex justify-center items-center gap-[10px] px-6 py-3 rounded-full border-2 border-Bg/2 text-txt4">
+                                <div class="justify-center items-center gap-[10px] px-6 py-3 rounded-full border-2 border-Bg/2 text-txt4 hidden min-[1303px]:flex">
                                     نوع پروژه : <span>{{ slide.type }}</span>
                                 </div>
 
@@ -217,22 +217,28 @@ const toggleAccordion = function (index) {
                         </div>
 
 
-                        <div class="flex flex-col gap-6 justify-center items-start w-full px-20 pt-2 pb-6 " v-if="accordionOpen === index">
+                        <div class="flex flex-col gap-6 justify-center items-start w-[328px] min-[1303px]:w-full px-4 min-[1303px]:px-20 pt-2 pb-6 " v-if="accordionOpen === index">
 
-                            <div class="flex gap-2 text-[16px] leading-[160%] font-light text-txt2 text-start">
+                            <p class="text-[14px] min-[1303px]:text-[16px] leading-[160%] font-light text-txt2 block min-[1303px]:hidden ">زمینه فعالیت : {{ slide.field }}</p>
+
+                            <div class="flex gap-2 text-[14px] min-[1303px]:text-[16px] leading-[160%] font-light text-txt2 text-start min-[1303px]:hidden">
+                                نوع پروژه : <span>{{ slide.type }}</span>
+                            </div>
+
+                            <div class="flex gap-2 text-[14px] min-[1303px]:text-[16px] leading-[160%] font-light text-txt2 text-start">
                                 <img src="../assets/icons/Clock Circle.svg" alt="time">
                                 <p>مدت زمان : <span>{{ slide.time }}</span></p>
                             </div>
 
-                            <div class="w-[1121px]">
+                            <div class="w-[328px] min-[1303px]:w-[1121px] h-full sliderContainer">
                                             <ClientOnly>
-                                                <swiper-container ref="containerRefTwo" :spaceBetween="-300" :slidesPerView="1.2">
+                                                <swiper-container ref="containerRefTwo" :spaceBetween="20" :slidesPerView="1.2"  >
                                                   <swiper-slide
                                                     v-for="(img, idx) in slide.images"
                                                     :key="idx"
                                                   >
                                                     <div class="flex flex-col gap-4">
-                                                        <img :src="img" class="w-[600px] rounded-xl" >
+                                                        <img :src="img" class="w-fit h-[318px] min-[1303px]:h-auto min-[1303px]:w-[600px] object-contain rounded-xl"  style="width: 100%; height: auto;">
                                                         <div class="text-[16px] leading-[160%] font-thin text-txt1">
                                                             <p>{{ slide.subtitle }}</p>
                                                         </div>
@@ -338,6 +344,17 @@ const toggleAccordion = function (index) {
 @media screen and (max-width : 760px) {
     .background {
         display: none;
+    }
+}
+@media (max-width: 640px) {
+    .swiper-slide {
+        width: 100% !important;
+        height: auto !important; /* یا ارتفاع مشخص */
+    }
+    .sliderContainer {
+        width: 328px;
+        overflow: hidden;
+        /* z-index: -100; */
     }
 }
 
