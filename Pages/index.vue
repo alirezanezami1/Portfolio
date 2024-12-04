@@ -299,14 +299,14 @@ const toggleAccordion = function (index) {
 
 
             <!-- //// faq -->
-             <div class="flex flex-col gap-16 justify-center items-center m-20">
+             <div class="flex flex-col gap-16 justify-center items-center mt-20 mx-5 lg:mx-20">
 
-                <div class="flex flex-col justify-center items-center gap-6 w-[753px]">
+                <div class="flex flex-col justify-center items-center gap-6 w-[328px] md:w-[753px]">
                     <div class="flex gap-[5px] justify-center items-center px-3 py-2 rounded-full bg-Bg/3">
                         <IconsDot></IconsDot> <span class="text-[14px] leading-[24%] font-thin">سوالات متداول</span>
                     </div>
 
-                    <div class="flex flex-col gap-4 justify-center items-center">
+                    <div class="flex flex-col gap-4 justify-center items-center text-center md:text-right">
                         <h6 class="text-[18px] leading-[140%] font-bold">پاسخ به سوالاتی که ممکن است در ذهن شما باشد</h6>
                         <p class="text-[16px] leading-[160%] font-light text-txt2 text-center">در اینجا به تمامی سوالات مهم شما پاسخ داده شده است تا بتوانید به راحتی تصمیم‌گیری کنید و از روند همکاری مطلع شوید؛ شفاف‌سازی هر آنچه که برای شما اهمیت دارد</p>
                     </div>
