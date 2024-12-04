@@ -31,7 +31,7 @@ const [container, slider] = useKeenSlider({
     <div class="flex flex-col gap-8 justify-center items-center">
       <div ref="container" class="keen-slider flex justify-center items-center">
             <div class="flex justify-between items-start text-txt1 keen-slider__slide bg-Bg/3 rounded-2xl w-[416px] h-[203px]" v-for="(item,index) in socialMediaList" :key="index" :class="`number-slide${index + 1}`">
-                  <div class="flex flex-col items-start pr-5">
+                  <div class="flex flex-col items-start pr-5 socialLink">
                     <div class="flex flex-col relative -top-10 gap-2 justify-center items-start w-[221px]">
                       <p class="text-[14px] leading-[160%] font-thin">برای دریافت آخرین نکات سئو ،</p>
                       <p class="text-[16px] leading-[160%] font-extrabold">{{ item.name }} من را دنبال کنید</p>
@@ -85,16 +85,6 @@ const [container, slider] = useKeenSlider({
     max-width: none !important; */
 }
 
-@media screen and (max-width : 550px) {
-  .keen-slider__slide {
-    width: 328px !important;
-  }
-  .keen-slider .socialImg {
-  width: 136px !important;
-  height: 136px !important;
-  }
-}
-
 .keen-slider .socialImg {
   width: 181px !important;
   height: 181px !important;
@@ -114,6 +104,28 @@ const [container, slider] = useKeenSlider({
 .keen-slider__slide:hover .socialImg img {
   transform: rotate(12deg) !important;
 }
+
+@media screen and (max-width : 550px) {
+  .keen-slider__slide {
+    width: 328px !important;
+  }
+  .keen-slider .socialImg {
+  width: 136px !important;
+  height: 136px !important;
+  position: absolute;
+  left: 0;
+  }
+  .keen-slider .socialImg img{
+    object-fit: cover;
+    width: 136px !important;
+    height: 136px !important;
+  }
+  .socialLink {
+    position: relative;
+    right: -44px;
+  }
+}
+
 .dots {
   display: flex;
   gap: 8px;

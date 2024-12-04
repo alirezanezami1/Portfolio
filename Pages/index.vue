@@ -36,7 +36,7 @@ const toggleAccordion = function (index) {
         </div>
 
         <!-- //// Introduction -->
-        <div class="flex grid-cols-3 flex-col-reverse lg:flex-row justify-center items-center my-11 mx-20 gap-8 lg:gap-3">
+        <div class="flex grid-cols-3 flex-col-reverse lg:flex-row justify-center items-center my-11 mx-5 lg:mx-20 gap-8 lg:gap-3">
             
             <div class="flex lg:flex-col justify-center items-center gap-[37px] lg:gap-[84px] w-[350px] h-[81px] lg:h-auto lg:w-[146px]" dir="ltr">
     
@@ -78,7 +78,7 @@ const toggleAccordion = function (index) {
         </div>
 
         <!-- //// Services -->
-         <div class="flex flex-col justify-center items-center text-center gap-10 w-[958px] max-[768px]:w-[328px] my-12 mx-20">
+         <div class="flex flex-col justify-center items-center text-center gap-10 w-[958px] max-[768px]:w-[328px] my-12 mx-5 lg:mx-20">
 
             <div class="flex flex-col gap-6 justify-center items-center">
 
@@ -105,7 +105,7 @@ const toggleAccordion = function (index) {
          </div>
 
          <!-- //// about  -->
-          <div class="flex flex-col justify-center items-center lg:flex-row lg:justify-between gap-8 lg:gap-[307px] my-16 mx-20 h-[570px] lg:h-auto">
+          <div class="flex flex-col justify-center items-center lg:flex-row lg:justify-between gap-8 lg:gap-[307px] my-16 mx-5 lg:mx-20 h-[570px] lg:h-auto">
 
             <!-- //// right  -->
              <div class="flex flex-col items-center lg:items-start gap-6 w-[343px] ">
@@ -165,7 +165,7 @@ const toggleAccordion = function (index) {
 
 
            <!-- //// experience  -->
-            <div class="flex flex-col justify-center items-center gap-20 m-20">
+            <div class="flex flex-col justify-center items-center gap-20 mt-20 mx-5 lg:mx-20">
 
                 <div class="flex flex-col gap-6 justify-center items-center w-[328px] min-[1303px]:w-[753px]">
                     <div class="w-[101px] h-[36px] bg-Bg/3 flex gap-[5px] justify-center items-center text-[14px] leading-[24] font-medium rounded-full">
@@ -265,7 +265,7 @@ const toggleAccordion = function (index) {
             </div>
 
             <!-- //// Social Media  -->
-            <div class="flex justify-center items-center m-20">
+            <div class="flex justify-center items-center mt-20 mx-5 lg:mx-20">
                 <ClientOnly>
                     <KeenSlider></KeenSlider>
                 </ClientOnly>
