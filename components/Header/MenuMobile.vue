@@ -20,7 +20,7 @@ const list = ArrayMenu()
 
         <div class="bg-Bg/1 flex flex-col gap-3 items-start text-right w-[208px] p-3 pt-6 ">
             <p class="text-[10px] font-light leading-[17.58px] text-txt3">منو</p>
-            <NuxtLink v-for="item in list" :key="item" class="text-sm text-txt1 cursor-pointer flex flex-col gap-1 mb-3 text-[16px] text-right font-medium leading-[19.2px] "  >
+            <NuxtLink v-for="item in list" :to="item.path" :key="item" class="text-sm text-txt1 cursor-pointer flex flex-col gap-1 mb-3 text-[16px] text-right font-medium leading-[19.2px] "  >
              <div class="flex gap-1">
                    {{ item.title }} <img v-if="item.title === 'خدمات' " src="../../assets/icons/Size=16px, Icon=Arrows-Down (1).svg" alt="icon"  class="w-[16px]">
              </div>

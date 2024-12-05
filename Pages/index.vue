@@ -256,7 +256,7 @@ const toggleAccordion = function (index) {
                 </div>
 
                 <div>
-                    <NuxtLink>
+                    <NuxtLink to="/projects">
                         <button class="flex justify-center items-center gap-3 p-3 text-white bg-Bg/2 rounded-lg cursor-pointer">
                            مشاهده نمونه کارها <img src="../assets/icons/Icon pack - Linear 2.svg">
                         </button>

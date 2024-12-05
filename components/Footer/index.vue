@@ -33,9 +33,9 @@ const SocialImg = [
                     <div class="flex flex-row md:flex-col text-[16px] leading-[160%] gap-8 md:gap-1 flex-wrap w-full md:w-auto justify-start md:justify-center items-start text-txt5">
                         <NuxtLink to="/" >صفحه اصلی</NuxtLink>
                         <NuxtLink to="/">خدمات</NuxtLink>
-                        <NuxtLink to="/">نمونه کارها</NuxtLink>
-                        <NuxtLink to="/">درباره من</NuxtLink>
-                        <NuxtLink to="/">ارتباط با من</NuxtLink>
+                        <NuxtLink to="/projects">نمونه کارها</NuxtLink>
+                        <NuxtLink to="/about">درباره من</NuxtLink>
+                        <NuxtLink to="/contact">ارتباط با من</NuxtLink>
                     </div>
                 </div>
 

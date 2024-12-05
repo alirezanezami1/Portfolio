@@ -8,7 +8,7 @@ Copy code
           <div class="flex justify-start items-center gap-4">
             <img :src="comment.img" class="w-[58px] object-cover">
             <div class="flex flex-col justify-center items-start gap-1">
-              <h5 class="text-[20px] leading-[140%] font-bold">{{ comment.employer }}</h5>
+              <h5 class="text-[18px] md:text-[20px] leading-[140%] font-bold">{{ comment.employer }}</h5>
               <p class="text-[16px] leading-[160%] text-txt2">{{ comment.loc }}</p>
             </div>
           </div>

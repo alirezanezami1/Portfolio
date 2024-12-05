@@ -10,7 +10,7 @@ export const ArrayMenu = () => {
         } ,
         {
             title : "نمونه کارها",
-            path : "/portfolio"
+            path : "/projects"
         },
         {
             title : "درباره من",
