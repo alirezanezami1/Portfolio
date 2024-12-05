@@ -5,6 +5,10 @@ const slides = ArrayProject()
 <template>
     <div class="flex flex-col justify-center items-center my-10 mx-20 gap-8">
 
+        <div class="background">
+            <img src="/backgrounds/Project-Desktop (1).png">
+        </div>
+
         <!-- //// Links -->
         <div class="flex justify-start items-start text-[12px] leading-[160%] gap-2 w-full">
             <NuxtLink to="/" class="flex justify-center items-center gap-2 text-txt2 ">صفحه اصلی<IconsLinearGray></IconsLinearGray></NuxtLink>
@@ -41,3 +45,21 @@ const slides = ArrayProject()
 
     </div>
 </template>
+
+<style scoped>
+.background {
+  position: absolute;
+  background-size: cover; 
+  background-position: center; 
+  top: 2%;
+  left: -5%;
+  width: 100vw;
+  z-index: -1000 ; 
+}
+
+@media screen and (max-width : 760px) {
+    .background {
+        display: none;
+    }
+}
+</style>

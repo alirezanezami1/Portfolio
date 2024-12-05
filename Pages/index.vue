@@ -244,7 +244,7 @@ const swiperTwo = useSwiper(containerRefTwo)
     
 </template>
 
-<style lang="css">
+<style lang="css" scoped>
 .background {
   position: absolute;
   background-size: cover; 
