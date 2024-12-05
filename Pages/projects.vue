@@ -50,12 +50,12 @@ const filterProjects = (type) => {
 
             </div>
 
-            <div class="filter-buttons">
-      <button @click="filterProjects('all')">همه</button>
-      <button v-for="type in uniqueTypes" :key="type" @click="filterProjects(type)">
-        {{ type }}
-      </button>
-    </div>
+            <div class="flex justify-center items-center flex-wrap gap-3 text-black">
+                <button @click="filterProjects('all')" :class="['px-3 py-2 rounded-lg bg-white border border-txt3' ,{ active: selectedType === 'all' }]">همه</button>
+                <button class="px-3 py-2 rounded-lg bg-white border border-txt3" v-for="type in uniqueTypes" :key="type" @click="filterProjects(type)" :class="{ active: selectedType === type }">
+                  {{ type }}
+                </button>
+            </div>
 
             <ProjectsComponente :showCount="slides.length" :slides="filteredSlides"></ProjectsComponente>
 
@@ -88,11 +88,8 @@ const filterProjects = (type) => {
         display: none;
     }
 }
-
-.filter-buttons {
-  display: flex;
-  gap: 10px;
-  margin-bottom: 20px;
+.active {
+  background-color: #13144E; /* رنگ پس‌زمینه فعال */
+  color: white; /* رنگ متن فعال */
 }
-
 </style>
