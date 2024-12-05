@@ -1,5 +1,25 @@
 <script setup>
 const slides = ArrayProject()
+const selectedType = ref('all');
+
+// محاسبه نوع‌های منحصر به فرد
+const uniqueTypes = computed(() => {
+  const types = slides.map(slide => slide.type);
+  return [...new Set(types)];
+});
+
+// فیلتر کردن پروژه‌ها
+const filteredSlides = computed(() => {
+  if (selectedType.value === 'all') {
+    return slides;
+  }
+  return slides.filter(slide => slide.type === selectedType.value);
+});
+
+// تابع فیلتر کردن
+const filterProjects = (type) => {
+  selectedType.value = type;
+};
 </script>
 
 <template>
@@ -30,8 +50,14 @@ const slides = ArrayProject()
 
             </div>
 
+            <div class="filter-buttons">
+      <button @click="filterProjects('all')">همه</button>
+      <button v-for="type in uniqueTypes" :key="type" @click="filterProjects(type)">
+        {{ type }}
+      </button>
+    </div>
 
-            <ProjectsComponente :showCount="slides.length"></ProjectsComponente>
+            <ProjectsComponente :showCount="slides.length" :slides="filteredSlides"></ProjectsComponente>
 
 
         </div>
@@ -62,4 +88,11 @@ const slides = ArrayProject()
         display: none;
     }
 }
+
+.filter-buttons {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
 </style>

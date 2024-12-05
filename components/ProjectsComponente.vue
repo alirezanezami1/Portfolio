@@ -7,6 +7,10 @@ const props = defineProps({
     type: Number,
     default: 3, // 
   },
+  slides: {
+    type: Array,
+    default: () => [],
+  },
 });
 
 const accordionOpen = ref(0)
@@ -14,7 +18,9 @@ const toggleAccordion = function (index) {
     accordionOpen.value = accordionOpen.value === index ? null : index
 }
 
-const projectsToShow = slides.slice(0, props.showCount);
+const projectsToShow = computed(() => {
+  return props.slides.slice(0, props.showCount);
+});
 
 </script>
 
