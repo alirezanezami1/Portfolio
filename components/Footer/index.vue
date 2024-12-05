@@ -8,7 +8,7 @@ const SocialImg = [
 </script>
 
 <template>
-    <div class="flex flex-col gap-7 w-full justify-center items-center bg-Bg/2 p-2 md:p-20">
+    <div class="flex flex-col gap-7 w-full justify-center items-center bg-Bg/2 pb-6 pt-10 md:p-20">
         <div class="flex flex-col xl:flex-row justify-center items-center gap-16">
             <div class="flex flex-col gap-[26px] w-[328px] sm:w-[704px] xl:w-[512px]">
                 <div class="flex flex-col justify-center items-start gap-4">

@@ -8,7 +8,6 @@ const socialMediaList = [
 
 const current = ref(0)
 const displayedItems = ref(socialMediaList.slice(2));
-console.log(displayedItems.value);
 
 
 const [container, slider] = useKeenSlider({

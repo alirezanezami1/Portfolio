@@ -165,7 +165,7 @@ const toggleAccordion = function (index) {
 
 
            <!-- //// experience  -->
-            <div class="flex flex-col justify-center items-center gap-20 mt-20 mx-5 lg:mx-20">
+            <div class="flex flex-col justify-center items-center gap-20 my-20 mx-5 lg:mx-20">
 
                 <div class="flex flex-col gap-6 justify-center items-center w-[328px] min-[1303px]:w-[753px]">
                     <div class="w-[101px] h-[36px] bg-Bg/3 flex gap-[5px] justify-center items-center text-[14px] leading-[24] font-medium rounded-full">
@@ -265,7 +265,7 @@ const toggleAccordion = function (index) {
             </div>
 
             <!-- //// Social Media  -->
-            <div class="flex justify-center items-center mt-20 mx-5 lg:mx-20">
+            <div class="flex justify-center items-center my-20 mx-5 lg:mx-20">
                 <ClientOnly>
                     <KeenSlider></KeenSlider>
                 </ClientOnly>
@@ -274,7 +274,7 @@ const toggleAccordion = function (index) {
             <!-- //// comments  -->
             <div class="flex flex-col justify-center items-center gap-8 m-20">
 
-                <div class="flex flex-col justify-center items-center gap-6 w-[753px]">
+                <div class="flex flex-col justify-center items-center text-center gap-6 w-[328px] md:w-[753px]">
                     <div class="flex gap-[5px] justify-center items-center px-3 py-2 rounded-full bg-Bg/3">
                         <IconsDot></IconsDot> <span class="text-[14px] leading-[24%] font-thin">نظرات و توصیه نامه ها</span>
                     </div>
@@ -299,7 +299,7 @@ const toggleAccordion = function (index) {
 
 
             <!-- //// faq -->
-             <div class="flex flex-col gap-16 justify-center items-center mt-20 mx-5 lg:mx-20">
+             <div class="flex flex-col gap-16 justify-center items-center my-20 mx-5 lg:mx-20">
 
                 <div class="flex flex-col justify-center items-center gap-6 w-[328px] md:w-[753px]">
                     <div class="flex gap-[5px] justify-center items-center px-3 py-2 rounded-full bg-Bg/3">
@@ -334,10 +334,10 @@ const toggleAccordion = function (index) {
   position: absolute;
   background-size: cover; 
   background-position: center; 
-  top: 0;
+  top: -.65%;
   left: -5%;
   width: 100vw;
-  height: min-content !important;
+  /* height: 200px !important; */
   z-index: -1000 ; 
 }
 

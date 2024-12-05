@@ -1,8 +1,9 @@
+Copy code
 <template>
- <div class="flex flex-col justify-center items-center gap-8 m-20">
+ <div class="flex flex-col justify-center items-center gap-8 mx-20">
   <div ref="container" class="keen-slider w-full">
-    <div v-for="(chunk, index) in chunkedComments" :key="index" class="keen-slider__slide flex flex-col justify-center items-center overflow-hidden w-full h-auto">
-      <div class="comments-container flex flex-col justify-center gap-4 w-full">
+    <div v-for="(chunk, index) in chunkedComments" :key="index" class="keen-slider__slide flex flex-col justify-center items-center overflow-hidden w-[328px] sm:w-full h-auto">
+      <div class="comments-container flex flex-col justify-center gap-4 w-[328px] sm:w-full">
         <div v-for="(comment, idx) in chunk" :key="idx" class="comment flex flex-col w-full justify-center gap-8 p-6 rounded-xl items-start bg-Bg/3">
           <div class="flex justify-start items-center gap-4">
             <img :src="comment.img" class="w-[58px] object-cover">
@@ -18,14 +19,6 @@
         </div>
       </div>
     </div>  
-  </div>
-  <div class="pagination">
-    <button
-      v-for="(chunk, index) in chunkedComments"
-      :key="index"
-      :class="['dot', { active: currentSlide === index }]"
-      @click="goToSlide(index)"
-    ></button>
   </div>
  </div>
 </template>
@@ -46,7 +39,7 @@ export default {
       {comment : 'من از لحظه ای که کار سئو رو به شما دادم،با اطمینان تمام طی این دوسال تمام روند رودر سریعترین حالت ممکن طی کردید ،همیشه رتبه یک بودیم و تعهد ومسئولیت بالای شما ،نظم ودقت بالاتون برای من قابل تحسین بود. اینکه وقتی یک چالش پیش می اومد همگام با من دنبال ارائه راه حل وحل موضوع بودید وسر سری موضوع رو رد نمیکردیم واسم مهم بود. اینکه با افرادی در حوزه کارتون در ارتباط هستین که در سریعترین حالت خدمات مورد نظرم ون رو برای سایت اوکی میکنن خودش خیلی مهمه ودر وقت صرفه جویی میشه. حسی که دارم با آدم منصف ،خوش اخلاق وبا تجربه ودر مسیر پیشرفته دارم کار میکنم.' , employer : '7خانم بینایی ' , loc : 'مدیر سایت لبخند شاپ ', img : '/img/9.png'},
     ]);
 
-    const currentSlide = ref(0)
+    const currentSlide = ref(0);
 
     // تقسیم کامنت‌ها به گروه‌های دو تایی
     const chunkedComments = computed(() => {
@@ -63,20 +56,14 @@ export default {
       slides: {
         perView: 1,
         spacing: 10,
-        origin : 1.55
+        origin : window.innerWidth < 768 ? 0.38 : 1.55
       },
       slideChanged(s) {
         currentSlide.value = s.details().relativeSlide; // به روز رسانی وضعیت اسلاید فعلی
       },
     });
 
-    const goToSlide = (index) => {
-      if(slider) {
-        slider.moveToSlide(index); // حرکت به اسلاید مشخص شده
-      }
-    };
-
-    return { container, chunkedComments,currentSlide, goToSlide };
+    return { container, chunkedComments,currentSlide};
   },
 };
 </script>
@@ -87,6 +74,12 @@ export default {
   justify-content: center; /* مرکز کردن اسلایدها */
   align-items: start; /* مرکز کردن عمودی */
   height: 100%;
+}
+@media screen and (max-width : 768px) {
+  .keen-slider__slide {
+  min-width: unset !important;
+  width: 310px !important;
+}
 }
 .pagination {
   display: flex;
