@@ -1,11 +1,11 @@
 <script setup>
 import { ref, watch } from 'vue';
-import 'vidstack/bundle';
 
 const videoPlayer = ref(null);
 const isPlaying = ref(false);
 const currentTime = ref(0);
 const duration = ref(0);
+const isFullscreen = ref(false); 
 
 // تابع برای پخش و توقف ویدیو
 const togglePlay = () => {
@@ -29,6 +29,8 @@ const updateProgress = () => {
   duration.value = videoPlayer.value.duration;
 };
 
+
+
 // تابع برای جستجو در ویدیو
 const seekVideo = () => {
   videoPlayer.value.currentTime = currentTime.value;
@@ -39,6 +41,32 @@ const formatTime = (time) => {
   const minutes = Math.floor(time / 60);
   const seconds = Math.floor(time % 60);
   return `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+};
+
+// تابع برای ورود و خروج از حالت تمام صفحه
+const toggleFullscreen = () => {
+  if (!isFullscreen.value) {
+    if (videoPlayer.value.requestFullscreen) {
+      videoPlayer.value.requestFullscreen();
+    } else if (videoPlayer.value.mozRequestFullScreen) { // Firefox
+      videoPlayer.value.mozRequestFullScreen();
+    } else if (videoPlayer.value.webkitRequestFullscreen) { // Chrome, Safari and Opera
+      videoPlayer.value.webkitRequestFullscreen();
+    } else if (videoPlayer.value.msRequestFullscreen) { // IE/Edge
+      videoPlayer.value.msRequestFullscreen();
+    }
+  } else {
+    if (document.exitFullscreen) {
+      document.exitFullscreen();
+    } else if (document.mozCancelFullScreen) { // Firefox
+      document.mozCancelFullScreen();
+    } else if (document.webkitExitFullscreen) { // Chrome, Safari and Opera
+      document.webkitExitFullscreen();
+    } else if (document.msExitFullscreen) { // IE/Edge
+      document.msExitFullscreen();
+    }
+  }
+  isFullscreen.value = !isFullscreen.value; // تغییر وضعیت تمام صفحه
 };
 
 // نظارت بر تغییرات زمان ویدیو
@@ -83,18 +111,28 @@ watch(currentTime, (newTime) => {
             <!-- //// left  -->
              <div class="flex flex-col justify-center items-center gap-6">
 
+              <div class="relative w-[416px] h-[416px]">
                 <video src="../Public/videos/aboutMe/IMG_6111.MOV" type="video/mp4" class="w-[416px] h-[416px]" ref="videoPlayer" @ended="resetVideo" @timeupdate="updateProgress"></video>
 
-                <button @click="togglePlay" class="bg-btn1 p-3 text-white rounded-lg">
-                  {{ isPlaying ? 'متوقف کردن' : 'پخش' }}
-                </button>
-
-                <div class="flex items-center w-full">
-        <span >{{ formatTime(currentTime) }}</span>
-        <input type="range" ref="progressBar" class="w-full mx-2" min="0" :max="duration" v-model="currentTime" @input="seekVideo" />
-        <span>{{ formatTime(duration) }}</span>
+                <div class="flex items-center w-full timeLine">
+                  <span class="time-text">{{ formatTime(currentTime) }}</span>
+                  <div class="progress-container w-full mx-2">
+                    <input type="range" ref="progressBar" class="progress-bar custom-range" min="0" :max="duration" v-model="currentTime" @input="seekVideo" />
+                    <div class="progress-filled" :style="{ width: (currentTime / duration) * 100 + '%' }"></div>
+                  </div>
+                  <span class="time-text">{{ formatTime(duration) }}</span>
                 </div>
       
+                <button @click="toggleFullscreen" class="text-white fullScreen">
+                  <IconsFullScreen></IconsFullScreen>
+                </button>
+              </div>
+
+                <button @click="togglePlay" class="bg-btn1 p-3 text-white rounded-full relative flex justify-center items-center">
+                  <div class="wave-animation" v-if="isPlaying"></div>
+                  <IconsPause v-if="isPlaying"></IconsPause>
+                  <IconsPlay v-if="!isPlaying"></IconsPlay>
+                </button>
 
              </div>
 
@@ -113,60 +151,160 @@ watch(currentTime, (newTime) => {
 </template>
 <style scoped>
 .time-text {
-  color: #fff;
+  color: white;
   font-size: 14px;
   margin: 0 10px;
+  opacity: 1;
+}
+
+.custom-range {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 8px;
+  background: #707076; /* رنگ پس‌زمینه نوار */
+  border-radius: 5px;
+  outline: none;
+}
+
+.custom-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px; /* عرض دکمه */
+  height: 16px; /* ارتفاع دکمه */
+  border-radius: 50%;
+  background: #707076; /* رنگ دکمه */
+  cursor: pointer;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+}
+
+.custom-range::-moz-range-thumb {
+  width: 16px; /* عرض دکمه */
+  height: 16px; /* ارتفاع دکمه */
+  border-radius: 50%;
+  background: #707076; /* رنگ دکمه */
+  cursor: pointer;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+}
+
+.custom-range::-ms-thumb {
+  width: 16px; /* عرض دکمه */
+  height: 16px; /* ارتفاع دکمه */
+  border-radius: 50%;
+  background: #707076; /* رنگ دکمه */
+  cursor: pointer;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+}
+
+.custom-range::-webkit-slider-runnable-track {
+  background: rgba(0,0, 0, .14); /* رنگ پس‌زمینه نوار */
+  border-radius: 5px;
+}
+
+.custom-range::-moz-range-track {
+  background: rgba(0,0, 0, .14); /* رنگ پس‌زمینه نوار */
+  border-radius: 5px;
+}
+
+.custom-range::-ms-track {
+  background: rgba(0,0, 0, .14); /* رنگ پس‌زمینه نوار */
+  border-radius: 5px;
+  height: 8px;
+}
+
+.custom-range:focus {
+  outline: none; /* حذف حاشیه هنگام تمرکز */
+}
+
+.custom-range:focus::-webkit-slider-thumb {
+  background: #707076; /* رنگ دکمه در حالت تمرکز */
+}
+
+.custom-range:focus::-moz-range-thumb {
+  background: #707076; /* رنگ دکمه در حالت تمرکز */
+}
+
+.custom-range:focus::-ms-thumb {
+  background: #707076; /* رنگ دکمه در حالت تمرکز */
+}
+
+.progress-container {
+  position: relative;
+  width: 100%;
 }
 
 .progress-bar {
   -webkit-appearance: none;
   width: 100%;
   height: 8px;
-  background: #ddd;
-  border-radius: 5px;
+  background: transparent; /* پس‌زمینه شفاف برای نوار */
   outline: none;
-  cursor: pointer;
+  position: relative;
+  z-index: 1; /* قرار دادن نوار پیشرفت بالای پس‌زمینه */
 }
 
 .progress-bar::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
-  width: 16px;
-  height: 16px;
+  width: 12px; /* عرض دکمه */
+  height: 12px; /* ارتفاع دکمه */
   border-radius: 50%;
-  background: #007bff;
+  background: #707076; /* رنگ دکمه */
   cursor: pointer;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+  position: relative;
+  right: -2px;
+  z-index: 2; /* قرار دادن دکمه بالای نوار */
 }
 
-.progress-bar::-moz-range-thumb {
-  width: 16px;
-  height: 16px;
-  border-radius: 50%;
-  background: #007bff;
-  cursor: pointer;
-}
-
-.progress-bar::-ms-thumb {
-  width: 16px;
-  height: 16px;
-  border-radius: 50%;
-  background: #007bff;
-  cursor: pointer;
-}
-
-.progress-bar::-webkit-slider-runnable-track {
-  background: #ddd;
+.progress-filled {
+  position: absolute;
+  height: 10px; /* ارتفاع نوار */
+  background: #707076; /* رنگ سبز برای زمان سپری شده */
+  top: 50%;
+  transform: translateY(-50%);
   border-radius: 5px;
+  right: 0;
+  z-index: 1; /* قرار دادن پس‌زمینه زیر دکمه */
+  transition: width 0.1s; /* انیمیشن برای تغییر عرض */
 }
 
-.progress-bar::-moz-range-track {
-  background: #ddd;
-  border-radius: 5px;
+.timeLine {
+  position: absolute;
+  bottom: 0;
 }
 
-.progress-bar::-ms-track {
-  background: #ddd;
-  border-radius: 5px;
-  height: 8px;
+.fullScreen {
+  position: absolute;
+  bottom: 6%;
+  right: 2%;
 }
+
+.wave-animation {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 65px; /* اندازه موج */
+  height: 65px; /* اندازه موج */
+  background: rgba(19, 20, 78, 1); /* رنگ موج */
+  border-radius: 50%; /* گرد کردن موج */
+  transform: translate(-50%, -50%); /* مرکز کردن موج */
+  animation: wave 2.5s infinite; /* انیمیشن موج */
+  opacity: 0; /* مخفی کردن موج */
+}
+
+@keyframes wave {
+  0% {
+    transform: translate(-50%, -50%) scale(0.5); /* شروع با اندازه کوچک */
+    opacity: 1; /* شروع با وضوح کامل */
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1); /* بزرگ شدن */
+    opacity: 0; /* محو شدن */
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(0.5); /* بازگشت به اندازه کوچک */
+    opacity: 0; /* محو شدن */
+  }
+}
+
 </style>
