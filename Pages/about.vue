@@ -29,8 +29,6 @@ const updateProgress = () => {
   duration.value = videoPlayer.value.duration;
 };
 
-
-
 // تابع برای جستجو در ویدیو
 const seekVideo = () => {
   videoPlayer.value.currentTime = currentTime.value;
@@ -75,6 +73,23 @@ watch(currentTime, (newTime) => {
     resetVideo();
   }
 });
+
+const skills = [
+  {title: 'ساختار وبسایت ' , description: 'بهبود ساختار وبسایت برای افزایش خزش و ایندکس شدن صفحات توسط موتور جستجو' , img: '/img/about/skill/Frame 323.png'},
+  {title: 'گزارش دهی و تحلیل ' , description: 'ارائه گزارش های دقیق از عملکرد سئو و تحلیل نتایح برای بهبود مستمر ' , img: '/img/about/skill/Email ads.png'},
+  {title: 'کیبورد ریسرچ و کیبورد تارگتینگ' , description: 'شناسایی کلمات کلیدی مرتبط با کسب و کار شما و تعیین استراتژی مناسب برای هدف گذاری آن' , img: '/img/about/skill/Frame 323 (1).png'},
+  {title: 'بهینه سازی محتوا' , description: 'تولید و بهینه سازی محتوا با کیفیت بالا برای موتور های جستجو و کاربران' , img: '/img/about/skill/Frame 323 (2).png'},
+  {title: 'آنالیز رقبا ' , description: 'بررسی رقبا و شناسایی فرصت های جدید برای پیشی گرفتن از آن ها ' , img: '/img/about/skill/Frame 323 (3).png'},
+  {title: 'توسعه بک لینک ' , description: 'ایحاد پروفایل بک لینک قوی و طبیعی برای افزایش اعتبار دامنه' , img: '/img/about/skill/Frame 323 (4).png'},
+  {title: 'چیدن پلن آف پیج ' , description: 'توانایی چیدن کمپین رپورتاژ آگهی اصولی' , img: '/img/about/skill/Frame 323 (5).png'},
+]
+
+const containerRef = ref(null)
+const slides = ref(Array.from({ length: 10 }))
+
+const swiper = useSwiper(containerRef)
+
+
 </script>
 
 <template>
@@ -87,7 +102,7 @@ watch(currentTime, (newTime) => {
         </div>
 
         <!-- //// intro and video  -->
-        <div class="flex justify-between items-center my-10 gap-52">
+        <div class="flex justify-between items-center my-20 gap-52">
 
             <!-- //// right  -->
             <div class="flex flex-col justify-center items-start gap-16">
@@ -142,6 +157,33 @@ watch(currentTime, (newTime) => {
              </div>
 
         </div>
+
+
+        <!-- //// My skills  -->
+         <div class="flex flex-col justify-center items-center gap-8 my-20">
+
+          <div class="flex flex-col justify-center items-center gap-6 w-[753px] text-center">
+            <div class="w-[123px] h-[36px] bg-Bg/3 flex gap-[5px] justify-center items-center text-[14px] leading-[24] font-medium rounded-full text-txt1"><IconsDot></IconsDot>مهارت های من</div>
+
+            <div class="flex flex-col gap-4 justify-center items-center">
+              <h6 class="text-[18px] leading-[140%] font-bold">مهارت‌های کلیدی من در دنیای سئو؛ از تحلیل داده‌ها تا بهبود رتبه سایت</h6>
+              <p class="text-[16px] leading-[160%] text-txt2">با به‌کارگیری طیف وسیعی از ابزارها و تکنیک‌های تخصصی در سئو، مهارت‌های من از بهینه‌سازی ساختار سایت تا بهبود تجربه کاربری، همه آنچه برای موفقیت در دنیای دیجیتال نیاز دارید را فراهم می‌کند</p>
+            </div>
+          </div>
+
+          <ClientOnly>
+    <swiper-container ref="containerRef">
+      <swiper-slide
+        v-for="(slide, idx) in slides"
+        :key="idx"
+        style="background-color: rgb(32, 233, 70); color: white;"
+      >
+        Slide {{ idx + 1 }}
+      </swiper-slide>
+    </swiper-container>
+  </ClientOnly>
+
+         </div>
 
         
 
@@ -244,26 +286,26 @@ watch(currentTime, (newTime) => {
   background: transparent; /* پس‌زمینه شفاف برای نوار */
   outline: none;
   position: relative;
-  z-index: 1; /* قرار دادن نوار پیشرفت بالای پس‌زمینه */
+  cursor: pointer;
+  z-index: 2; /* قرار دادن نوار پیشرفت بالای پس‌زمینه */
 }
 
 .progress-bar::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
-  width: 12px; /* عرض دکمه */
+  width: 0px; /* عرض دکمه */
   height: 12px; /* ارتفاع دکمه */
   border-radius: 50%;
   background: #707076; /* رنگ دکمه */
   cursor: pointer;
-  box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
   position: relative;
   right: -2px;
-  z-index: 2; /* قرار دادن دکمه بالای نوار */
+  z-index: 10; /* قرار دادن دکمه بالای نوار */
 }
 
 .progress-filled {
   position: absolute;
-  height: 10px; /* ارتفاع نوار */
+  height: 12px; /* ارتفاع نوار */
   background: #707076; /* رنگ سبز برای زمان سپری شده */
   top: 50%;
   transform: translateY(-50%);
@@ -293,7 +335,7 @@ watch(currentTime, (newTime) => {
   background: rgba(19, 20, 78, 1); /* رنگ موج */
   border-radius: 50%; /* گرد کردن موج */
   transform: translate(-50%, -50%); /* مرکز کردن موج */
-  animation: wave 2.5s infinite; /* انیمیشن موج */
+  animation: wave 1.8s infinite; /* انیمیشن موج */
   opacity: 0; /* مخفی کردن موج */
 }
 
@@ -312,4 +354,15 @@ watch(currentTime, (newTime) => {
   }
 }
 
+swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  height: 20vh;
+  font-size: 4rem;
+  width: 300px;
+  font-weight: bold;
+  font-family: 'Roboto', sans-serif;
+}
 </style>

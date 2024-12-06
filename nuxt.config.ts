@@ -4,7 +4,7 @@ export default defineNuxtConfig({
   compatibilityDate: '2024-04-03',
   devtools: { enabled: true },
   css: ['~/assets/css/main.css'],
-  modules: ['@formkit/auto-animate/nuxt', '@nuxt/image', 'nuxt-swiper' , 'nuxt-keen-slider'],
+  modules: ['@formkit/auto-animate/nuxt', '@nuxt/image', 'nuxt-keen-slider', 'nuxt-swiper'],
   vite: {
     vue: {
       template: {

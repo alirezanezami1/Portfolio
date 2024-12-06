@@ -1,6 +1,5 @@
 <script setup lang="ts">
-
-
+const slides = ArrayProject()
 const services = [
         {title : 'منتورینگ سئو' , description : 'اگه هنوز اعتماد به نفس گرفتن پروژه سئو نداری، حتما از یه منتورسئو کمک بگیر' , img : '/img/2.png'},
         {title : 'مشاوره سئو' , description : 'با گرفتن مشاوره سئو، عیب و ایرادهای فعلی سایتت رو برطرف کن' , img : '/img/4.png'},
@@ -10,9 +9,9 @@ const services = [
         {title : 'تدوین استراتژی محتوا' , description : 'اگه نمیدونی معماری و چیدمان صفحات سایتت چطور باید باشه، نیاز به تدوین استراتژی داری' , img : '/img/3.png'}
     ]
 
-const containerRefTwo = ref(null)
+// const containerRefTwo = ref(null)
 
-const swiperTwo = useSwiper(containerRefTwo)
+// const swiperTwo = useSwiper(containerRefTwo)
 
 </script>
 
@@ -168,7 +167,7 @@ const swiperTwo = useSwiper(containerRefTwo)
                 </div>
 
 
-                <ProjectsComponente :showCount="3"></ProjectsComponente>
+                <ProjectsComponente :showCount="3" :slides="slides"></ProjectsComponente>
 
                 <div>
                     <NuxtLink to="/projects">
@@ -256,21 +255,6 @@ const swiperTwo = useSwiper(containerRefTwo)
   z-index: -1000 ; 
 }
 
-@media screen and (max-width : 760px) {
-    .background {
-        display: none;
-    }
-}
-@media (max-width: 640px) {
-    .swiper-slide {
-        width: 100% !important;
-        height: auto !important; /* یا ارتفاع مشخص */
-    }
-    .sliderContainer {
-        width: 328px;
-        overflow: hidden;
-        /* z-index: -100; */
-    }
-}
+
 
 </style>
