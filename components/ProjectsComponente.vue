@@ -13,6 +13,10 @@ const props = defineProps({
   },
 });
 
+const containerRefTwo = ref(null)
+
+const swiperTwo = useSwiper(containerRefTwo)
+
 const accordionOpen = ref(0)
 const toggleAccordion = function (index) {
     accordionOpen.value = accordionOpen.value === index ? null : index
@@ -100,3 +104,22 @@ const projectsToShow = computed(() => {
 
         </div>
 </template>
+
+<style>
+@media screen and (max-width : 760px) {
+    .background {
+        display: none;
+    }
+}
+@media (max-width: 640px) {
+    .swiper-slide {
+        width: 100% !important;
+        height: auto !important; /* یا ارتفاع مشخص */
+    }
+    .sliderContainer {
+        width: 328px;
+        overflow: hidden;
+        /* z-index: -100; */
+    }
+}
+</style>
