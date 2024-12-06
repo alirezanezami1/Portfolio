@@ -84,11 +84,23 @@ const skills = [
   {title: 'چیدن پلن آف پیج ' , description: 'توانایی چیدن کمپین رپورتاژ آگهی اصولی' , img: '/img/about/skill/Frame 323 (5).png'},
 ]
 
-const containerRef = ref(null)
-const slides = ref(Array.from({ length: 10 }))
+const currentAbout = ref(0)
+const displayedItemsAbout = ref(skills.slice(0,skills.length));
 
-const swiper = useSwiper(containerRef)
 
+const [container, slider] = useKeenSlider({
+  loop: true,
+  mode: "free",
+  slides: {
+    perView: 3,
+    spacing: 25,
+    origin  : 3
+  },
+  initial: currentAbout.value,
+      slideChanged: (s) => {
+        currentAbout.value = s.track.details.rel
+      },
+});
 
 </script>
 
@@ -160,7 +172,7 @@ const swiper = useSwiper(containerRef)
 
 
         <!-- //// My skills  -->
-         <div class="flex flex-col justify-center items-center gap-8 my-20">
+         <div class="flex flex-col justify-center items-center gap-24 my-20">
 
           <div class="flex flex-col justify-center items-center gap-6 w-[753px] text-center">
             <div class="w-[123px] h-[36px] bg-Bg/3 flex gap-[5px] justify-center items-center text-[14px] leading-[24] font-medium rounded-full text-txt1"><IconsDot></IconsDot>مهارت های من</div>
@@ -171,17 +183,31 @@ const swiper = useSwiper(containerRef)
             </div>
           </div>
 
-          <ClientOnly>
-    <swiper-container ref="containerRef">
-      <swiper-slide
-        v-for="(slide, idx) in slides"
-        :key="idx"
-        style="background-color: rgb(32, 233, 70); color: white;"
-      >
-        Slide {{ idx + 1 }}
-      </swiper-slide>
-    </swiper-container>
-  </ClientOnly>
+             <div class="flex flex-col gap-6 justify-center items-center">
+              <div ref="container" class="keen-slider flex justify-center items-center">
+                    <div class="flex justify-start items-start text-txt1 keen-slider__slide bg-Bg/3 rounded-xl px-6 py-5 h-[205px]" v-for="(item,index) in skills" :key="index" :class="`number-slide${index + 1}`">
+                          <div class="flex flex-col justify-center items-start gap-6">
+                            <img :src="item.img">
+                            <div class="flex flex-col gap-4 justify-start items-start">
+                              <h6 class="text-[18px] leading-[140%] font-bold">{{ item.title }}</h6>
+                              <p class="text-[16px] leading-[160%] text-txt6">{{ item.description }}</p>
+                            </div>
+                          </div>
+                    </div>
+              </div>
+
+              <div class="flex gap-2" dir="ltr">
+                <div v-if="slider" class="dots">
+                <button
+                v-for="(_slide, idx) in displayedItemsAbout"
+                @click="slider.moveToIdx(idx)"
+                :class="{ dot: true, active: currentAbout === idx }"
+                :key="idx"
+                ></button>
+                </div>
+              </div>
+             </div>
+
 
          </div>
 
@@ -354,15 +380,27 @@ const swiper = useSwiper(containerRef)
   }
 }
 
-swiper-slide {
+.dots {
   display: flex;
+  gap: 8px;
   justify-content: center;
   align-items: center;
-  font-size: 18px;
-  height: 20vh;
-  font-size: 4rem;
-  width: 300px;
-  font-weight: bold;
-  font-family: 'Roboto', sans-serif;
+}
+.dot {
+  border: none;
+  width: 16px;
+  height: 16px;
+  background: #CDCFCD;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.dot:focus {
+  outline: none;
+}
+.dot.active {
+  width: 30px;
+  height: 16px;
+  border-radius: 15px;
+  background-color: #13144E;
 }
 </style>
