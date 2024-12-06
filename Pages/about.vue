@@ -87,7 +87,7 @@ watch(currentTime, (newTime) => {
         </div>
 
         <!-- //// intro and video  -->
-        <div class="flex justify-between items-center my-10 gap-14">
+        <div class="flex justify-between items-center my-10 gap-52">
 
             <!-- //// right  -->
             <div class="flex flex-col justify-center items-start gap-16">
@@ -109,10 +109,10 @@ watch(currentTime, (newTime) => {
 
 
             <!-- //// left  -->
-             <div class="flex flex-col justify-center items-center gap-6">
+             <div class="flex flex-col justify-center items-center gap-8">
 
               <div class="relative w-[416px] h-[416px]">
-                <video src="../Public/videos/aboutMe/IMG_6111.MOV" type="video/mp4" class="w-[416px] h-[416px]" ref="videoPlayer" @ended="resetVideo" @timeupdate="updateProgress"></video>
+                <video src="../Public/videos/aboutMe/IMG_6111.MOV" type="video/mp4" class="w-[416px] h-[416px] rounded-lg" ref="videoPlayer" @ended="resetVideo" @timeupdate="updateProgress"></video>
 
                 <div class="flex items-center w-full timeLine">
                   <span class="time-text">{{ formatTime(currentTime) }}</span>
@@ -128,11 +128,16 @@ watch(currentTime, (newTime) => {
                 </button>
               </div>
 
-                <button @click="togglePlay" class="bg-btn1 p-3 text-white rounded-full relative flex justify-center items-center">
+               <div class="flex justify-center items-center gap-5">
+                <p class="text-[16px] leading-[160%] text-txt6">نکته مثبت من در ارائه گزارش منظم و ماهانه و همچنین پیگیری و پاسخگویی سریع به کارفرماست.</p>
+                <div class="w-[92px]">
+                  <button @click="togglePlay" class="bg-btn1 p-3 text-white rounded-full relative flex justify-center items-center">
                   <div class="wave-animation" v-if="isPlaying"></div>
                   <IconsPause v-if="isPlaying"></IconsPause>
                   <IconsPlay v-if="!isPlaying"></IconsPlay>
                 </button>
+                </div>
+               </div>
 
              </div>
 
