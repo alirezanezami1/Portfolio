@@ -1,5 +1,5 @@
 <script setup>
-import { ref, watch } from 'vue';
+import { ref, watch ,computed } from 'vue';
 
 const videoPlayer = ref(null);
 const isPlaying = ref(false);
@@ -84,6 +84,16 @@ const skills = [
   {title: 'چیدن پلن آف پیج ' , description: 'توانایی چیدن کمپین رپورتاژ آگهی اصولی' , img: '/img/about/skill/Frame 323 (5).png'},
 ]
 
+const showAll = ref(false);
+
+const displayedSkills = computed(() => {
+  return showAll.value ? skills : skills.slice(0, 4);
+});
+
+const toggleShowAll = () => {
+  showAll.value = !showAll.value;
+};
+
 const currentAbout = ref(0)
 const displayedItemsAbout = ref(skills.slice(0,skills.length));
 
@@ -92,7 +102,7 @@ const [container, slider] = useKeenSlider({
   loop: true,
   mode: "free",
   slides: {
-    perView: 3,
+    perView: window.innerWidth < 1000 ? 2 : 3,
     spacing: 25,
     origin  : 3
   },
@@ -171,10 +181,10 @@ const [container, slider] = useKeenSlider({
         </div>
 
 
-        <!-- //// My skills  -->
+        <!-- //// مهارت ها  -->
          <div class="flex flex-col justify-center items-center gap-24 my-20">
 
-          <div class="flex flex-col justify-center items-center gap-6 w-[753px] text-center">
+          <div class="flex flex-col justify-center items-center gap-6 w-[328px] md:w-[753px] text-center">
             <div class="w-[123px] h-[36px] bg-Bg/3 flex gap-[5px] justify-center items-center text-[14px] leading-[24] font-medium rounded-full text-txt1"><IconsDot></IconsDot>مهارت های من</div>
 
             <div class="flex flex-col gap-4 justify-center items-center">
@@ -183,7 +193,8 @@ const [container, slider] = useKeenSlider({
             </div>
           </div>
 
-             <div class="flex flex-col gap-6 justify-center items-center">
+          <!-- //// اسلایدر مهارت ها-دسکتاپ -->
+          <div class="hidden md:flex flex-col gap-6 justify-center items-center">
               <div ref="container" class="keen-slider flex justify-center items-center">
                     <div class="flex justify-start items-start text-txt1 keen-slider__slide bg-Bg/3 rounded-xl px-6 py-5 h-[205px]" v-for="(item,index) in skills" :key="index" :class="`number-slide${index + 1}`">
                           <div class="flex flex-col justify-center items-start gap-6">
@@ -206,7 +217,23 @@ const [container, slider] = useKeenSlider({
                 ></button>
                 </div>
               </div>
-             </div>
+          </div>
+
+          <!-- //// مهارت ها-موبایل -->
+          <div class="flex md:hidden flex-col justify-center gap-6 items-center ">
+            <div class="flex justify-start items-start text-txt1 bg-Bg/3 rounded-xl px-6 py-5 h-[231px] w-[328px]" v-for="(item,index) in displayedSkills" :key="index" >
+                          <div class="flex flex-col justify-center items-start gap-6">
+                            <img :src="item.img">
+                            <div class="flex flex-col gap-4 justify-start items-start">
+                              <h6 class="text-[18px] leading-[140%] font-bold">{{ item.title }}</h6>
+                              <p class="text-[16px] leading-[160%] text-txt6">{{ item.description }}</p>
+                            </div>
+                          </div>
+            </div>
+            <button @click="toggleShowAll" class="flex justify-center items-center gap-2 text-txt4">
+              مشاهده سایر خدمات <IconsAltArrowDown :class="{'rotate-180' : showAll}"></IconsAltArrowDown>
+            </button>
+          </div>
 
 
          </div>
