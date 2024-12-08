@@ -9,7 +9,7 @@ const Items = [
 
 <template>
 
-<div class="flex flex-col justify-center items-center gap-24 my-10 w-full">
+<div class="flex flex-col justify-center items-center gap-24 my-20 w-full">
     <div class="flex flex-col justify-center items-center gap-6 w-[328px] md:w-[753px] text-center">
         <div class="w-[80px] h-[36px] bg-Bg/3 flex gap-[5px] justify-center items-center text-[14px] leading-[24] font-medium rounded-full text-txt1"><IconsDot></IconsDot>چرا من</div>
 
