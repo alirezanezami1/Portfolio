@@ -254,7 +254,4 @@ const services = [
   /* height: 200px !important; */
   z-index: -1000 ; 
 }
-
-
-
 </style>

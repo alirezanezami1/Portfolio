@@ -80,6 +80,10 @@ watch(currentTime, (newTime) => {
 <template>
     <div class="flex flex-col justify-center items-center my-10 mx-20">
 
+      <div class="background">
+            <img src="/backgrounds/About me-Desktop.png" alt="background img">
+        </div>
+
         <!-- //// لینک ها  -->
         <div class="flex justify-start items-start text-[12px] leading-[160%] gap-2 w-full">
             <NuxtLink to="/" class="flex justify-center items-center gap-2 text-txt2 ">صفحه اصلی<IconsLinearGray></IconsLinearGray></NuxtLink>
@@ -155,11 +159,19 @@ watch(currentTime, (newTime) => {
 
          
          <!-- //// مدرک -->
-          <div class="flex justify-center items-center my-20">
-            <div class="flex justify-center items-center p-5 bg-Bg/2 md:bg-Bg/1 rounded-lg">
+          <div class="flex flex-col-reverse min-[1186px]:flex-row justify-center items-center my-10 w-full">
+            <div class="flex justify-center items-center p-5 min-[1186px]:p-0 bg-Bg/2 rounded-2xl">
               <img src="/img/about/license/Frame 344.png">
             </div>
-            <div></div>
+            <div class="flex justify-center items-center bg-Bg/1 min-[1186px]:bg-Bg/2 w-[328px] min-[1186px]:w-[620px] h-[384px] rounded-2xl ">
+              <div class="flex flex-col justify-center items-center gap-5 min-[1186px]:gap-24 p-0 min-[1186px]:p-20">
+                <div class="w-[160px] h-[36px] bg-Bg/3 min-[1186px]:bg-Bg/5 flex gap-[5px] justify-center items-center text-[14px] leading-[24] font-medium rounded-full text-txt1 min-[1186px]:text-white"><IconsDot class="block min-[1186px]:hidden"></IconsDot>مدارک و گواهینامه ها</div>
+                <div class="flex flex-col gap-4 justify-center items-center text-center">
+                  <h6 class="text-[18px] leading-[140%] font-bold text-txt1 min-[1186px]:text-white">مدارک و گواهینامه‌های تخصصی: راه موفقیت من در سئو</h6>
+                  <p class="text-[16px] leading-[160%] text-txt2 min-[1186px]:text-white opacity-60">نگاهی به دوره‌ها و گواهینامه‌هایی که به من کمک کرده‌اند تا در صنعت سئو به روز و توانمند بمانم</p>
+                </div>
+              </div>
+            </div>
           </div>
 
 
@@ -173,6 +185,17 @@ watch(currentTime, (newTime) => {
     </div>
 </template>
 <style scoped>
+.background {
+  position: absolute;
+  background-size: cover; 
+  background-position: center; 
+  top: 1.5%;
+  left: -2%;
+  width: 100vw;
+  /* height: 200px !important; */
+  z-index: -1000 ; 
+}
+
 .time-text {
   color: white;
   font-size: 14px;

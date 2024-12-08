@@ -9,9 +9,9 @@ const Items = [
 
 <template>
 
-<div class="flex flex-col justify-center items-center gap-24 my-20 w-full">
+<div class="flex flex-col justify-center items-center gap-24 my-10 w-full">
     <div class="flex flex-col justify-center items-center gap-6 w-[328px] md:w-[753px] text-center">
-        <div class="w-[78px] h-[36px] bg-Bg/3 flex gap-[5px] justify-center items-center text-[14px] leading-[24] font-medium rounded-full text-txt1"><IconsDot></IconsDot>چرا من</div>
+        <div class="w-[80px] h-[36px] bg-Bg/3 flex gap-[5px] justify-center items-center text-[14px] leading-[24] font-medium rounded-full text-txt1"><IconsDot></IconsDot>چرا من</div>
 
         <div class="flex flex-col gap-4 justify-center items-center">
           <h6 class="text-[18px] leading-[140%] font-bold">ارتباط موثر و گزارش‌گیری منظم: بهترین همراه برای پیشبرد پروژه‌های سئو شما</h6>
