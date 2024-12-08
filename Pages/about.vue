@@ -152,9 +152,18 @@ watch(currentTime, (newTime) => {
 
         <!-- //// چرا من  -->
          <AboutWhyMe></AboutWhyMe>
-        
 
-        <!-- //// social media -->
+         
+         <!-- //// مدرک -->
+          <div class="flex justify-center items-center my-20">
+            <div class="flex justify-center items-center p-5 bg-Bg/2 md:bg-Bg/1 rounded-lg">
+              <img src="/img/about/license/Frame 344.png">
+            </div>
+            <div></div>
+          </div>
+
+
+        <!-- //// سوشال مدیا -->
         <div class="flex justify-center items-center my-20 mx-5 lg:mx-20">
                 <ClientOnly>
                     <KeenSlider></KeenSlider>

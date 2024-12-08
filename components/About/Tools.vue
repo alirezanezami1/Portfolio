@@ -33,7 +33,17 @@ window.addEventListener('resize', () => {
 </script>
 
 <template>
-    <div class="flex flex-col justify-center items-center my-20">
+    <div class="flex flex-col justify-center items-center gap-24 my-20">
+
+      <div class="flex flex-col justify-center items-center gap-6 w-[328px] md:w-[753px] text-center">
+        <div class="w-[76px] h-[36px] bg-Bg/3 flex gap-[5px] justify-center items-center text-[14px] leading-[24] font-medium rounded-full text-txt1"><IconsDot></IconsDot>ابزارها</div>
+
+        <div class="flex flex-col gap-4 justify-center items-center">
+          <h6 class="text-[18px] leading-[140%] font-bold">استفاده از تکنولوژی برای بهبود سئو: ارتباط عمیق و توانایی کار با ابزار ها</h6>
+          <p class="text-[16px] leading-[160%] text-txt2">از نرم‌افزارهای قدرتمند برای تحلیل دقیق عملکرد سایت، شناسایی فرصت‌ها و بهبود رتبه در موتورهای جستجو استفاده می‌کنم؛ ابزارهایی که به شما کمک می‌کنند در رقابت دیجیتال برنده باشید</p>
+        </div>
+      </div>
+
           <!-- ////ابزارها-دسکتاپ -->
           <div class="hidden justify-center items-center gap-4 w-full min-[877px]:flex">
             <div v-for="item,index in tools" :key="index" class="w-[200px] lg:w-[250px] xl:w-auto">
