@@ -8,7 +8,18 @@ const Items = [
 </script>
 
 <template>
-    <div class="flex flex-col lg:flex-row justify-center items-center gap-4 w-full my-20">
+
+<div class="flex flex-col justify-center items-center gap-24 my-20 w-full">
+    <div class="flex flex-col justify-center items-center gap-6 w-[328px] md:w-[753px] text-center">
+        <div class="w-[78px] h-[36px] bg-Bg/3 flex gap-[5px] justify-center items-center text-[14px] leading-[24] font-medium rounded-full text-txt1"><IconsDot></IconsDot>چرا من</div>
+
+        <div class="flex flex-col gap-4 justify-center items-center">
+          <h6 class="text-[18px] leading-[140%] font-bold">ارتباط موثر و گزارش‌گیری منظم: بهترین همراه برای پیشبرد پروژه‌های سئو شما</h6>
+          <p class="text-[16px] leading-[160%] text-txt2">ترکیبی از تخصص، تحلیل‌های دقیق و ارتباط مستمر؛ من در هر مرحله از مسیر سئوی شما همراه‌تان هستم</p>
+        </div>
+      </div>
+
+    <div class="flex flex-col lg:flex-row justify-center items-center gap-4 w-full">
         <div v-for="item,index in Items" :key="index" class="flex flex-col justify-start items-start gap-8 px-4 py-6 rounded-xl w-[308px] h-[251px] lg:h-[300px] xl:h-[251px] bg-Bg/3">
             <img :src="item.img" alt="img">
             <div class="flex flex-col gap-4 justify-start items-start">
@@ -17,4 +28,7 @@ const Items = [
             </div>
         </div>
     </div>
+</div>
+
+
 </template>
