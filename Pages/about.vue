@@ -150,6 +150,8 @@ watch(currentTime, (newTime) => {
         <!-- //// ابزارها  -->
         <AboutTools></AboutTools>
 
+        <!-- //// چرا من  -->
+         <AboutWhyMe></AboutWhyMe>
         
 
         <!-- //// social media -->

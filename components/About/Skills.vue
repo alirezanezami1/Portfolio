@@ -36,6 +36,11 @@ const [container, slider] = useKeenSlider({
         currentAbout.value = s.track.details.rel
       },
 });
+
+window.addEventListener('resize', () => {
+  isMobile.value = window.innerWidth < 768;
+  slider.update(); // به‌روزرسانی اسلایدر
+});
 </script>
 
 <template>
