@@ -50,7 +50,7 @@ const [container, slider] = useKeenSlider({
 
 
       <div class="flex gap-2">
-        <div v-if="slider" class="dots">
+        <div v-if="slider" class="dots" dir="ltr">
       <button
         v-for="(_slide, idx) in displayedItems"
         @click="slider.moveToIdx(idx)"
