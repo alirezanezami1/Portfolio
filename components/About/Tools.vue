@@ -53,7 +53,7 @@ window.addEventListener('resize', () => {
 
           <!-- //// ابزارها-موبایل  -->
           <div class="flex min-[877px]:hidden flex-col justify-center items-center gap-4">
-            <div ref="container1" class="flex flex-row justify-center items-center keen-slider my-20 w-full">
+            <div ref="container1" class="flex flex-row justify-center items-center keen-slider w-full">
               <div class="keen-slider__slide " v-for="item,index in tools" :key="index" >
                 <img :src="item.img">
               </div>
