@@ -190,7 +190,7 @@ watch(currentTime, (newTime) => {
   background-size: cover; 
   background-position: center; 
   top: 1.5%;
-  left: -2%;
+  left: -6%;
   width: 100vw;
   /* height: 200px !important; */
   z-index: -1000 ; 
