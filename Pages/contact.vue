@@ -28,13 +28,69 @@
                 </div>
 
                 <!-- //// فرم ارتباط با من  -->
-                 <div></div>
+                 <div class="w-full">
+                     <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-10 w-[848px]">
+
+                      <div class="grid gap-4 grid-cols-1 sm:grid-cols-10 sm:col-span-full">
+                        <div class="sm:col-span-5 grid gap-2">
+                         <label for="first-name" class="block text-[18px] leading-[160%] font-medium text-txt1">نام</label>
+                         <div class="mt-2">
+                           <input type="text" name="first-name" id="first-name" placeholder="نام خود را وارد کنید" autocomplete="given-name" class="block w-full rounded-xl bg-Bg/3 px-3 p-3 text-[14px] leading-[160%] text-txt7 sm:text-sm/6 placeholder:text-txt2 font-thin" />
+                         </div>
+                       </div>
+                   
+                       <div class="sm:col-span-5 grid gap-2">
+                         <label for="last-name" class="block text-[18px] leading-[160%] font-medium text-txt1">نام خانوادگی</label>
+                         <div class="mt-2">
+                           <input type="text" name="last-name" id="last-name" placeholder="نام خانوادگی خود را وارد کنید" autocomplete="family-name" class="block w-full rounded-xl bg-Bg/3 px-3 p-3 text-[14px] leading-[160%] text-txt7 sm:text-sm/6 placeholder:text-txt2 font-thin" />
+                         </div>
+                       </div>
+                      </div>
+                   
+                       <div class="sm:col-span-full grid gap-2">
+                         <label for="number" class="block text-[18px] leading-[160%] font-medium text-txt1">تلفن همراه</label>
+                         <div class="mt-2">
+                           <input id="number" name="number" type="number" placeholder="شماره تلفن خود را وارد کنید" autocomplete="email" class="block w-full rounded-xl bg-Bg/3 px-3 p-3 text-[14px] leading-[160%] text-txt7 sm:text-sm/6 placeholder:text-txt2 font-thin" />
+                         </div>
+                       </div>
+
+                       <div class="sm:col-span-full grid gap-2">
+                         <label for="email" class="block text-[18px] leading-[160%] font-medium text-txt1">ایمیل</label>
+                         <div class="mt-2">
+                           <input id="email" name="email" type="email" placeholder="ایمیل خود را وارد کنید" autocomplete="email" class="block w-full rounded-xl bg-Bg/3 px-3 p-3 text-[14px] leading-[160%] text-txt7 sm:text-sm/6 placeholder:text-txt2 font-thin" />
+                         </div>
+                       </div>
+
+                        <div class="col-span-full grid gap-2">
+                            <label for="about" class="block text-[18px] leading-[160%] font-medium text-txt1">متن ارسالی</label>
+                            <div class="mt-2">
+                              <textarea name="about" id="about" rows="3" placeholder="متن ارسالی خود را وارد کنید" class="block w-full h-[325px] rounded-xl bg-Bg/3 px-3 p-3 text-[14px] leading-[160%] text-txt7 sm:text-sm/6 placeholder:text-txt2 font-thin" />
+                            </div>
+                        </div>
+                   
+                     </div>
+                 </div>
+
             </div>
 
             <div></div>
          </div>
 
 
+         <!-- //// سوشال مدیا -->
+        <div class="flex justify-center items-center my-20 mx-5 lg:mx-20">
+                <ClientOnly>
+                    <KeenSlider></KeenSlider>
+                </ClientOnly>
+        </div>
 
     </div>
 </template>
+
+<style scoped>
+input:focus,
+textarea:focus {
+    outline: none; /* حذف outline پیش‌فرض */
+    border: 0px solid transparent; /* یا رنگ دلخواه خود را اینجا قرار دهید */
+}
+</style>
