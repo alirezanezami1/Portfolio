@@ -1,5 +1,10 @@
 <template>
     <div class="flex flex-col justify-center items-center my-10 mx-20">
+
+        <div class="background">
+            <img src="/backgrounds/Contact me - Desktop.png" alt="background img">
+        </div>
+
         <!-- //// لینک ها  -->
         <div class="flex justify-start items-start text-[12px] leading-[160%] gap-2 w-full">
             <NuxtLink to="/" class="flex justify-center items-center gap-2 text-txt2 ">صفحه اصلی<IconsLinearGray></IconsLinearGray></NuxtLink>
@@ -95,5 +100,16 @@ input:focus,
 textarea:focus {
     outline: none; /* حذف outline پیش‌فرض */
     border: 0px solid transparent; /* یا رنگ دلخواه خود را اینجا قرار دهید */
+}
+
+.background {
+  position: absolute;
+  background-size: cover; 
+  background-position: center; 
+  top: 1.5%;
+  left: -6%;
+  width: 100vw;
+  /* height: 200px !important; */
+  z-index: -1000 ; 
 }
 </style>
