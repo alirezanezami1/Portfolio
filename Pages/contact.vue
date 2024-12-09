@@ -28,7 +28,7 @@
                 </div>
 
                 <!-- //// فرم ارتباط با من  -->
-                 <div class="w-full">
+                <div class="w-full">
                      <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-10 w-[848px]">
 
                       <div class="grid gap-4 grid-cols-1 sm:grid-cols-10 sm:col-span-full">
@@ -69,11 +69,14 @@
                         </div>
                    
                      </div>
-                 </div>
+                </div>
 
             </div>
 
-            <div></div>
+            <div class="w-full p-3 bg-Bg/2 rounded-lg text-white flex justify-center items-center">
+                <button class="flex justify-center items-center gap-3 text-center"><span class="text-[18px] leading-[120%]">ارسال پیام</span><IconsArrowLeftWhite></IconsArrowLeftWhite></button>
+            </div>
+
          </div>
 
 
