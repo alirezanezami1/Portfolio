@@ -2,23 +2,28 @@ export const ArrayMenu = () => {
     return [
         {
             title : "صفحه اصلی",
-            path : "/"
+            path : "/",
+            name : 'home'
         } ,
         {
             title : "خدمات",
             path : "",
+            name : ''
         } ,
         {
             title : "نمونه کارها",
-            path : "/projects"
+            path : "/projects",
+            name : 'projects'
         },
         {
             title : "درباره من",
-            path : "/about"
+            path : "/about",
+            name : 'about'
         },
         {
             title : "ارتباط با من",
-            path : "/contact"
+            path : "/contact",
+            name : 'contact'
         }
     ]
   }
