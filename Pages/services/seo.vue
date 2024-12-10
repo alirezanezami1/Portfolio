@@ -8,5 +8,10 @@
             <span>درباره من</span>
         </div>
 
+        <div class="flex justify-center items-center w-[328px] md:w-full my-10">
+            <img src="/img/seo/Frame 450.png" alt="banner" class="hidden md:block">
+            <img src="/img/seo/Frame 450 (1).png" alt="banner" class="flex md:hidden">
+        </div>
+
     </div>
 </template>
