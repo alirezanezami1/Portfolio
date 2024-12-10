@@ -1,4 +1,3 @@
-Copy code
 <template>
  <div class="flex flex-col justify-center items-center gap-8 mx-20">
   <div ref="container" class="keen-slider w-full">
