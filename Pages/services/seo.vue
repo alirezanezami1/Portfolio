@@ -29,16 +29,16 @@ const hint = ['سئو  چیست ؟' , 'من چگونه می توانم به شم
 
 
          <!-- //// ویدیو  -->
-          <div class="flex justify-center items-center my-20 relative w-full">
+          <div class="flex justify-center items-center my-20 relative w-full ">
 
             <div class="background">
             <img src="/backgrounds/24px Cross.png" alt="background">
             </div>
             
-            <div class="flex justify-center items-center rounded-[28px] w-fit p-6 h-fit bg-Bg/7 relative">
-                <video src="../../Public/videos/aboutMe/IMG_6111.MOV" class="w-fit h-[566px] rounded-xl"></video>
-                <img src="../../Public/img/videoPlayer/Vector 2820.png" class="absolute -right-24 -top-16">
-                <img src="../../Public/img/videoPlayer/Vector 2821.png" class="absolute -left-14 -bottom-16">
+            <div class="flex justify-center items-center rounded-[28px] w-fit p-3 md:p-6 h-fit bg-Bg/7 relative">
+                <video src="../../Public/videos/aboutMe/IMG_6111.MOV" class="w-fit h-fit rounded-xl"></video>
+                <img src="../../Public/img/videoPlayer/Vector 2820.png" class="absolute w-[72px] md:w-auto h-[75px] md:h-auto rotate-90 md:rotate-0 -right-0 -top-10 md:-right-24 md:-top-16">
+                <img src="../../Public/img/videoPlayer/Vector 2821.png" class="absolute w-[72px] md:w-auto h-[75px] md:h-auto rotate-[30deg] md:rotate-0 -left-0 -top-10 md:-left-24 md:-top-16">
             </div>
           </div>
 
