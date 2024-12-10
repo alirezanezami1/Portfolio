@@ -2,12 +2,12 @@
 import { ref, onMounted, onBeforeUnmount} from 'vue';
 const list = ArrayMenu()
 const servicesList = [
-  {title : '- انجام پروژه سئو' , path: ''},
-  {title : '- مشاوره سئو' , path: ''},
-  {title : '- منتورینگ سئو' , path: ''},
-  {title : '- گوگل ادز' , path: ''},
-  {title : '- تدوین استراتژی محتوا' , path: ''},
-  {title : '- طراحی سایت ' , path: ''},
+  {title : '- انجام پروژه سئو' , path: '/services/seo'},
+  {title : '- مشاوره سئو' , path: '/services/seo-consulting'},
+  {title : '- منتورینگ سئو' , path: '/services/seo-mentoring'},
+  {title : '- گوگل ادز' , path: '/services/seo-strategy'},
+  {title : '- تدوین استراتژی محتوا' , path: '/services/google-Ads'},
+  {title : '- طراحی سایت ' , path: '/services/website-design'},
 ]
 
 const activePage = ref('home'); // صفحه فعال پیش‌فرض
