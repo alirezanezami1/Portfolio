@@ -2,7 +2,6 @@
 import { ref, watch ,computed } from 'vue';
 const hint = ['سئو  چیست ؟' , 'من چگونه می توانم به شما کمک کنم ؟' , 'اقدامات اولیه سئو ' , 'اقدامات سئو تکنیکال' , 'اقدامات سئو داخلی' , 'اقدامات سئو خارجی' , 'آنالیز سایت و میزان ورودی ها']
 
-
 const videoPlayer = ref(null);
 const isPlayingSeoVideo = ref(false);
 const currentTime = ref(0);
@@ -140,7 +139,6 @@ watch(currentTime, (newTime) => {
             </div>
           </div>
 
-
           <!-- //// سئو چیست  -->
           <div class="flex flex-col justify-start items-start w-full my-20 gap-4">
             <div class="flex flex-col justify-start items-start gap-6">
@@ -159,7 +157,6 @@ watch(currentTime, (newTime) => {
             </div>
           </div>
 
-
           <!-- //// کمک به سئو -->
           <div class="flex flex-col justify-start items-start w-full my-20 gap-4">
             <div class="flex flex-col justify-start items-start gap-6">
@@ -176,6 +173,13 @@ watch(currentTime, (newTime) => {
                 <p class="text-txt4 text-[16px] leading-[160%]">+ فرآیند سئو به 3 بخش اصلی تقسیم میشه:</p>
             </div>
           </div>
+
+          <!-- //// تصاویر مراحل سئو  -->
+           <div class="flex justify-center items-center my-10">
+            <img src="/img/seo/Group 70.png" class="hidden md:flex">
+            <img src="/img/seo/Group 144.png" class="flex md:hidden">
+           </div>
+
 
           <!-- //// سوشال مدیا -->
         <div class="flex justify-center items-center my-20 mx-5 lg:mx-20">
