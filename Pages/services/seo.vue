@@ -94,7 +94,6 @@ watch(currentTime, (newTime) => {
             <img src="/img/seo/Frame 450 (1).png" alt="banner" class="flex md:hidden">
         </div>
 
-
          <!-- //// مواردی که در این صفحه به آنها اشاره خواهد شد : -->
          <div class="flex flex-col justify-start gap-10 items-start rounded-2xl my-20 w-[328px] md:w-full border border-txt3 p-10">
             <h5 class="text-[20px] leading-[140%] text-txt1 font-bold">مواردی که در این صفحه به آنها اشاره خواهد شد :</h5>
@@ -102,7 +101,6 @@ watch(currentTime, (newTime) => {
                 <p v-for="item,index in hint" :key="index" class="text-[14px] md:text-[16px] leading-[160%] text-txt4"><span>{{ index + 1 }}.</span>{{ item }}</p>
             </div>
          </div>
-
 
          <!-- //// ویدیو  -->
           <div class="flex justify-center items-center my-20 relative w-full ">
@@ -139,6 +137,25 @@ watch(currentTime, (newTime) => {
                 </div>
                </div>
 
+            </div>
+          </div>
+
+
+          <!-- //// سئو چیست  -->
+          <div class="flex flex-col justify-start items-start w-full my-20 gap-4">
+            <div class="flex flex-col justify-start items-start gap-6">
+                <div class="flex flex-col justify-start items-start gap-6">
+                    <div class="w-[61px] h-[36px] bg-Bg/3 flex gap-[5px] justify-center items-center text-[14px] leading-[24] font-medium rounded-full"><IconsDot></IconsDot>سئو</div>
+                    <div class="flex justify-start items-start gap-2"><IconsStar></IconsStar><h6 class="text-[18px] leading-[140%] font-bold text-txt1">سئو چیست؟</h6></div>
+                </div>
+
+                <div>
+                    <p class="text-txt6 text-[16px] leading-[60px] ">اگه یک کسب و کار فیزیکی داری اما دوست داری که یه سایت هم داشته باشی و محصولاتت رو به صورت آنلاین هم بفروشی، باید بتونی تو صفحه اول گوگل اون محصول و خدماتت رو به مشتری نشون بدی. در حال حاضر اکثر افرادی که دنبال خرید محصول، پیدا کردن یه مرکز خوب واسه گرفتن خدمات و ... هستند اولین کاری که می کنند اینه که توی گوگل سرچ میزنن.حالا وقتی سایت شما سئو شده باشه این فرصت رو خواهی داشت که با سرچ کاربر، بیای توی نتایج برتر گوگل و کاربر از بین هزار نتیجه، روی لینک شما کلیک کنه و وارد سایت شما بشه</p>
+                </div>
+            </div>
+
+            <div>
+                <p class="text-txt4 text-[16px] leading-[160%]">+ پس می تونیم بگیم که سئو، راز موفقیت کسب‌وکارهای آنلاینه و به فروش بهتر شما کمک میکنه</p>
             </div>
           </div>
 
