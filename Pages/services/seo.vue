@@ -112,9 +112,9 @@ watch(currentTime, (newTime) => {
             </div>
             
             <div class="flex justify-center items-center rounded-[28px] w-fit p-3 md:p-6 h-fit bg-Bg/7 relative">
-                <video src="../../Public/videos/aboutMe/IMG_6111.MOV" class="w-fit h-fit rounded-xl" ref="videoPlayer" @ended="resetVideo" @timeupdate="updateProgress"></video>
+                <video src="../../Public/videos/aboutMe/IMG_6111.MOV" class="w-fit h-fit rounded-xl" ref="videoPlayer" @ended="resetVideo" @timeupdate="updateProgress" @mouseenter="isHovered = true" @mouseleave="isHovered = false"></video>
                 <img src="../../Public/img/videoPlayer/Vector 2820.png" class="absolute w-[72px] md:w-auto h-[75px] md:h-auto rotate-90 md:rotate-0 -right-0 -top-10 md:-right-24 md:-top-16">
-                <img src="../../Public/img/videoPlayer/Vector 2821.png" class="absolute w-[72px] md:w-auto h-[75px] md:h-auto rotate-[30deg] md:rotate-0 -left-0 -top-10 md:-left-24 md:-top-16">
+                <img src="../../Public/img/videoPlayer/Vector 2821.png" class="absolute w-[72px] md:w-auto h-[75px] md:h-auto rotate-[30deg] md:rotate-0 -left-0 -top-10 md:-left-16 md:top-[85%]">
 
                 <div class="flex items-center w-full timeLine">
                   <span class="time-text">{{ formatTime(currentTime) }}</span>
@@ -133,7 +133,7 @@ watch(currentTime, (newTime) => {
                 <div class="w-[92px]">
                   <button @click="togglePlaySeo" class="bg-btn1 p-3 text-white rounded-full relative flex justify-center items-center">
                   <div class="wave-animation" v-if="isPlayingSeoVideo"></div>
-                  <IconsPause v-if="isPlayingSeoVideo"></IconsPause>
+                  <IconsPause  v-if="isPlayingSeoVideo" ></IconsPause>
                   <IconsPlay v-if="!isPlayingSeoVideo"></IconsPlay>
                 </button>
                 </div>
@@ -285,13 +285,13 @@ watch(currentTime, (newTime) => {
 
 .timeLine {
   position: absolute;
-  bottom: 0 ;
+  bottom: 7% ;
   width: 90%;
 }
 
 .fullScreen {
   position: absolute;
-  bottom: 6%;
+  bottom: 15%;
   right: 6% !important;
 }
 
@@ -299,10 +299,11 @@ watch(currentTime, (newTime) => {
   .timeLine {
   position: absolute;
   bottom: 10%;
+  width: 90%;
 }
 .fullScreen {
   position: absolute;
-  bottom: 20%;
+  bottom: 15%;
   right: 2%;
 }
 }
