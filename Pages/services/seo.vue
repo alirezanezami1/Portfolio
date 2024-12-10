@@ -160,6 +160,23 @@ watch(currentTime, (newTime) => {
           </div>
 
 
+          <!-- //// کمک به سئو -->
+          <div class="flex flex-col justify-start items-start w-full my-20 gap-4">
+            <div class="flex flex-col justify-start items-start gap-6">
+                <div class="flex flex-col justify-start items-start gap-6">
+                    <div class="flex justify-start items-start gap-2"><IconsStar></IconsStar><h6 class="text-[18px] leading-[140%] font-bold text-txt1">حالا من چطوری به کسب و کار شما کمک می کنم؟</h6></div>
+                </div>
+
+                <div>
+                    <p class="text-txt6 text-[16px] leading-[60px] ">گوگل برای اینکه به یک سایت رتبه بده و اون رو توی نتایج برتر خودش نشون بده حدود 200 فاکتور رو بررسی می کنه. حالا من به عنوان یک کارشناس سئو وظیفه دارم که این فاکتورها رو بررسی و بهینه کنم تا بتونم وبسایت شما رو توی 10 نتیجه برتر گوگل بالا بیارم.</p>
+                </div>
+            </div>
+
+            <div>
+                <p class="text-txt4 text-[16px] leading-[160%]">+ فرآیند سئو به 3 بخش اصلی تقسیم میشه:</p>
+            </div>
+          </div>
+
           <!-- //// سوشال مدیا -->
         <div class="flex justify-center items-center my-20 mx-5 lg:mx-20">
                 <ClientOnly>
