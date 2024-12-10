@@ -199,6 +199,10 @@ watch(currentTime, (newTime) => {
             </div>
 
 
+            <div class="flex justify-center items-center my-10">
+                <DisclosureSeo></DisclosureSeo>
+            </div>
+
 
           <!-- //// سوشال مدیا -->
         <div class="flex justify-center items-center my-20 mx-5 lg:mx-20">
@@ -238,7 +242,7 @@ watch(currentTime, (newTime) => {
 
 @media screen and (min-width : 970px) {
     .pointSection .txtPoint::before {
-        top: 36%;
+        top: 38%;
     }
 }
 
