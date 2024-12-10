@@ -20,12 +20,22 @@ const hint = ['سئو  چیست ؟' , 'من چگونه می توانم به شم
 
 
          <!-- //// مواردی که در این صفحه به آنها اشاره خواهد شد : -->
-         <div class="flex flex-col justify-start gap-10 items-start rounded-2xl my-10 w-[328px] md:w-full border border-txt3 p-10">
+         <div class="flex flex-col justify-start gap-10 items-start rounded-2xl my-20 w-[328px] md:w-full border border-txt3 p-10">
             <h5 class="text-[20px] leading-[140%] text-txt1 font-bold">مواردی که در این صفحه به آنها اشاره خواهد شد :</h5>
             <div class="flex flex-col justify-start items-start gap-5">
                 <p v-for="item,index in hint" :key="index" class="text-[14px] md:text-[16px] leading-[160%] text-txt4"><span>{{ index + 1 }}.</span>{{ item }}</p>
             </div>
          </div>
+
+
+         <!-- //// ویدیو  -->
+          <div class="flex justify-center items-center my-20 relative w-full">
+            <div class="flex justify-center items-center rounded-[28px] w-fit p-6 h-fit bg-Bg/7 relative">
+                <video src="../../Public/videos/aboutMe/IMG_6111.MOV" class="w-fit h-[566px] rounded-xl"></video>
+                <img src="../../Public/img/videoPlayer/Vector 2820.png" class="absolute -right-24 -top-16">
+                <img src="../../Public/img/videoPlayer/Vector 2821.png" class="absolute -left-14 -bottom-16">
+            </div>
+          </div>
 
 
           <!-- //// سوشال مدیا -->

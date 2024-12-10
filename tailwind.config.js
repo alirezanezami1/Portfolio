@@ -37,6 +37,7 @@ export default {
       'Bg/4' : '#CDCFCD' ,
       'Bg/5' : '#424371' ,
       'Bg/6' : '#F7F8F9' ,
+      'Bg/7' : '#B8B8CA' ,
 
       //// button
       'btn1' : '#13144E',
