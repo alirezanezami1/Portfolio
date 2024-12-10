@@ -1,6 +1,14 @@
 <script setup>
 import { ref, onMounted, onBeforeUnmount} from 'vue';
 const list = ArrayMenu()
+const servicesList = [
+  {title : '- انجام پروژه سئو' , path: ''},
+  {title : '- مشاوره سئو' , path: ''},
+  {title : '- منتورینگ سئو' , path: ''},
+  {title : '- گوگل ادز' , path: ''},
+  {title : '- تدوین استراتژی محتوا' , path: ''},
+  {title : '- طراحی سایت ' , path: ''},
+]
 
 const activePage = ref('home'); // صفحه فعال پیش‌فرض
 const showDropdown = ref(false);
@@ -54,10 +62,8 @@ onBeforeUnmount(() => {
         <div v-if="activePage === item.name && item.title !== 'خدمات' " class="absolute left-0 right-0 bottom-[-5px] h-[4px] bg-[#13144E] transition-all duration-300 rounded-full pt-1"></div>
     </NuxtLink>
 
-    <div v-if="showDropdown" id="dropdown-menu" class="absolute left-72 mt-36 bg-Bg/6 shadow-lg rounded-md z-10 text-txt2">
-        <NuxtLink to="/service1" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">خدمات 1</NuxtLink>
-        <NuxtLink to="/service2" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">خدمات 2</NuxtLink>
-        <NuxtLink to="/service3" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">خدمات 3</NuxtLink>
+    <div v-if="showDropdown" id="dropdown-menu" class="absolute left-64 mt-56 bg-Bg/6 shadow-lg grid gap-2 z-10 rounded-xl text-txt2 py-3 px-4">
+        <NuxtLink v-for="item in servicesList" :key="item" :to="item.path" class="block cursor-pointer text-[12px] leading-[160%]">{{ item.title }}</NuxtLink>
     </div>
 </div>
 
