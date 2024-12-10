@@ -178,13 +178,25 @@ watch(currentTime, (newTime) => {
            <div class="flex flex-col justify-center items-center my-10">
             <img src="/img/seo/Group 70.png" class="hidden md:flex">
             <img src="/img/seo/Group 144.png" class="flex md:hidden">
+            </div>
 
-        </div>
+            <!-- ////  -->
+            <div class="relative flex justify-start items-start w-full rounded-lg p-2 pr-6 text-txt4 pointSection">
+                <p class="text-[16px] leading-[160%] txtPoint">هر کدام از این بخش ها به تعداد زیادی تسک تقسیم میشه که ما توی فرآیند سئو کردن سایت همه رو با هم پیش می بریم.</p>
+            </div>
 
-        <div class="relative flex justify-start items-start w-full rounded-lg p-2 pr-6 text-txt4 pointSection">
-            <p class="text-[16px] leading-[160%] txtPoint">هر کدام از این بخش ها به تعداد زیادی تسک تقسیم میشه که ما توی فرآیند سئو کردن سایت همه رو با هم پیش می بریم.</p>
-        </div>
 
+            <!-- //// برای سئو یک سایت چه کارهایی انجام میدیم؟ -->
+            <div class="flex flex-col justify-start items-start w-full my-20 gap-4">
+            <div class="flex justify-start items-start ">
+                <div class="flex flex-col justify-start items-start gap-6">
+                    <div class="flex justify-start items-start gap-2"><IconsStar></IconsStar><h6 class="text-[18px] leading-[140%] font-bold text-txt1">برای سئو یک سایت چه کارهایی انجام میدیم؟</h6></div>
+                </div>
+            </div>
+            <div>
+                <p class="text-txt6 text-[16px] leading-[60px] "> برای نمونه تعدادی از خدماتی که من برای سئو کردن یک پروژه ارائه میدم رو واستون میارم:</p>
+            </div>
+            </div>
 
 
 
