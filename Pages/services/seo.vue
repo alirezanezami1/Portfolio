@@ -175,10 +175,17 @@ watch(currentTime, (newTime) => {
           </div>
 
           <!-- //// تصاویر مراحل سئو  -->
-           <div class="flex justify-center items-center my-10">
+           <div class="flex flex-col justify-center items-center my-10">
             <img src="/img/seo/Group 70.png" class="hidden md:flex">
             <img src="/img/seo/Group 144.png" class="flex md:hidden">
-           </div>
+
+        </div>
+
+        <div class="relative flex justify-start items-start w-full rounded-lg p-2 pr-6 text-txt4 pointSection">
+            <p class="text-[16px] leading-[160%] txtPoint">هر کدام از این بخش ها به تعداد زیادی تسک تقسیم میشه که ما توی فرآیند سئو کردن سایت همه رو با هم پیش می بریم.</p>
+        </div>
+
+
 
 
           <!-- //// سوشال مدیا -->
@@ -202,6 +209,26 @@ watch(currentTime, (newTime) => {
   z-index: -1000 ; 
 }
 
+.pointSection {
+    background-color: rgba(19, 20, 78, .16);
+}
+
+.pointSection .txtPoint::before {
+    content: '';
+    position: absolute;
+    top: 24%;
+    width: 10px !important;
+    height: 10px !important;
+    border-radius: 12px;
+    right: 8px;
+    background-color: #13144E;
+}
+
+@media screen and (min-width : 970px) {
+    .pointSection .txtPoint::before {
+        top: 36%;
+    }
+}
 
 .time-text {
   color: white;
