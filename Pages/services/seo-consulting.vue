@@ -151,7 +151,28 @@ watch(currentTime, (newTime) => {
                     <p>البته اگه خودت کارشناس سئو هستی و پروژه ات به مشکل خورده باز هم می تونی روی کمک یه همکار حساب کنی. تو این جور مواقع بهترین کار اینه که مشکل و مسئله سایت رو از یک زاویه دیگه و از دید یک نفر متخصص دیگه ببینیم تا بتونیم مشکل رو شناسایی کنیم.</p>
                 </div>
             </div>
+        </div>
+
+
+         <!-- //// مراحل مشاوره -->
+         <div class="flex flex-col justify-start items-start w-full my-20 gap-4">
+            <div class="flex flex-col justify-start items-start gap-6">
+                <div class="flex flex-col justify-start items-start gap-6">
+                    <div class="flex justify-start items-start gap-2"><IconsStar></IconsStar><h6 class="text-[18px] leading-[140%] font-bold text-txt1">مراحل مشاوره سئو چطوره؟</h6></div>
+                </div>
+            </div>
           </div>
+
+          <!-- //// تصاویر -->
+        <div class="flex flex-col justify-center items-center my-10">
+            <img src="/img/seo-consulting/Group 73.png" class="hidden md:flex">
+            <img src="/img/seo-consulting/Group 146.png" class="flex md:hidden">
+        </div>
+
+            <!-- ////  -->
+        <div class="relative flex justify-start items-start w-[328px] md:w-full rounded-lg p-2 pr-6 text-txt4 pointSection">
+                <p class="text-[16px] leading-[160%] txtPoint">در یک جلسه 1 ساعتی تمام موارد لازم خدمتتون توضیح داده میشه. (جلسه از طریق Google Meet برگزار میشه)</p>
+        </div>
 
 
     </div>
@@ -167,6 +188,27 @@ watch(currentTime, (newTime) => {
   width: 100vw;
   /* height: 200px !important; */
   z-index: -1000 ; 
+}
+
+.pointSection {
+    background-color: rgba(19, 20, 78, .16);
+}
+
+.pointSection .txtPoint::before {
+    content: '';
+    position: absolute;
+    top: 17%;
+    width: 10px !important;
+    height: 10px !important;
+    border-radius: 12px;
+    right: 8px;
+    background-color: #13144E;
+}
+
+@media screen and (min-width : 970px) {
+    .pointSection .txtPoint::before {
+        top: 38%;
+    }
 }
 
 .time-text {
