@@ -136,6 +136,22 @@ watch(currentTime, (newTime) => {
             </div>
         </div>
 
+        <!-- //// منتورینگ سئو  -->
+        <div class="flex flex-col justify-start items-start w-[328px] md:w-full my-10 gap-4 ">
+            <div class="flex flex-col justify-start items-start gap-6">
+                <div class="flex flex-col justify-start items-start gap-6">
+                    <div class="w-[119px] h-[36px] bg-Bg/3 flex gap-[5px] justify-center items-center text-[14px] leading-[24] font-medium rounded-full"><IconsDot></IconsDot>منتورینگ سئو</div>
+                    <div class="flex justify-start items-start gap-2"><IconsStar></IconsStar><h6 class="text-[18px] leading-[140%] font-bold text-txt1">منتورینگ سئو به درد کیا می خوره ؟</h6></div>
+                </div>
+
+                <div class="flex flex-col justify-start items-start gap-4 text-txt6 text-[16px] leading-10">
+                    <p>اگه تا الان تجربه عملی سئو کردن یک سایت رو نداشتی؟ اگه تا الان چند تا دوره آموزشی سئو دیدی اما هنوز ترس داری که به صورت واقعی یک پروژه بگیری؟ اگه اولین پروژه سئوت رو گرفتی اما نمیدونی از کجا شروع کنی؟</p>
+                    <p>شما نیاز به یک منتور دارید!</p>
+                    <p>منتور سئو فردیه که <span class="text-txt1">در قالب یه متخصص سئو، به شما کمک میکنه که فرآیند سئو کردن یک پروژه واقعی رو پیش ببری.</span> درواقع توی فرآیند منتورینگ، شما به صورت هفتگی با منتور جلسه دارید و تسک هایی که باید روی پروژه پیاده کنید رو با هم چک میکنید. درستی و اشتباه تسک های قبلی بررسی میشه و تسک هایی که واسه هفته آینده باید انجام بدید به شما محول میشه. اینطوری کم کم اعتماد به نفس تون بالا میره و واسه گرفتن پروژه دوم بدون هیچ ترس و واهمه ای، اقدام می کنید.</p>
+                </div>
+            </div>
+        </div>
+
     </div>
 </template>
 
