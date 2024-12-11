@@ -1,6 +1,7 @@
 <script setup>
 import { ref, watch  } from 'vue';
 const hint = ['چرایی داشتن طراحی مناسب یک سایت ؟' , 'در زمینه بودجه و هزینه مشکلی دارید ؟' , 'مراحل طراحی سایت که من میتوام در اونها بهت کمک کنم']
+const web = ['انتخاب نام دامنه' , 'خرید هاست باکیفیت' , 'رسم وایرفریم و طرح اولیه سایت' , 'مشخص کردن کتگوری ها و صفحات ضروری سایت برای طراح']
 
 const videoPlayer = ref(null);
 const isPlayingSeoVideo = ref(false);
@@ -152,7 +153,6 @@ watch(currentTime, (newTime) => {
             </div>
         </div>
 
-
          <!-- //// هزینه مالی  -->
          <div class="flex flex-col justify-start items-start w-[328px] md:w-full my-10 gap-4 ">
             <div class="flex flex-col justify-start items-start gap-6">
@@ -163,6 +163,19 @@ watch(currentTime, (newTime) => {
                 <div class="flex flex-col justify-start items-start gap-4 text-txt6 text-[16px] leading-10">
                     <p>اما اگه مشکل بادجت دارید میتونید برای طراحی سایت از قالب های آماده وردپرس استفاده کنید که البته اونها هم امکان شخصی سازی دارن و می تونید در نهایت یک سایت خیلی شیک، کاملا ریسپانسیو و بدون باگ داشته باشید.</p>
                     <p>من توی تیمم 3 تا طراح سایت حرفه ای دارم که میتونن انواع سایت شخصی، فروشگاهی، خدماتی، پزشکی و .... رو با بالاترین کیفیت و کاملا مطابق با نیازهای کارفرما، طراحی کنن.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- //// مراحل طراحی سایت  -->
+        <div class="flex flex-col justify-start items-start w-[328px] md:w-full my-10 gap-4">
+            <div class="flex flex-col justify-start items-start gap-8">
+                <div class="flex flex-col justify-start items-start gap-6">
+                    <div class="flex justify-start items-start gap-2"><IconsStar></IconsStar><h6 class="text-[18px] leading-[140%] font-bold text-txt1">مراحل ایجاد یه کمپین گوگل ادز به این صورته که : </h6></div>
+                </div>
+
+                <div class="flex flex-col justify-start items-start gap-4 text-txt6 text-[16px] leading-10">
+                    <p v-for="item,index in web" :key="index" class="text-[14px] md:text-[16px] leading-[160%]"><span>{{ index + 1 }}.</span>{{ item }}</p>
                 </div>
             </div>
         </div>
