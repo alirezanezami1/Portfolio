@@ -174,6 +174,17 @@ watch(currentTime, (newTime) => {
                 <p class="text-[16px] leading-[160%] txtPoint">در یک جلسه 1 ساعتی تمام موارد لازم خدمتتون توضیح داده میشه. (جلسه از طریق Google Meet برگزار میشه)</p>
         </div>
 
+         <!-- //// هزینه مشاوره -->
+         <div class="flex flex-col justify-start items-start w-full my-20 gap-4">
+            <div class="flex justify-start items-start ">
+                <div class="flex flex-col justify-start items-start gap-6">
+                    <div class="flex justify-start items-start gap-2"><IconsStar></IconsStar><h6 class="text-[18px] leading-[140%] font-bold text-txt1">هزینه مشاوره سئو چقدره ؟</h6></div>
+                </div>
+            </div>
+            <div>
+                <p class="text-txt6 text-[16px] leading-[40px] ">هزینه مشاوره به مدت زمانی که واسه آنالیز و عیب یابی پروژه از من گرفته میشه، بستگی داره. اگه سایت خیلی مشکلات فنی و ریز و درشت داشته باشه، هزینه مشاوره حدود 1.500 میشه اما اگه سایت و پروژه کوچیکی باشه هزینه حدود 800 هزار تومان خواهد بود.</p>
+            </div>
+            </div>
 
     </div>
 </template>
