@@ -136,6 +136,24 @@ watch(currentTime, (newTime) => {
            
             </div>
         </div>
+
+
+        <!-- //// مشاوره سئو  -->
+        <div class="flex flex-col justify-start items-start w-full my-10 gap-4">
+            <div class="flex flex-col justify-start items-start gap-6">
+                <div class="flex flex-col justify-start items-start gap-6">
+                    <div class="w-[107px] h-[36px] bg-Bg/3 flex gap-[5px] justify-center items-center text-[14px] leading-[24] font-medium rounded-full"><IconsDot></IconsDot>مشاوره سئو</div>
+                    <div class="flex justify-start items-start gap-2"><IconsStar></IconsStar><h6 class="text-[18px] leading-[140%] font-bold text-txt1">مشاوره سئو برای چه کسایی مناسبه ؟</h6></div>
+                </div>
+
+                <div class="flex flex-col justify-start items-start gap-4 text-txt6 text-[16px] leading-10">
+                    <p>اگه یک کسب و کار آنلاین داری اما اون طور که باید نمی فروشی یا تعداد ترافیک و ورودی سایتت کمه حتما یه جای کار می لنگه! تو این حالت بهترین کار گرفتن مشاوره از یک کارشناس سئو خبره است که بتونه مشکلات سایت شما رو پیدا کنه و کمکتون کنه تا سایت رو از اون وضعیت نجات بدید.</p>
+                    <p>البته اگه خودت کارشناس سئو هستی و پروژه ات به مشکل خورده باز هم می تونی روی کمک یه همکار حساب کنی. تو این جور مواقع بهترین کار اینه که مشکل و مسئله سایت رو از یک زاویه دیگه و از دید یک نفر متخصص دیگه ببینیم تا بتونیم مشکل رو شناسایی کنیم.</p>
+                </div>
+            </div>
+          </div>
+
+
     </div>
 </template>
 
