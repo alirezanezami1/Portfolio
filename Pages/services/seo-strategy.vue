@@ -1,5 +1,79 @@
 <script setup>
+import { ref, watch  } from 'vue';
 const hint = ['چرا به تدوین استراتژی سئو نیاز داریم ؟' , 'تعریف تدوین استراتژی سئو' , 'مراحل تدوین استراتژی سئو']
+
+const videoPlayer = ref(null);
+const isPlayingSeoVideo = ref(false);
+const currentTime = ref(0);
+const duration = ref(0);
+const isFullscreen = ref(false); 
+
+// تابع برای پخش و توقف ویدیو
+const togglePlaySeo = () => {
+  if (isPlayingSeoVideo.value) {
+    videoPlayer.value.pause();
+  } else {
+    videoPlayer.value.play();
+  }
+  isPlayingSeoVideo.value = !isPlayingSeoVideo.value;
+};
+
+// تابع برای بازنشانی وضعیت ویدیو
+const resetVideo = () => {
+    isPlayingSeoVideo.value = false; // Reset the play state when the video ends
+  currentTime.value = 0; // Reset the current time
+};
+
+// تابع برای به‌روزرسانی خط زمان
+const updateProgress = () => {
+  currentTime.value = videoPlayer.value.currentTime;
+  duration.value = videoPlayer.value.duration;
+};
+
+// تابع برای جستجو در ویدیو
+const seekVideo = () => {
+  videoPlayer.value.currentTime = currentTime.value;
+};
+
+// تابع برای فرمت کردن زمان
+const formatTime = (time) => {
+  const minutes = Math.floor(time / 60);
+  const seconds = Math.floor(time % 60);
+  return `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+};
+
+// تابع برای ورود و خروج از حالت تمام صفحه
+const toggleFullscreen = () => {
+  if (!isFullscreen.value) {
+    if (videoPlayer.value.requestFullscreen) {
+      videoPlayer.value.requestFullscreen();
+    } else if (videoPlayer.value.mozRequestFullScreen) { // Firefox
+      videoPlayer.value.mozRequestFullScreen();
+    } else if (videoPlayer.value.webkitRequestFullscreen) { // Chrome, Safari and Opera
+      videoPlayer.value.webkitRequestFullscreen();
+    } else if (videoPlayer.value.msRequestFullscreen) { // IE/Edge
+      videoPlayer.value.msRequestFullscreen();
+    }
+  } else {
+    if (document.exitFullscreen) {
+      document.exitFullscreen();
+    } else if (document.mozCancelFullScreen) { // Firefox
+      document.mozCancelFullScreen();
+    } else if (document.webkitExitFullscreen) { // Chrome, Safari and Opera
+      document.webkitExitFullscreen();
+    } else if (document.msExitFullscreen) { // IE/Edge
+      document.msExitFullscreen();
+    }
+  }
+  isFullscreen.value = !isFullscreen.value; // تغییر وضعیت تمام صفحه
+};
+
+// نظارت بر تغییرات زمان ویدیو
+watch(currentTime, (newTime) => {
+  if (newTime >= duration.value) {
+    resetVideo();
+  }
+});
 </script>
 <template>
     <div class="flex flex-col justify-center items-center my-10 mx-20">
