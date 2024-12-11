@@ -6,5 +6,12 @@
             <NuxtLink class="flex justify-center items-center gap-2 text-txt2 ">خدمات<IconsLinearGray></IconsLinearGray></NuxtLink>
             <span>منتورینگ سئو</span>
         </div>
+
+         <!-- //// بنر  -->
+         <div class="flex justify-center items-center w-[328px] md:w-full my-10">
+            <img src="/img/seo-mentoring/Frame 450.png" alt="banner" class="hidden md:block">
+            <img src="/img/seo-mentoring/Frame 450 (1).png" alt="banner" class="flex md:hidden">
+        </div>
+
     </div>
 </template>
