@@ -136,6 +136,21 @@ watch(currentTime, (newTime) => {
             </div>
         </div>
 
+        <!-- //// ادز  -->
+        <div class="flex flex-col justify-start items-start w-[328px] md:w-full my-10 gap-4 ">
+            <div class="flex flex-col justify-start items-start gap-6">
+                <div class="flex flex-col justify-start items-start gap-6">
+                    <div class="w-[171px] h-[36px] bg-Bg/3 flex gap-[5px] justify-center items-center text-[14px] leading-[24] font-medium rounded-full"><IconsDot></IconsDot>چه کمکی بهت می کنه ؟</div>
+                    <div class="flex justify-start items-start gap-2"><IconsStar></IconsStar><h6 class="text-[18px] leading-[140%] font-bold text-txt1">گوگل ادز چه کمکی بهت می کنه ؟</h6></div>
+                </div>
+
+                <div class="flex flex-col justify-start items-start gap-4 text-txt6 text-[16px] leading-10">
+                    <p>اگه سایتت تازه لانچ شده و تایم نداری که سئو کار کنی و سایت رو بالا بیاری می تونی با صرف هزینه از تبلیغات گوگل ادز استفاده کنی و بعد از چند ساعت، سایتت رو توی نتایج بالای سرپ گوگل ببینی!</p>
+                    <p>درواقع گوگل ادز کمک میکنه که بدون نیاز به سئو و تنها با صرف هزینه، روی سایتت ترافیک ایجاد کنی. برخی اوقات برای اینکه بدونیم پتانسیل اون حوزه، چقدره و چه کلماتی بیشتر پولسازن، قبل از اینکه سئو رو استارت بزنیم، یه کمپین ادز روی سایت ران می کنیم تا بفهمیم بهتره تمرکزمون رو روی چه صفحات و چه کلماتی بذاریم.</p>
+                </div>
+            </div>
+        </div>
+
     </div>
 </template>
 
