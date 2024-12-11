@@ -152,6 +152,19 @@ watch(currentTime, (newTime) => {
             </div>
         </div>
 
+        <!-- //// مدت زمان منتورینگ -->
+        <div class="flex flex-col justify-start items-start w-[328px] md:w-full my-20 gap-4">
+            <div class="flex flex-col justify-start items-start gap-6">
+                <div class="flex flex-col justify-start items-start gap-6">
+                    <div class="flex justify-start items-start gap-2"><IconsStar></IconsStar><h6 class="text-[18px] leading-[140%] font-bold text-txt1">مدت زمان منتورینگ سئو چقدره ؟</h6></div>
+                </div>
+
+                <div>
+                    <p class="text-txt6 text-[16px] leading-[40px] ">بسته به اسکیل پروژه، مدت زمان منتورینگ میتونه متغیر باشه. اما برای پیش بردن یک پروژه واقعی لازم هست حداقل 3 ماه زمان گذاشت پس دوره منتورینگ از 3 ماه به بالا تعریف میشه.</p>
+                </div>
+            </div>
+          </div>
+
     </div>
 </template>
 
