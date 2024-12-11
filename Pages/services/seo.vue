@@ -80,8 +80,12 @@ watch(currentTime, (newTime) => {
 <template>
     <div class="flex flex-col justify-center items-center my-10 mx-20">
 
+      <div class="background1">
+            <img src="/backgrounds/Services-Seo-Desktop.png" alt="background img">
+        </div>
+
         <!-- //// لینک ها  -->
-        <div class="flex justify-start items-start text-[12px] leading-[160%] gap-2 w-full">
+        <div class="flex justify-start items-start text-[12px] leading-[160%] gap-2 w-[328px] md:w-full">
             <NuxtLink to="/" class="flex justify-center items-center gap-2 text-txt2 ">صفحه اصلی<IconsLinearGray></IconsLinearGray></NuxtLink>
             <NuxtLink class="flex justify-center items-center gap-2 text-txt2 ">خدمات<IconsLinearGray></IconsLinearGray></NuxtLink>
             <span>درباره من</span>
@@ -140,7 +144,7 @@ watch(currentTime, (newTime) => {
           </div>
 
           <!-- //// سئو چیست  -->
-          <div class="flex flex-col justify-start items-start w-full my-20 gap-4">
+          <div class="flex flex-col justify-start items-start w-full my-10 gap-4">
             <div class="flex flex-col justify-start items-start gap-6">
                 <div class="flex flex-col justify-start items-start gap-6">
                     <div class="w-[61px] h-[36px] bg-Bg/3 flex gap-[5px] justify-center items-center text-[14px] leading-[24] font-medium rounded-full"><IconsDot></IconsDot>سئو</div>
@@ -206,7 +210,7 @@ watch(currentTime, (newTime) => {
 
             <!-- //// مشاوره -->
             <div class="flex flex-col justify-center items-center my-10 gap-16 w-full">
-              <div class="w-[328px] md:w-full">
+              <div class="w-[328px] md:w-[536px]">
                 <img src="/img/seo/Group 71.png" alt="img" class="w-full">
               </div>
 
@@ -221,7 +225,7 @@ watch(currentTime, (newTime) => {
                 </NuxtLink>
               </div>
             </div>
-            
+
 
           <!-- //// سوشال مدیا -->
         <div class="flex justify-center items-center my-20 mx-5 lg:mx-20">
@@ -233,6 +237,17 @@ watch(currentTime, (newTime) => {
     </div>
 </template>
 <style scoped>
+.background1 {
+  position: absolute;
+  background-size: cover; 
+  background-position: center; 
+  top: 10%;
+  left: -6%;
+  width: 100vw;
+  /* height: 200px !important; */
+  z-index: -1000 ; 
+}
+
 .background {
   position: absolute;
   background-size: cover; 
@@ -403,7 +418,7 @@ watch(currentTime, (newTime) => {
 }
 .fullScreen {
   position: absolute;
-  bottom: 15%;
+  bottom: 20%;
   right: 2%;
 }
 }
