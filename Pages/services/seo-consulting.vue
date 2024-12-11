@@ -79,6 +79,10 @@ watch(currentTime, (newTime) => {
 <template>
     <div class="flex flex-col justify-center items-center my-10 mx-20">
 
+        <div class="background1">
+            <img src="/backgrounds/Services-SEO consulting-Desktop.png" alt="background img">
+        </div>
+
          <!-- //// لینک ها  -->
          <div class="flex justify-start items-start text-[12px] leading-[160%] gap-2 w-[328px] md:w-full">
             <NuxtLink to="/" class="flex justify-center items-center gap-2 text-txt2 ">صفحه اصلی<IconsLinearGray></IconsLinearGray></NuxtLink>
@@ -139,7 +143,7 @@ watch(currentTime, (newTime) => {
 
 
         <!-- //// مشاوره سئو  -->
-        <div class="flex flex-col justify-start items-start w-full my-10 gap-4">
+        <div class="flex flex-col justify-start items-start w-[328px] md:w-full my-10 gap-4 ">
             <div class="flex flex-col justify-start items-start gap-6">
                 <div class="flex flex-col justify-start items-start gap-6">
                     <div class="w-[107px] h-[36px] bg-Bg/3 flex gap-[5px] justify-center items-center text-[14px] leading-[24] font-medium rounded-full"><IconsDot></IconsDot>مشاوره سئو</div>
@@ -155,7 +159,7 @@ watch(currentTime, (newTime) => {
 
 
          <!-- //// مراحل مشاوره -->
-         <div class="flex flex-col justify-start items-start w-full my-20 gap-4">
+         <div class="flex flex-col justify-start items-start w-[328px] md:w-full my-20 gap-4">
             <div class="flex flex-col justify-start items-start gap-6">
                 <div class="flex flex-col justify-start items-start gap-6">
                     <div class="flex justify-start items-start gap-2"><IconsStar></IconsStar><h6 class="text-[18px] leading-[140%] font-bold text-txt1">مراحل مشاوره سئو چطوره؟</h6></div>
@@ -175,7 +179,7 @@ watch(currentTime, (newTime) => {
         </div>
 
          <!-- //// هزینه مشاوره -->
-        <div class="flex flex-col justify-start items-start w-full my-20 gap-4">
+        <div class="flex flex-col justify-start items-start w-[328px] md:w-full my-20 gap-4">
             <div class="flex justify-start items-start ">
                 <div class="flex flex-col justify-start items-start gap-6">
                     <div class="flex justify-start items-start gap-2"><IconsStar></IconsStar><h6 class="text-[18px] leading-[140%] font-bold text-txt1">هزینه مشاوره سئو چقدره ؟</h6></div>
@@ -192,7 +196,7 @@ watch(currentTime, (newTime) => {
                 <img src="/img/seo/Group 71.png" alt="img" class="w-full">
               </div>
 
-              <div class="flex flex-col justify-center items-center gap-8">
+              <div class="flex flex-col justify-center items-center gap-8 w-[328px] md:w-full">
                 <div class="flex flex-col justify-center items-center gap-6 text-center">
                   <h3 class="text-[20px] md:text-[32px] leading-[140%] font-bold">قصد داری یه تایم مشاوره بگیری؟</h3>
                   <p class="text-[16px] md:text-[18px] leading-[160%] opacity-80 text-txt6">اگه تمایل داری که یه تایم مشاوره سئو بگیری و ایرادات سایتت رو متوجه بشی، فرم زیر رو تکمیل کن تا در اولین فرصت باهاتون تماس بگیریم.</p>
@@ -208,6 +212,17 @@ watch(currentTime, (newTime) => {
 </template>
 
 <style scoped>
+.background1 {
+  position: absolute;
+  background-size: cover; 
+  background-position: center; 
+  top: 10%;
+  left: -6%;
+  width: 100vw;
+  /* height: 200px !important; */
+  z-index: -1000 ; 
+}
+
 .background {
   position: absolute;
   background-size: cover; 

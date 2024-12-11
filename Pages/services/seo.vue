@@ -106,7 +106,7 @@ watch(currentTime, (newTime) => {
          </div>
 
          <!-- //// ویدیو  -->
-          <div class="flex justify-center items-center my-20 relative w-full ">
+          <div class="flex justify-center items-center my-20 relative w-[328px] md:w-full ">
 
             <div class="background">
             <img src="/backgrounds/24px Cross.png" alt="background">
@@ -144,7 +144,7 @@ watch(currentTime, (newTime) => {
           </div>
 
           <!-- //// سئو چیست  -->
-          <div class="flex flex-col justify-start items-start w-full my-10 gap-4">
+          <div class="flex flex-col justify-start items-start w-[328px] md:w-full my-10 gap-4">
             <div class="flex flex-col justify-start items-start gap-6">
                 <div class="flex flex-col justify-start items-start gap-6">
                     <div class="w-[61px] h-[36px] bg-Bg/3 flex gap-[5px] justify-center items-center text-[14px] leading-[24] font-medium rounded-full"><IconsDot></IconsDot>سئو</div>
@@ -162,7 +162,7 @@ watch(currentTime, (newTime) => {
           </div>
 
           <!-- //// کمک به سئو -->
-          <div class="flex flex-col justify-start items-start w-full my-20 gap-4">
+          <div class="flex flex-col justify-start items-start w-[328px] md:w-full my-20 gap-4">
             <div class="flex flex-col justify-start items-start gap-6">
                 <div class="flex flex-col justify-start items-start gap-6">
                     <div class="flex justify-start items-start gap-2"><IconsStar></IconsStar><h6 class="text-[18px] leading-[140%] font-bold text-txt1">حالا من چطوری به کسب و کار شما کمک می کنم؟</h6></div>
@@ -191,7 +191,7 @@ watch(currentTime, (newTime) => {
 
 
             <!-- //// برای سئو یک سایت چه کارهایی انجام میدیم؟ -->
-            <div class="flex flex-col justify-start items-start w-full my-20 gap-4">
+            <div class="flex flex-col justify-start items-start w-[328px] md:w-full my-20 gap-4">
             <div class="flex justify-start items-start ">
                 <div class="flex flex-col justify-start items-start gap-6">
                     <div class="flex justify-start items-start gap-2"><IconsStar></IconsStar><h6 class="text-[18px] leading-[140%] font-bold text-txt1">برای سئو یک سایت چه کارهایی انجام میدیم؟</h6></div>
@@ -204,7 +204,7 @@ watch(currentTime, (newTime) => {
 
 
             <!-- //// موارد اشاره شده برای سئو -->
-            <div class="flex justify-center items-center my-10 w-full">
+            <div class="flex justify-center items-center my-10 w-[328px] md:w-full">
                 <DisclosureSeo></DisclosureSeo>
             </div>
 
@@ -214,7 +214,7 @@ watch(currentTime, (newTime) => {
                 <img src="/img/seo/Group 71.png" alt="img" class="w-full">
               </div>
 
-              <div class="flex flex-col justify-center items-center gap-8">
+              <div class="flex flex-col justify-center items-center w-[328px] md:w-full gap-8">
                 <div class="flex flex-col justify-center items-center gap-6 text-center">
                   <h3 class="text-[20px] md:text-[32px] leading-[140%] font-bold">قصد داری پروژه تو به من بسپاری یا هنوز شک داری؟</h3>
                   <p class="text-[16px] md:text-[18px] leading-[160%] opacity-80 text-txt6">اگه تا الان متقاعد شدی که سئو به کسب و کار آنلاینت کمک می کنه و قصد داری پروژه تو به من بسپاری، از طریق فرم مشخصاتت رو بذار تا باهات تماس بگیریم.</p>
