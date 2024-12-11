@@ -163,7 +163,22 @@ watch(currentTime, (newTime) => {
                     <p class="text-txt6 text-[16px] leading-[40px] ">بسته به اسکیل پروژه، مدت زمان منتورینگ میتونه متغیر باشه. اما برای پیش بردن یک پروژه واقعی لازم هست حداقل 3 ماه زمان گذاشت پس دوره منتورینگ از 3 ماه به بالا تعریف میشه.</p>
                 </div>
             </div>
-          </div>
+        </div>
+
+        <!-- //// منتور  -->
+        <div class="flex flex-col justify-start items-start w-[328px] md:w-full my-10 gap-4 ">
+            <div class="flex flex-col justify-start items-start gap-6">
+                <div class="flex flex-col justify-start items-start gap-6">
+                    <div class="w-[107px] h-[36px] bg-Bg/3 flex gap-[5px] justify-center items-center text-[14px] leading-[24] font-medium rounded-full"><IconsDot></IconsDot>مشاوره سئو</div>
+                    <div class="flex justify-start items-start gap-2"><IconsStar></IconsStar><h6 class="text-[18px] leading-[140%] font-bold text-txt1">چرا باید شما را به عنوان منتور انتخاب کنم ؟</h6></div>
+                </div>
+
+                <div class="flex flex-col justify-start items-start gap-4 text-txt6 text-[16px] leading-10">
+                    <p>من به عنوان مدیر سئو قبلی آژانس بمان، تجربه سئو بیش از 50 پروژه مختلف رو داشتم و با چالش های مختلف هر حوزه آشنا هستم. علاوه براین بیش از صدها کلمه کلیدی رو به صفحه اول گوگل رسوندم در نتیجه می تونم توی موارد مختلف سئو یک پروژه (چه پروژه ای که صفر هست و هنوز استارت نخورده و چه پروژه ای که از اواسط کار بهتون محول شده) بهتون راهنمایی و مشاوره بدم.</p>
+                    <p>این اطمینان رو به شما میدم که با طی کردن جلسات هفتگی و اجرای تسک هایی که بهتون محول میشه خیلی زود به فرآیند سئو کردن سایت، مسلط می شید و اعتماد به نفس گرفتن پروژه های جدید رو پیدا خواهی کرد.</p>
+                </div>
+            </div>
+        </div>
 
     </div>
 </template>
