@@ -135,6 +135,19 @@ watch(currentTime, (newTime) => {
             </div>
         </div>
 
+        <!-- //// چرا  -->
+        <div class="flex flex-col justify-start items-start w-[328px] md:w-full my-10 gap-4 ">
+            <div class="flex flex-col justify-start items-start gap-6">
+                <div class="flex flex-col justify-start items-start gap-6">
+                    <div class="w-[66px] h-[36px] bg-Bg/3 flex gap-[5px] justify-center items-center text-[14px] leading-[24] font-medium rounded-full"><IconsDot></IconsDot>چرا ؟</div>
+                    <div class="flex justify-start items-start gap-2"><IconsStar></IconsStar><h6 class="text-[18px] leading-[140%] font-bold text-txt1">چرا به تدوین استراتژی سئو نیاز داریم ؟</h6></div>
+                </div>
+
+                <div class="flex flex-col justify-start items-start gap-4 text-txt6 text-[16px] leading-10">
+                    <p>وقتی یک سایت با تعداد بالای محصول و دسته بندی داریم، قبل از دیزاین و طراحی باید ساختار سایت و معماری اولیه آن را به درستی بسازیم، در غیر اینصورت نمی توانیم نتیجه خوبی از سایت انتظار داشته باشیم.</p>
+                </div>
+            </div>
+        </div>
 
     </div>
 </template>
