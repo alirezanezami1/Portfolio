@@ -19,7 +19,7 @@ const toggleAccordion = (index) => {
 
 
 <template>
-    <div class="flex flex-col gap-4 justify-center items-center">
+    <div class="flex flex-col gap-4 justify-center items-center w-full">
         <div v-for="item,index in SeoList" :key="index" class="w-[328px] md:w-full px-3 md:px-6 py-5 bg-Bg/3 rounded-xl">
             <Disclosure :defaultOpen="openIndexes[index]">
                 <template #default="{open}">

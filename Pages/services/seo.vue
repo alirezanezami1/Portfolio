@@ -199,7 +199,7 @@ watch(currentTime, (newTime) => {
             </div>
 
 
-            <div class="flex justify-center items-center my-10">
+            <div class="flex justify-center items-center my-10 w-full">
                 <DisclosureSeo></DisclosureSeo>
             </div>
 
