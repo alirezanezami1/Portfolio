@@ -170,7 +170,6 @@ watch(currentTime, (newTime) => {
             </div>
         </div>
 
-
          <!-- //// مشاوره -->
          <div class="flex flex-col justify-center items-center my-10 gap-16 w-full">
               <div class="w-[328px] md:w-[536px]">

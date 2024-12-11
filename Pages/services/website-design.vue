@@ -180,6 +180,24 @@ watch(currentTime, (newTime) => {
             </div>
         </div>
 
+        <!-- //// مشاوره -->
+        <div class="flex flex-col justify-center items-center my-10 gap-16 w-full">
+              <div class="w-[328px] md:w-[536px]">
+                <img src="/img/seo/Group 71.png" alt="img" class="w-full">
+              </div>
+
+              <div class="flex flex-col justify-center items-center w-[328px] md:w-full gap-8">
+                <div class="flex flex-col justify-center items-center gap-6 text-center">
+                  <h3 class="text-[20px] md:text-[32px] leading-[140%] font-bold">می خوای بدونی هزینه طراحی یک سایت اختصاصی و حرفه ای چقدر میشه ؟</h3>
+                  <p class="text-[16px] md:text-[18px] leading-[160%] opacity-80 text-txt6">اگه دوست داری کافیه شماره تو بذاری تا در اولین فرصت باهات تماس بگیریم و درباره جزئیات کار بیشتر با هم صحبت کنیم</p>
+                </div>
+
+                <NuxtLink to="/contact">
+                  <button class="flex justify-center items-center gap-3 p-3 bg-Bg/2 text-white rounded-lg">فرم ارتباط با من<IconsArrowLeftWhite></IconsArrowLeftWhite></button>
+                </NuxtLink>
+              </div>
+        </div>
+
     </div>
 </template>
 
