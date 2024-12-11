@@ -185,7 +185,7 @@ watch(currentTime, (newTime) => {
             </div>
 
             <!-- ////  -->
-            <div class="relative flex justify-start items-start w-full rounded-lg p-2 pr-6 text-txt4 pointSection">
+            <div class="relative flex justify-start items-start w-[328px] md:w-full rounded-lg p-2 pr-6 text-txt4 pointSection">
                 <p class="text-[16px] leading-[160%] txtPoint">هر کدام از این بخش ها به تعداد زیادی تسک تقسیم میشه که ما توی فرآیند سئو کردن سایت همه رو با هم پیش می بریم.</p>
             </div>
 
@@ -266,7 +266,7 @@ watch(currentTime, (newTime) => {
 .pointSection .txtPoint::before {
     content: '';
     position: absolute;
-    top: 24%;
+    top: 17%;
     width: 10px !important;
     height: 10px !important;
     border-radius: 12px;
