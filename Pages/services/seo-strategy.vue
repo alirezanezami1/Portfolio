@@ -178,6 +178,24 @@ watch(currentTime, (newTime) => {
             <img src="/img/seo-startegy/Frame 749 (1).png" class="flex md:hidden">
         </div>
 
+        <!-- //// مشاوره -->
+        <div class="flex flex-col justify-center items-center my-10 gap-16 w-full">
+              <div class="w-[328px] md:w-[536px]">
+                <img src="/img/seo/Group 71.png" alt="img" class="w-full">
+              </div>
+
+              <div class="flex flex-col justify-center items-center w-[328px] md:w-full gap-8">
+                <div class="flex flex-col justify-center items-center gap-6 text-center">
+                  <h3 class="text-[20px] md:text-[32px] leading-[140%] font-bold">قصد داری با من یه پروپوزال کامل و تخصصی داشته باشی؟</h3>
+                  <p class="text-[16px] md:text-[18px] leading-[160%] opacity-80 text-txt6">اگر قصد دارید یک پروپوزال کاملا تخصصی و دقیق داشته باشید، کافیست شماره تماستون رو بگذارید تا در اسرع وقت باهاتون تماس بگیریم و از جزئیات کار بیشتر صحبت کنیم</p>
+                </div>
+
+                <NuxtLink to="/contact">
+                  <button class="flex justify-center items-center gap-3 p-3 bg-Bg/2 text-white rounded-lg">فرم ارتباط با من<IconsArrowLeftWhite></IconsArrowLeftWhite></button>
+                </NuxtLink>
+              </div>
+        </div>
+
     </div>
 </template>
 
