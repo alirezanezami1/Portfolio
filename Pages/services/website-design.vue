@@ -152,6 +152,21 @@ watch(currentTime, (newTime) => {
             </div>
         </div>
 
+
+         <!-- //// هزینه مالی  -->
+         <div class="flex flex-col justify-start items-start w-[328px] md:w-full my-10 gap-4 ">
+            <div class="flex flex-col justify-start items-start gap-6">
+                <div class="flex flex-col justify-start items-start gap-6">
+                    <div class="flex justify-start items-start gap-2"><IconsStar></IconsStar><h6 class="text-[18px] leading-[140%] font-bold text-txt1">در زمینه بودجه و هزینه مالی مشکلی وجود داره ؟</h6></div>
+                </div>
+
+                <div class="flex flex-col justify-start items-start gap-4 text-txt6 text-[16px] leading-10">
+                    <p>اما اگه مشکل بادجت دارید میتونید برای طراحی سایت از قالب های آماده وردپرس استفاده کنید که البته اونها هم امکان شخصی سازی دارن و می تونید در نهایت یک سایت خیلی شیک، کاملا ریسپانسیو و بدون باگ داشته باشید.</p>
+                    <p>من توی تیمم 3 تا طراح سایت حرفه ای دارم که میتونن انواع سایت شخصی، فروشگاهی، خدماتی، پزشکی و .... رو با بالاترین کیفیت و کاملا مطابق با نیازهای کارفرما، طراحی کنن.</p>
+                </div>
+            </div>
+        </div>
+
     </div>
 </template>
 
