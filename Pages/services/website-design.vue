@@ -88,7 +88,7 @@ watch(currentTime, (newTime) => {
         <!-- //// بنر  -->
         <div class="flex justify-center items-center w-[328px] md:w-full my-10">
             <img src="/img/seo-design/Frame 450.png" alt="banner" class="hidden md:block">
-            <img src="/img/seo-design/Frame 450.png" alt="banner" class="flex md:hidden">
+            <img src="/img/seo-design/Frame 450 (1).png" alt="banner" class="flex md:hidden">
         </div>
 
          <!-- //// مواردی که در این صفحه به آنها اشاره خواهد شد : -->
@@ -133,6 +133,22 @@ watch(currentTime, (newTime) => {
                 </div>
                </div>
            
+            </div>
+        </div>
+
+         <!-- //// طراحی مناسب  -->
+         <div class="flex flex-col justify-start items-start w-[328px] md:w-full my-10 gap-4 ">
+            <div class="flex flex-col justify-start items-start gap-6">
+                <div class="flex flex-col justify-start items-start gap-6">
+                    <div class="w-[160px] h-[36px] bg-Bg/3 flex gap-[5px] justify-center items-center text-[14px] leading-[24] font-medium rounded-full"><IconsDot></IconsDot>چرایی  طراحی مناسب</div>
+                    <div class="flex justify-start items-start gap-2"><IconsStar></IconsStar><h6 class="text-[18px] leading-[140%] font-bold text-txt1">دنبال یه سایت شیک و حرفه ای و یونیک هستی ؟</h6></div>
+                </div>
+
+                <div class="flex flex-col justify-start items-start gap-4 text-txt6 text-[16px] leading-10">
+                    <p>پس خوب جایی اومدی !</p>
+                    <p>طراحی سایت و داشتن یک رابط کاربری خوب به صورت مستقیم روی سئو سایت هم تاثیر میگذاره. علاوه براین با توجه به الگوریتم Mobile First Index ، در حال حاضر گوگل خیلی به نسخه موبایل هر سایت اهمیت میده و در مرحله اول ورژن موبایل هر سایت رو ایندکس میکنه؛ رو این حساب خیلی مهمه سایتی که دارید طراحی می کنید، نسخه موبایلش بدون باگ و مشکل باشه و اصطلاحا کاملا ریسپانسیو باشه.</p>
+                    <p>اگه دوست دارید که سایتتون کاملا شخصی سازی شده باشه و دیزاینش کاملا یونیک باشه، به شما پیشنهاد می کنم که یک UI اختصاصی واسه سایت تون طراحی کنید. من توی تیمم یک <span class="text-txt1 font-bold">UI Designer حرفه ای</span>  دارم که می تونه واستون یک سایت فوق حرفه ای طراحی کنه.</p>
+                </div>
             </div>
         </div>
 
