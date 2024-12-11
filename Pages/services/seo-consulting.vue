@@ -24,7 +24,43 @@ const hint = ['مشاوره سئو برای چه کسایی خوبه؟' , ' مر
             <div class="flex flex-col justify-start items-start gap-5">
                 <p v-for="item,index in hint" :key="index" class="text-[14px] md:text-[16px] leading-[160%] text-txt4"><span>{{ index + 1 }}.</span>{{ item }}</p>
             </div>
-         </div>
+        </div>
 
-    </div>
+        <!-- //// ویدیو  -->
+        <div class="flex justify-center items-center my-20 relative w-full ">
+            <div class="background">
+            <img src="/backgrounds/24px Cross.png" alt="background">
+            </div>
+
+            <div class="flex justify-center items-center rounded-[28px] w-fit p-3 md:p-6 h-fit bg-Bg/7 relative">
+                <video src="../../Public/videos/aboutMe/IMG_6111.MOV" class="w-fit h-fit rounded-xl" ref="videoPlayer" @ended="resetVideo" @timeupdate="updateProgress" ></video>
+                <img src="../../Public/img/videoPlayer/Vector 2820.png" class="absolute w-[72px] md:w-auto h-[75px] md:h-auto rotate-90 md:rotate-0 -right-0 -top-10 md:-right-24 md:-top-16">
+                <img src="../../Public/img/videoPlayer/Vector 2821.png" class="absolute w-[72px] md:w-auto h-[75px] md:h-auto rotate-[30deg] md:rotate-0 -left-0 -top-10 md:-left-16 md:top-[85%]">
+            
+                <div class="flex items-center w-full timeLine">
+                  <span class="time-text">{{ formatTime(currentTime) }}</span>
+                  <div class="progress-container w-full mx-2">
+                    <input type="range" ref="progressBar" class="progress-bar custom-range" min="0" :max="duration" v-model="currentTime" @input="seekVideo" />
+                    <div class="progress-filled" :style="{ width: (currentTime / duration) * 100 + '%' }"></div>
+                  </div>
+                  <span class="time-text">{{ formatTime(duration) }}</span>
+                </div>
+            
+                <button @click="toggleFullscreen" class="text-white fullScreen">
+                  <IconsFullScreen></IconsFullScreen>
+                </button>
+            
+                <div class="flex justify-center items-center gap-5 absolute left-1/2 -translate-x-[75%]">
+                <div class="w-[92px]">
+                  <button @click="togglePlaySeo" class="bg-btn1 p-3 text-white rounded-full relative flex justify-center items-center">
+                  <div class="wave-animation" v-if="isPlayingSeoVideo"></div>
+                  <IconsPause  v-if="isPlayingSeoVideo" ></IconsPause>
+                  <IconsPlay v-if="!isPlayingSeoVideo"></IconsPlay>
+                </button>
+                </div>
+               </div>
+           
+            </div>
+            </div>
+        </div>
 </template>
