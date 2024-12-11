@@ -149,6 +149,20 @@ watch(currentTime, (newTime) => {
             </div>
         </div>
 
+
+        <!-- ////  -->
+        <div class="flex flex-col justify-start items-start w-[328px] md:w-full my-10 gap-4 ">
+            <div class="flex flex-col justify-start items-start gap-6">
+                <div class="flex flex-col justify-start items-start gap-6">
+                    <div class="flex justify-start items-start gap-2"><IconsStar></IconsStar><h6 class="text-[18px] leading-[140%] font-bold text-txt1">تدوین استراتژی سئو یعنی چه ؟</h6></div>
+                </div>
+
+                <div class="flex flex-col justify-start items-start gap-4 text-txt6 text-[16px] leading-10">
+                    <p>فرآیندی است که طی آن کارشناس سئو با آنالیز دقیق رقبا و کیورد ریسرچ جامع حول آن حوزه، تمام پتانسیل ها، کتگوری های مهم و کلمات کلیدی پولساز را استخراج کرده و سپس در بهترین مدل پیاده سازی می کند</p>
+                </div>
+            </div>
+        </div>
+
     </div>
 </template>
 
