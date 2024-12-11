@@ -88,27 +88,6 @@ const hint = ['چرا به تدوین استراتژی سئو نیاز داری�
   z-index: -1000 ; 
 }
 
-.pointSection {
-    background-color: rgba(19, 20, 78, .16);
-}
-
-.pointSection .txtPoint::before {
-    content: '';
-    position: absolute;
-    top: 17%;
-    width: 10px !important;
-    height: 10px !important;
-    border-radius: 12px;
-    right: 8px;
-    background-color: #13144E;
-}
-
-@media screen and (min-width : 970px) {
-    .pointSection .txtPoint::before {
-        top: 38%;
-    }
-}
-
 .time-text {
   color: white;
   font-size: 14px;
