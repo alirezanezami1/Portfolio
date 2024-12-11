@@ -78,6 +78,11 @@ watch(currentTime, (newTime) => {
 
 <template>
     <div class="flex flex-col justify-center items-center my-10 mx-20">
+        
+        <div class="background1">
+            <img src="/backgrounds/Services-SEO mentoring-Desktop.png" alt="background img">
+        </div>
+
         <!-- //// لینک ها  -->
         <div class="flex justify-start items-start text-[12px] leading-[160%] gap-2 w-[328px] md:w-full">
             <NuxtLink to="/" class="flex justify-center items-center gap-2 text-txt2 ">صفحه اصلی<IconsLinearGray></IconsLinearGray></NuxtLink>
@@ -202,6 +207,16 @@ watch(currentTime, (newTime) => {
 </template>
 
 <style scoped>
+.background1 {
+  position: absolute;
+  background-size: cover; 
+  background-position: center; 
+  top: 10%;
+  left: -6%;
+  width: 100vw;
+  /* height: 200px !important; */
+  z-index: -1000 ; 
+}
 
 .background {
   position: absolute;
