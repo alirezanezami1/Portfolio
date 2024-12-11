@@ -165,6 +165,25 @@ watch(currentTime, (newTime) => {
             </div>
         </div>
 
+
+         <!-- //// مشاوره -->
+         <div class="flex flex-col justify-center items-center my-10 gap-16 w-full">
+              <div class="w-[328px] md:w-[536px]">
+                <img src="/img/seo/Group 71.png" alt="img" class="w-full">
+              </div>
+
+              <div class="flex flex-col justify-center items-center w-[328px] md:w-full gap-8">
+                <div class="flex flex-col justify-center items-center gap-6 text-center">
+                  <h3 class="text-[20px] md:text-[32px] leading-[140%] font-bold">من توی تیمم یه کمپین منیجر حرفه ای دارم</h3>
+                  <p class="text-[16px] md:text-[18px] leading-[160%] opacity-80 text-txt6">من توی تیمم یه کمپین منیجر حرفه ای دارم که میتونه واستون یه کمپین رپورتاژ عالی با بالاترین بازدهی رو ران کنه. اگه تمایل دارید، شماره تماستون رو بگذارید تا در اسرع وقت با شما تماس بگیریم و جزئیات کار رو با هم بررسی کنیم.</p>
+                </div>
+
+                <NuxtLink to="/contact">
+                  <button class="flex justify-center items-center gap-3 p-3 bg-Bg/2 text-white rounded-lg">فرم ارتباط با من<IconsArrowLeftWhite></IconsArrowLeftWhite></button>
+                </NuxtLink>
+              </div>
+        </div>
+
     </div>
 </template>
 
