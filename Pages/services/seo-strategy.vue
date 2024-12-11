@@ -163,6 +163,21 @@ watch(currentTime, (newTime) => {
             </div>
         </div>
 
+          <!-- //// مراحل تدیون استراتژی -->
+          <div class="flex flex-col justify-start items-start w-[328px] md:w-full my-20 gap-4">
+            <div class="flex flex-col justify-start items-start gap-6">
+                <div class="flex flex-col justify-start items-start gap-6">
+                    <div class="flex justify-start items-start gap-2"><IconsStar></IconsStar><h6 class="text-[18px] leading-[140%] font-bold text-txt1">تدوین استراتژی  سئو شامل مراحل زیر است :</h6></div>
+                </div>
+            </div>
+          </div>
+
+          <!-- //// تصاویر -->
+        <div class="flex flex-col justify-center items-center my-10">
+            <img src="/img/seo-startegy/Frame 748 (1).png" class="hidden md:flex">
+            <img src="/img/seo-startegy/Frame 749 (1).png" class="flex md:hidden">
+        </div>
+
     </div>
 </template>
 
