@@ -87,8 +87,8 @@ watch(currentTime, (newTime) => {
 
         <!-- //// بنر  -->
         <div class="flex justify-center items-center w-[328px] md:w-full my-10">
-            <img src="/img/seo-ads/Frame 450.png" alt="banner" class="hidden md:block">
-            <img src="/img/seo-ads/Frame 450 (1).png" alt="banner" class="flex md:hidden">
+            <img src="/img/seo-design/Frame 450.png" alt="banner" class="hidden md:block">
+            <img src="/img/seo-design/Frame 450.png" alt="banner" class="flex md:hidden">
         </div>
 
          <!-- //// مواردی که در این صفحه به آنها اشاره خواهد شد : -->
