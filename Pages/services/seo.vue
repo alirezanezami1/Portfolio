@@ -226,14 +226,6 @@ watch(currentTime, (newTime) => {
               </div>
             </div>
 
-
-          <!-- //// سوشال مدیا -->
-        <div class="flex justify-center items-center my-20 mx-5 lg:mx-20">
-                <ClientOnly>
-                    <KeenSlider></KeenSlider>
-                </ClientOnly>
-        </div>
-
     </div>
 </template>
 <style scoped>

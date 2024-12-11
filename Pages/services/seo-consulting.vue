@@ -175,7 +175,7 @@ watch(currentTime, (newTime) => {
         </div>
 
          <!-- //// هزینه مشاوره -->
-         <div class="flex flex-col justify-start items-start w-full my-20 gap-4">
+        <div class="flex flex-col justify-start items-start w-full my-20 gap-4">
             <div class="flex justify-start items-start ">
                 <div class="flex flex-col justify-start items-start gap-6">
                     <div class="flex justify-start items-start gap-2"><IconsStar></IconsStar><h6 class="text-[18px] leading-[140%] font-bold text-txt1">هزینه مشاوره سئو چقدره ؟</h6></div>
@@ -184,7 +184,25 @@ watch(currentTime, (newTime) => {
             <div>
                 <p class="text-txt6 text-[16px] leading-[40px] ">هزینه مشاوره به مدت زمانی که واسه آنالیز و عیب یابی پروژه از من گرفته میشه، بستگی داره. اگه سایت خیلی مشکلات فنی و ریز و درشت داشته باشه، هزینه مشاوره حدود 1.500 میشه اما اگه سایت و پروژه کوچیکی باشه هزینه حدود 800 هزار تومان خواهد بود.</p>
             </div>
-            </div>
+        </div>
+
+         <!-- //// مشاوره -->
+        <div class="flex flex-col justify-center items-center my-10 gap-16 w-full">
+              <div class="w-[328px] md:w-[536px]">
+                <img src="/img/seo/Group 71.png" alt="img" class="w-full">
+              </div>
+
+              <div class="flex flex-col justify-center items-center gap-8">
+                <div class="flex flex-col justify-center items-center gap-6 text-center">
+                  <h3 class="text-[20px] md:text-[32px] leading-[140%] font-bold">قصد داری یه تایم مشاوره بگیری؟</h3>
+                  <p class="text-[16px] md:text-[18px] leading-[160%] opacity-80 text-txt6">اگه تمایل داری که یه تایم مشاوره سئو بگیری و ایرادات سایتت رو متوجه بشی، فرم زیر رو تکمیل کن تا در اولین فرصت باهاتون تماس بگیریم.</p>
+                </div>
+
+                <NuxtLink to="/contact">
+                  <button class="flex justify-center items-center gap-3 p-3 bg-Bg/2 text-white rounded-lg">فرم ارتباط با من<IconsArrowLeftWhite></IconsArrowLeftWhite></button>
+                </NuxtLink>
+              </div>
+        </div>
 
     </div>
 </template>
