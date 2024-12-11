@@ -79,6 +79,12 @@ watch(currentTime, (newTime) => {
 
 <template>
     <div class="flex flex-col justify-center items-center my-10 mx-20">
+
+        <div class="background1">
+            <img src="/backgrounds/Services- Website design -Desktop.png" alt="background img">
+        </div>
+
+
           <!-- //// لینک ها  -->
         <div class="flex justify-start items-start text-[12px] leading-[160%] gap-2 w-[328px] md:w-full">
             <NuxtLink to="/" class="flex justify-center items-center gap-2 text-txt2 ">صفحه اصلی<IconsLinearGray></IconsLinearGray></NuxtLink>
