@@ -5,8 +5,8 @@ const servicesList = [
   {title : '- انجام پروژه سئو' , path: '/services/seo'},
   {title : '- مشاوره سئو' , path: '/services/seo-consulting'},
   {title : '- منتورینگ سئو' , path: '/services/seo-mentoring'},
-  {title : '- گوگل ادز' , path: '/services/seo-strategy'},
-  {title : '- تدوین استراتژی محتوا' , path: '/services/google-Ads'},
+  {title : '- تدوین استراتژی سئو' , path: '/services/seo-strategy'},
+  {title : '- گوگل ادز' , path: '/services/google-Ads'},
   {title : '- طراحی سایت ' , path: '/services/website-design'},
 ]
 
