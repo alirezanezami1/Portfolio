@@ -34,7 +34,7 @@
 
                 <!-- //// فرم ارتباط با من  -->
                 <div class="w-full">
-                     <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-10 w-[848px]">
+                     <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-10 w-[328px] md:w-[848px]">
 
                       <div class="grid gap-4 grid-cols-1 sm:grid-cols-10 sm:col-span-full">
                         <div class="sm:col-span-5 grid gap-2">
