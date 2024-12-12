@@ -3,7 +3,7 @@ const SocialImg = [
     { url : '' , img : '/img/Linkedin.png'},
     { url : '' , img : '/img/Whatsapp.png'},
     { url : '' , img : '/img/Instagram (1).png'},
-    { url : '' , img : '/img/Telegram.png'},
+    { url : 'https://t.me/Ranjbari67' , img : '/img/Telegram.png'},
 ]
 </script>
 
@@ -42,12 +42,12 @@ const SocialImg = [
                 <div class="flex flex-col justify-start items-start gap-6">
                     <h4 class="text-[20px] md:text-[24px] leading-[140%] text-white">خدمات اصلی</h4>
                     <div class="flex flex-row md:flex-col text-[16px] leading-[160%] gap-8 md:gap-1 flex-wrap w-full md:w-auto justify-start md:justify-center items-start text-txt5">
-                        <NuxtLink to="/" >انحام پروژه سئو</NuxtLink>
-                        <NuxtLink to="/">مشاوره سئو</NuxtLink>
-                        <NuxtLink to="/">منتورینگ سئو</NuxtLink>
-                        <NuxtLink to="/">گوگل ادز</NuxtLink>
-                        <NuxtLink to="/">تدوین استراتژی سئو</NuxtLink>
-                        <NuxtLink to="/">طراحی سایت</NuxtLink>
+                        <NuxtLink to="/services/seo" >انحام پروژه سئو</NuxtLink>
+                        <NuxtLink to="/services/seo-consulting">مشاوره سئو</NuxtLink>
+                        <NuxtLink to="/services/seo-mentoring">منتورینگ سئو</NuxtLink>
+                        <NuxtLink to="/services/google-Ads">گوگل ادز</NuxtLink>
+                        <NuxtLink to="/services/seo-strategy">تدوین استراتژی سئو</NuxtLink>
+                        <NuxtLink to="/services/website-design">طراحی سایت</NuxtLink>
                     </div>
                 </div>
 
