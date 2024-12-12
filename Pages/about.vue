@@ -159,7 +159,7 @@ watch(currentTime, (newTime) => {
 
          
          <!-- //// مدرک -->
-          <div class="flex flex-col-reverse min-[1186px]:flex-row justify-center items-center my-20 w-full">
+          <div class="flex flex-col-reverse min-[1186px]:flex-row justify-center items-center my-20 w-[328px] md:w-full">
             <div class="flex justify-center items-center p-5 min-[1186px]:p-0 bg-Bg/2 rounded-2xl">
               <img src="/img/about/license/Frame 344.png">
             </div>
