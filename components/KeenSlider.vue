@@ -1,9 +1,9 @@
 <script setup>
 const socialMediaList = [
-    {name : 'لینکدین' , url : '' , img : '/img/Linkedin.png' , ellipse : '/img/Ellipse 8 (1).svg'},
-    {name : 'واتساپ' , url : '' , img : '/img/Whatsapp.png' , ellipse : '/img/Ellipse 8 (3).svg'},
-    {name : 'اینستاگرام' , url : '' , img : '/img/Instagram (1).png' , ellipse : '/img/Ellipse 8 (2).svg'},
-    {name : 'تلگرام' , url : '' , img : '/img/Telegram.png' , ellipse : '/img/Ellipse 8.svg'},
+    {name : 'لینکدین' , url : 'https://www.linkedin.com/in/r-ranjbari/' , img : '/img/Linkedin.png' , ellipse : '/img/Ellipse 8 (1).svg'},
+    {name : 'واتساپ' , url : '//api.whatsapp.com/send?phone=+989380286230MOBILE_NUMBER&text=WHATEVER_LINK_OR_TEXT_YOU_WANT_TO_SEND' , img : '/img/Whatsapp.png' , ellipse : '/img/Ellipse 8 (3).svg'},
+    {name : 'اینستاگرام' , url : 'https://www.instagram.com/ranjbari.seo/' , img : '/img/Instagram (1).png' , ellipse : '/img/Ellipse 8 (2).svg'},
+    {name : 'تلگرام' , url : 'https://t.me/Ranjbari67' , img : '/img/Telegram.png' , ellipse : '/img/Ellipse 8.svg'},
 ]
 
 const current = ref(0)
@@ -29,7 +29,7 @@ const [container, slider] = useKeenSlider({
 <template>
     <div class="flex flex-col gap-8 justify-center items-center">
       <div ref="container" class="keen-slider flex justify-center items-center">
-            <div class="flex justify-between items-start text-txt1 keen-slider__slide bg-Bg/3 rounded-2xl w-[416px] h-[203px]" v-for="(item,index) in socialMediaList" :key="index" :class="`number-slide${index + 1}`">
+            <NuxtLink class="flex justify-between items-start text-txt1 keen-slider__slide bg-Bg/3 rounded-2xl w-[416px] h-[203px]" v-for="(item,index) in socialMediaList" :to="item.url" :key="index" :class="`number-slide${index + 1}`" target="_blank">
                   <div class="flex flex-col items-start pr-5 socialLink">
                     <div class="flex flex-col relative -top-10 gap-2 justify-center items-start w-[221px]">
                       <p class="text-[14px] leading-[160%] font-thin">برای دریافت آخرین نکات سئو ،</p>
@@ -45,19 +45,19 @@ const [container, slider] = useKeenSlider({
                   <div class="absolute bottom-0">
                     <img :src="item.ellipse" alt="ellipse">
                   </div>
-            </div>
+            </NuxtLink>
       </div>
 
 
       <div class="flex gap-2">
         <div v-if="slider" class="dots" dir="ltr">
-      <button
+        <button
         v-for="(_slide, idx) in displayedItems"
         @click="slider.moveToIdx(idx)"
         :class="{ dot: true, active: current === idx }"
         :key="idx"
-      ></button>
-    </div>
+        ></button>
+        </div>
       </div>
 
     </div>
