@@ -1,5 +1,6 @@
 <script setup>
 import { ref, onMounted, onBeforeUnmount} from 'vue';
+// const route = useRoute();
 const list = ArrayMenu()
 const servicesList = [
   {title : '- انجام پروژه سئو' , path: '/services/seo'},
@@ -50,6 +51,7 @@ onMounted(() => {
 onBeforeUnmount(() => {
   document.removeEventListener('click', handleClickOutside);
 });
+
 </script>
 
 <template>
