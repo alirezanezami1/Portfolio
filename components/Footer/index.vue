@@ -1,8 +1,8 @@
 <script setup>
 const SocialImg = [
-    { url : '' , img : '/img/Linkedin.png'},
-    { url : '' , img : '/img/Whatsapp.png'},
-    { url : '' , img : '/img/Instagram (1).png'},
+    { url : 'https://www.linkedin.com/in/r-ranjbari/' , img : '/img/Linkedin.png'},
+    { url : '//api.whatsapp.com/send?phone=+989380286230MOBILE_NUMBER&text=WHATEVER_LINK_OR_TEXT_YOU_WANT_TO_SEND' , img : '/img/Whatsapp.png'},
+    { url : 'https://www.instagram.com/ranjbari.seo/' , img : '/img/Instagram (1).png'},
     { url : 'https://t.me/Ranjbari67' , img : '/img/Telegram.png'},
 ]
 </script>
@@ -63,7 +63,7 @@ const SocialImg = [
                     <div class="flex flex-col gap-[18px] justify-center items-start">
                         <h4 class="text-[24px] leading-[140%] text-white">شبکه های اجتماعی</h4>
                         <div class="flex gap-4 justify-center items-center cursor-pointer">
-                            <NuxtLink v-for="item in SocialImg" :key="item"><img :src="item.img" class="w-[40px]"></NuxtLink>
+                            <NuxtLink v-for="item in SocialImg" :to="item.url" :key="item" target="_blank"><img :src="item.img" class="w-[40px]"></NuxtLink>
                         </div>
                     </div>
                 </div>
