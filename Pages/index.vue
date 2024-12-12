@@ -139,7 +139,7 @@ const services = [
                 </div>
 
                 <div>
-                    <NuxtLink class="text-[32px] leading-[140%] font-bold cursor-pointer">
+                    <NuxtLink class="text-[32px] leading-[140%] font-bold cursor-pointer" to="tel:+989380286230">
                         ۰۹۳۸۰۲۸۶۲۳۰
                     </NuxtLink>
                 </div>
