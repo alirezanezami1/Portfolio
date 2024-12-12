@@ -10,6 +10,13 @@ const servicesList = [
   {title : '- طراحی سایت ' , path: '/services/website-design'},
 ]
 
+const SocialImg = [
+    { url : 'https://www.linkedin.com/in/r-ranjbari/' , img : '/img/Linkedin.png'},
+    { url : '//api.whatsapp.com/send?phone=+989380286230MOBILE_NUMBER&text=WHATEVER_LINK_OR_TEXT_YOU_WANT_TO_SEND' , img : '/img/Whatsapp.png'},
+    { url : 'https://www.instagram.com/ranjbari.seo/' , img : '/img/Instagram (1).png'},
+    { url : 'https://t.me/Ranjbari67' , img : '/img/Telegram.png'},
+]
+
 const activePage = ref('home'); // صفحه فعال پیش‌فرض
 const showDropdown1 = ref(false);
 
@@ -84,17 +91,8 @@ onBeforeUnmount(() => {
         </div>
        
         <div class="bg-Bg/1 w-[208px] flex items-center justify-center pt-20 pb-6 gap-2 mt-auto">
-            <NuxtLink>
-                <img src="../../assets/mediaIcons/whatsapp.png" alt="socialMedia" class="w-[40px] h-[40px] cursor-pointer">
-            </NuxtLink>
-            <NuxtLink>
-                <img src="../../assets/mediaIcons/instagram.png" alt="socialMedia" class="w-[40px] h-[40px] cursor-pointer">
-            </NuxtLink>
-            <NuxtLink>
-                <img src="../../assets/mediaIcons/Telegram.png" alt="socialMedia" class="w-[40px] h-[40px] cursor-pointer">
-            </NuxtLink>
-            <NuxtLink>
-                <img src="../../assets/mediaIcons/Linkedin.png" alt="socialMedia" class="w-[40px] h-[40px] cursor-pointer">
+            <NuxtLink v-for="item in SocialImg" :key="item" :to="item.url" target="_blank">
+                <img :src="item.img" alt="socialMedia" class="w-[40px] h-[40px] cursor-pointer">
             </NuxtLink>
         </div>
 
