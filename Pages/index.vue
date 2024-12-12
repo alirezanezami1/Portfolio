@@ -22,7 +22,7 @@ const services = [
             <img src="/backgrounds/Home page - Desktop (1).png" alt="background img">
         </div>
 
-        <!-- //// Introduction -->
+        <!-- //// معرفی -->
         <div class="flex grid-cols-3 flex-col-reverse lg:flex-row justify-center items-center my-11 mx-5 lg:mx-20 gap-8 lg:gap-3">
             
             <div class="flex lg:flex-col justify-center items-center gap-[37px] lg:gap-[84px] w-[350px] h-[81px] lg:h-auto lg:w-[146px]" dir="ltr">
@@ -64,7 +64,7 @@ const services = [
     
         </div>
 
-        <!-- //// Services -->
+        <!-- //// خدمات -->
          <div class="flex flex-col justify-center items-center text-center gap-10 w-[958px] max-[768px]:w-[328px] my-12 mx-5 lg:mx-20">
 
             <div class="flex flex-col gap-6 justify-center items-center">
@@ -91,7 +91,7 @@ const services = [
 
          </div>
 
-         <!-- //// about  -->
+         <!-- //// درباره من  -->
           <div class="flex flex-col justify-center items-center lg:flex-row lg:justify-between gap-8 lg:gap-[307px] my-16 mx-5 lg:mx-20 h-[570px] lg:h-auto">
 
             <!-- //// right  -->
@@ -125,7 +125,7 @@ const services = [
 
           </div>
 
-          <!-- //// call  -->
+          <!-- //// تماس  -->
            <div class="flex justify-center flex-col min-[1140px]:flex-row gap-10 items-center pt-14 min-[1140px]:pt-0 text-white bg-Bg/2 w-full h-auto min-[1140px]:h-[290px] mb-16 mt-48 ">
 
             <div class="flex flex-col gap-6 justify-center items-center text-center w-fit min-[1140px]:w-[739px] h-[192px]">
@@ -151,7 +151,7 @@ const services = [
            </div>
 
 
-           <!-- //// Projects  -->
+           <!-- //// نمونه کار  -->
             <div class="flex flex-col justify-center items-center gap-20 my-20 mx-5 lg:mx-20">
 
                 <div class="flex flex-col gap-6 justify-center items-center w-[328px] min-[1303px]:w-[753px]">
@@ -178,14 +178,14 @@ const services = [
                 </div>
             </div>
 
-            <!-- //// Social Media  -->
+            <!-- //// لینک حساب ها -->
             <div class="flex justify-center items-center my-20 mx-5 lg:mx-20">
                 <ClientOnly>
                     <KeenSlider></KeenSlider>
                 </ClientOnly>
             </div>
 
-            <!-- //// comments  -->
+            <!-- //// کامنت ها  -->
             <div class="flex flex-col justify-center items-center gap-8 m-20">
 
                 <div class="flex flex-col justify-center items-center text-center gap-6 w-[328px] md:w-[753px]">
