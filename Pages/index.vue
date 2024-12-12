@@ -118,7 +118,9 @@ const services = [
 
                 <!-- //// bottom  -->
                 <div class="flex justify-center lg:justify-start items-center w-full">
+                    <NuxtLink to="/about">
                     <button class="flex justify-center items-center p-3 gap-3 text-txt4 rounded-lg border-2 border-btn1 cursor-pointer"> با من بیشتر آشنا شوید<IconsArrowLeft class="w-[32px]"></IconsArrowLeft></button>
+                    </NuxtLink>
                 </div>
 
              </div>
