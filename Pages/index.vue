@@ -9,9 +9,15 @@ const services = [
         {title : 'تدوین استراتژی محتوا' , path : '/services/seo-strategy' , description : 'اگه نمیدونی معماری و چیدمان صفحات سایتت چطور باید باشه، نیاز به تدوین استراتژی داری' , img : '/img/3.png'}
     ]
 
-// const containerRefTwo = ref(null)
+const showForm = ref(false); // وضعیت نمایش کامپوننت خطا
 
-// const swiperTwo = useSwiper(containerRefTwo)
+const triggerError = () => {
+    showForm.value = true; // نمایش کامپوننت خطا
+};
+
+const closeForms = () => {
+    showForm.value = false; // پنهان کردن کامپوننت خطا
+};
 
 </script>
 
@@ -55,7 +61,7 @@ const services = [
                 <p class="text-txt2 text-[14px] lg:text-[16px] leading-[160%] font-normal">سؤالات زیادی توی ذهنت هست که دوست داری جواب دقیقشون رو بدونی؟ 😎 کافیه شماره‌ت رو بذاری تا با هم صحبت کنیم و کسب‌وکارت رو بررسی کنیم. ببینیم که آیا سئو برای رشد و موفقیت کار تو مناسب هست یا نه. 🔍📈</p>
                 </div>
                <div>
-                <button class="bg-btn1 p-3 flex text-white justify-center items-center gap-3 rounded-lg">
+                <button class="bg-btn1 p-3 flex text-white justify-center items-center gap-3 rounded-lg" @click="showForm = true">
                     <img src="../assets/icons/Icon pack - Linear.png" alt="icon" class="w-[32px]">
                     <span class="text-[18px] leading-[120%] font-medium">مشاوره رایگان</span>
                 </button>
@@ -238,7 +244,13 @@ const services = [
 
              </div>
 
-             
+
+
+        <div v-if="showForm" class="overlay" @click="closeForms">
+            <div class="rounded-lg" @click.stop> <!-- جلوگیری از بستن هنگام کلیک روی کامپوننت خطا -->
+                <RequestConsulting :closeForm="closeForms"/>
+            </div>
+        </div>
            
 
     </div>
@@ -255,5 +267,19 @@ const services = [
   width: 100vw;
   /* height: 200px !important; */
   z-index: -1000 ; 
+}
+
+.overlay {
+    position: fixed; /* موقعیت ثابت */
+    bottom: 0; /* از بالای صفحه */
+    left: 0; /* از سمت چپ */
+    width: 100%; /* عرض کامل صفحه */
+    height: 100%; /* ارتفاع کامل صفحه */
+    background-color: rgba(0, 0, 0, 0.24); /* رنگ تار */
+    display: flex; /* استفاده از flexbox برای مرکز کردن */
+    justify-content: center; /* مرکز کردن افقی */
+    align-items: center; /* مرکز کردن عمودی */
+    z-index: 1000; /* بالاتر از سایر محتوا */
+    backdrop-filter: blur(8px);
 }
 </style>
