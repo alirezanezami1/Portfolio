@@ -31,7 +31,7 @@ const submitFreeForm = async () => {
     };
 
     try {
-        const response = await axios.post('http://127.0.0.1:8000/api/forms', formData);        
+        const response = await axios.post('http://127.0.0.1:8000/api/freeforms', formData);        
         // پاک کردن مقادیر فرم بعد از ارسال موفقیت‌آمیز
         firstName.value = '';
         phoneNumber.value = '';

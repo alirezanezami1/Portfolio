@@ -11,10 +11,6 @@ const services = [
 
 const showForm = ref(false); // وضعیت نمایش کامپوننت خطا
 
-const triggerError = () => {
-    showForm.value = true; // نمایش کامپوننت خطا
-};
-
 const closeForms = () => {
     showForm.value = false; // پنهان کردن کامپوننت خطا
 };
