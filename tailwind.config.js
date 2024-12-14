@@ -29,6 +29,7 @@ export default {
       'txt5' : '#CDCFCD',
       'txt6' : '#505650',
       'txt7' : '#1E251E',
+      'error' : '#FF0000',
 
       //// background 
       'Bg/1' : '#FFFFFF',
