@@ -116,7 +116,7 @@ watch(currentTime, (newTime) => {
              <div class="flex flex-col justify-center items-center gap-0 lg:gap-8 w-[328px] lg:w-auto">
 
               <div class="relative w-[328px] lg:w-[416px] h-[416px]">
-                <video src="../Public/videos/aboutMe/IMG_6111.MOV" type="video/mp4" class="w-[328px] lg:w-[416px] h-[416px] rounded-lg" ref="videoPlayer" @ended="resetVideo" @timeupdate="updateProgress"></video>
+                <video src="/videos/aboutMe/IMG_6111.MOV" poster="/videos/aboutMe/about-me2.jpg" type="video/mp4" class="w-[328px] lg:w-[416px] h-[416px] rounded-lg" ref="videoPlayer" @ended="resetVideo" @timeupdate="updateProgress"></video>
 
                 <div class="flex items-center w-full timeLine">
                   <span class="time-text">{{ formatTime(currentTime) }}</span>
