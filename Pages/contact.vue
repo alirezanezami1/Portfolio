@@ -46,7 +46,7 @@ const submitForm = async () => {
     };
 
     try {
-        const response = await axios.post('YOUR_API_ENDPOINT', formData);
+        const response = await axios.post('http://127.0.0.1:8000/api/forms', formData);
         console.log('Response:', response.data);
         
         // پاک کردن مقادیر فرم بعد از ارسال موفقیت‌آمیز
@@ -55,22 +55,32 @@ const submitForm = async () => {
         phoneNumber.value = '';
         email.value = '';
         message.value = '';
+        triggerConfirm()
         
         // می‌توانید پیغام موفقیت نمایش دهید
     } catch (error) {
-        console.error('Error sending form data:', error);
-        // می‌توانید پیغام خطا نمایش دهید
+      triggerError()
     }
 };
 
-const showError = ref(true); // وضعیت نمایش کامپوننت خطا
+const showError = ref(false); // وضعیت نمایش کامپوننت خطا
+const showConfirm = ref(false); // وضعیت نمایش کامپوننت خطا
 
 const triggerError = () => {
     showError.value = true; // نمایش کامپوننت خطا
 };
 
+const triggerConfirm = () => {
+  showConfirm.value = true; // نمایش کامپوننت خطا
+};
+
+
 const closeError = () => {
     showError.value = false; // پنهان کردن کامپوننت خطا
+};
+
+const closeConfirm = () => {
+  showConfirm.value = false; // پنهان کردن کامپوننت خطا
 };
 
 const handleClickOutside = (event) => {
@@ -78,6 +88,7 @@ const handleClickOutside = (event) => {
   // const servicesLink = document.getElementById('services-link1');
   if (dropdown) {
     closeError();
+    closeConfirm()
   }
 };
 
@@ -188,9 +199,10 @@ onBeforeUnmount(() => {
                 </ClientOnly>
         </div>
 
-        <div v-if="showError" class="overlay" @click="closeError">
+        <div v-if="showError || showConfirm" class="overlay" @click="closeError">
             <div class="error-container" @click.stop> <!-- جلوگیری از بستن هنگام کلیک روی کامپوننت خطا -->
-                <ErrorComponent />
+                <ErrorComponent v-if="showError" />
+                <Confirm v-if="showConfirm"></Confirm>
             </div>
         </div>
     </div>

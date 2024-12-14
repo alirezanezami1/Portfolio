@@ -1,6 +1,6 @@
 <template>
     <div class="flex flex-col justify-center items-center gap-7 pb-6 p-6 w-full sm:w-[400px] bg-white rounded-lg">
-        <img src="/img/Frame 579.png" alt="confirm">
+        <img src="../assets/icons/Frame 579.png" alt="confirm">
 
         <div class="flex flex-col justify-center items-center gap-6">
             <div class="flex flex-col justify-center items-center gap-3 text-center">
