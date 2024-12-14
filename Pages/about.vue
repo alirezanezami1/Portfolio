@@ -156,7 +156,7 @@ watch(currentTime, (newTime) => {
 
         <!-- //// چرا من  -->
          <AboutWhyMe></AboutWhyMe>
-
+         
          
          <!-- //// مدرک -->
           <div class="flex flex-col-reverse min-[1186px]:flex-row justify-center items-center my-20 w-[328px] md:w-full">
