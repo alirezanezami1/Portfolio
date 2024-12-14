@@ -62,6 +62,34 @@ const submitForm = async () => {
         // می‌توانید پیغام خطا نمایش دهید
     }
 };
+
+const showError = ref(true); // وضعیت نمایش کامپوننت خطا
+
+const triggerError = () => {
+    showError.value = true; // نمایش کامپوننت خطا
+};
+
+const closeError = () => {
+    showError.value = false; // پنهان کردن کامپوننت خطا
+};
+
+const handleClickOutside = (event) => {
+  const dropdown = document.getElementsByClassName('overlay');
+  // const servicesLink = document.getElementById('services-link1');
+  if (dropdown) {
+    closeError();
+  }
+};
+
+onMounted(() => {
+  document.addEventListener('click', handleClickOutside);
+});
+
+// حذف رویداد در زمان تخریب کامپوننت
+onBeforeUnmount(() => {
+  document.removeEventListener('click', handleClickOutside);
+});
+
 </script>
 
 <template>
@@ -160,6 +188,11 @@ const submitForm = async () => {
                 </ClientOnly>
         </div>
 
+        <div v-if="showError" class="overlay" @click="closeError">
+            <div class="error-container" @click.stop> <!-- جلوگیری از بستن هنگام کلیک روی کامپوننت خطا -->
+                <ErrorComponent />
+            </div>
+        </div>
     </div>
 </template>
 
@@ -179,5 +212,26 @@ textarea:focus {
   width: 100vw;
   /* height: 200px !important; */
   z-index: -1000 ; 
+}
+
+.overlay {
+    position: fixed; /* موقعیت ثابت */
+    top: 0; /* از بالای صفحه */
+    left: 0; /* از سمت چپ */
+    width: 100%; /* عرض کامل صفحه */
+    height: 100%; /* ارتفاع کامل صفحه */
+    background-color: rgba(0, 0, 0, 0.24); /* رنگ تار */
+    display: flex; /* استفاده از flexbox برای مرکز کردن */
+    justify-content: center; /* مرکز کردن افقی */
+    align-items: center; /* مرکز کردن عمودی */
+    z-index: 1000; /* بالاتر از سایر محتوا */
+    backdrop-filter: blur(8px);
+}
+
+.error-container {
+    background-color: white; /* رنگ پس‌زمینه برای کامپوننت خطا */
+    padding: 20px; /* فاصله داخلی */
+    border-radius: 8px; /* گرد کردن گوشه‌ها */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); /* سایه برای زیبایی */
 }
 </style>
