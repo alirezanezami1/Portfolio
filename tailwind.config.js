@@ -42,7 +42,8 @@ export default {
 
       //// button
       'btn1' : '#13144E',
-      'btn2' : 'rgba(19,20,78,.14)'
+      'btn2' : 'rgba(19,20,78,.14)',
+      'btn3' : '#D0D0DC'
     }
   }
 }
