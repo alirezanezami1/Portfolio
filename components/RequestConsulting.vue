@@ -33,9 +33,9 @@ const handleCheckboxChange = () => {
 
         <div class="flex w-full gap-4 flex-col justify-start items-start bg-white p-5">
             <div class="w-full grid gap-1">
-                         <label for="last-name" class="block text-[18px] leading-[160%] font-medium text-txt1">نام خانوادگی</label>
+                         <label for="last-name" class="block text-[18px] leading-[160%] font-medium text-txt1">نام و نام خانوادگی</label>
                          <div class="mt-1 w-full">
-                           <input type="text" name="last-name" id="last-name" placeholder="نام خانوادگی خود را وارد کنید"  autocomplete="family-name" class="block w-full rounded-xl bg-Bg/3 px-3 p-3 text-[14px] leading-[160%] text-txt7 sm:text-sm/6 placeholder:text-txt2 font-thin" />
+                           <input type="text" name="last-name" id="last-name" placeholder="نام و نام خانوادگی خود را وارد کنید"  autocomplete="family-name" class="block w-full rounded-xl bg-Bg/3 px-3 p-3 text-[14px] leading-[160%] text-txt7 sm:text-sm/6 placeholder:text-txt2 font-thin" />
                          </div>
             </div>
 
