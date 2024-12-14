@@ -1,5 +1,6 @@
 <script setup>
 import { defineProps } from 'vue';
+import axios from 'axios';
 
 const props = defineProps({
     closeForm: {
@@ -7,6 +8,7 @@ const props = defineProps({
         required: true
     }
 });
+
 const selectedOptions = ref([]); // برای ذخیره گزینه‌های انتخاب شده
 const options = ref([
     { value: 'انجام پروژه سئو', text: 'انجام پروژه سئو' },
@@ -17,9 +19,52 @@ const options = ref([
     { value: 'طراحی سایت', text: 'طراحی سایت' },
 ]);
 
-const handleCheckboxChange = () => {
-    console.log('گزینه‌های انتخاب شده:', selectedOptions.value);
+const firstName = ref('');
+const phoneNumber = ref('');
+
+const submitFreeForm = async () => {
+
+    const formData = {
+        name: firstName.value,
+        phone: Number(phoneNumber.value),
+        choices_field: selectedOptions.value
+    };
+
+    try {
+        const response = await axios.post('http://127.0.0.1:8000/api/forms', formData);        
+        // پاک کردن مقادیر فرم بعد از ارسال موفقیت‌آمیز
+        firstName.value = '';
+        phoneNumber.value = '';
+        selectedOptions.value = []
+        triggerConfirm()
+        
+        // می‌توانید پیغام موفقیت نمایش دهید
+    } catch (error) {
+      triggerError()
+    }
 };
+
+
+const showError = ref(false); // وضعیت نمایش کامپوننت خطا
+const showConfirm = ref(false); // وضعیت نمایش کامپوننت خطا
+
+const triggerError = () => {
+    showError.value = true; // نمایش کامپوننت خطا
+};
+
+const triggerConfirm = () => {
+  showConfirm.value = true; // نمایش کامپوننت خطا
+};
+
+
+const closeError = () => {
+    showError.value = false; // پنهان کردن کامپوننت خطا
+};
+
+const closeConfirm = () => {
+  showConfirm.value = false; // پنهان کردن کامپوننت خطا
+};
+
 </script>
 
 <template>
@@ -35,14 +80,14 @@ const handleCheckboxChange = () => {
             <div class="w-full grid gap-1">
                          <label for="last-name" class="block text-[18px] leading-[160%] font-medium text-txt1">نام و نام خانوادگی</label>
                          <div class="mt-1 w-full">
-                           <input type="text" name="last-name" id="last-name" placeholder="نام و نام خانوادگی خود را وارد کنید"  autocomplete="family-name" class="block w-full rounded-xl bg-Bg/3 px-3 p-3 text-[14px] leading-[160%] text-txt7 sm:text-sm/6 placeholder:text-txt2 font-thin" />
+                           <input type="text" name="last-name" id="last-name" v-model="firstName" placeholder="نام و نام خانوادگی خود را وارد کنید"  autocomplete="family-name" class="block w-full rounded-xl bg-Bg/3 px-3 p-3 text-[14px] leading-[160%] text-txt7 sm:text-sm/6 placeholder:text-txt2 font-thin" />
                          </div>
             </div>
 
             <div class="w-full grid gap-1">
                          <label for="number" class="block text-[18px] leading-[160%] font-medium text-txt1">تلفن همراه</label>
                          <div class="w-full mt-1">
-                           <input id="number" name="number" type="tel" dir="rtl"  placeholder="شماره تلفن خود را وارد کنید" autocomplete="email" class="block w-full rounded-xl bg-Bg/3 px-3 p-3 text-[14px] leading-[160%] text-txt7 sm:text-sm/6 placeholder:text-txt2 font-thin" />
+                           <input id="number" name="number" type="tel" dir="rtl" v-model="phoneNumber"  placeholder="شماره تلفن خود را وارد کنید" autocomplete="email" class="block w-full rounded-xl bg-Bg/3 px-3 p-3 text-[14px] leading-[160%] text-txt7 sm:text-sm/6 placeholder:text-txt2 font-thin" />
                          </div>
             </div>
 
@@ -68,7 +113,15 @@ const handleCheckboxChange = () => {
         <div class="flex justify-end items-start w-full bg-Bg/3 p-5 rounded-b-lg border-none">
             <div class="flex justify-center w-full sm:w-auto sm:justify-end items-start gap-4 text-[14px]">
                 <button class="px-6 py-2 text-txt1 rounded-lg bg-Bg/3 border-2 border-btn3" @click="closeForm">انصراف</button>
-                <button class="px-6 py-2 text-white rounded-lg bg-txt4">ثبت درخواست</button>
+                <button class="px-6 py-2 text-white rounded-lg bg-txt4" @click="submitFreeForm">ثبت درخواست</button>
+            </div>
+        </div>
+
+
+        <div v-if="showError || showConfirm" class="overlay" @click="() => {closeError() ; closeConfirm()}">
+            <div class="error-container" @click.stop> <!-- جلوگیری از بستن هنگام کلیک روی کامپوننت خطا -->
+                <ErrorComponent v-if="showError" />
+                <Confirm v-if="showConfirm"></Confirm>
             </div>
         </div>
     </div>
@@ -120,5 +173,30 @@ const handleCheckboxChange = () => {
     transform: translateY(-50%);
     color: white; /* رنگ علامت تیک */
     font-size: 16px; /* اندازه علامت تیک */
+}
+
+.overlay {
+    position: fixed; /* موقعیت ثابت */
+    bottom: 0; /* از بالای صفحه */
+    left: 0; /* از سمت چپ */
+    width: 100%; /* عرض کامل صفحه */
+    height: 100%; /* ارتفاع کامل صفحه */
+    background-color: rgba(0, 0, 0, 0.24); /* رنگ تار */
+    display: flex; /* استفاده از flexbox برای مرکز کردن */
+    justify-content: center; /* مرکز کردن افقی */
+    align-items: center; /* مرکز کردن عمودی */
+    z-index: 1000; /* بالاتر از سایر محتوا */
+    backdrop-filter: blur(8px);
+}
+
+@media screen and (max-width:640px) {
+  .error-container {
+    position: fixed;
+    bottom: 0;
+  }
+}
+
+.error-container {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); /* سایه برای زیبایی */
 }
 </style>

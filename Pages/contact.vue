@@ -3,8 +3,8 @@ import { ref } from 'vue';
 import axios from 'axios';
 
 const firstName = ref('');
-const lastName = ref('');
 const phoneNumber = ref('');
+const lastName = ref('');
 const email = ref('');
 const message = ref('');
 const errors = ref({}); // برای ذخیره خطاها

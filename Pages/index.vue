@@ -7,7 +7,7 @@ const services = [
         {title : 'گوگل ادز', path: '/services/google-Ads' , description : 'اگه خیلی عجله داری که سایتت به رتبه 1 گوگل برسه، گوگل ادز رو امتحان کن' , img : '/img/9.png'},
         {title : 'طراحی سایت', path: '/services/website-design' , description : 'اگه دنبال یه سایت شیک و حرفه ای واسه خودت هستی، خوب جایی اومدی' , img : '/img/12.png'},
         {title : 'تدوین استراتژی محتوا' , path : '/services/seo-strategy' , description : 'اگه نمیدونی معماری و چیدمان صفحات سایتت چطور باید باشه، نیاز به تدوین استراتژی داری' , img : '/img/3.png'}
-    ]
+]
 
 const showForm = ref(false); // وضعیت نمایش کامپوننت خطا
 
