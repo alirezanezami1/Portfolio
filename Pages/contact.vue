@@ -216,7 +216,7 @@ textarea:focus {
 
 .overlay {
     position: fixed; /* موقعیت ثابت */
-    top: 0; /* از بالای صفحه */
+    bottom: 0; /* از بالای صفحه */
     left: 0; /* از سمت چپ */
     width: 100%; /* عرض کامل صفحه */
     height: 100%; /* ارتفاع کامل صفحه */
@@ -228,10 +228,14 @@ textarea:focus {
     backdrop-filter: blur(8px);
 }
 
+@media screen and (max-width:640px) {
+  .error-container {
+    position: fixed;
+    bottom: 0;
+  }
+}
+
 .error-container {
-    background-color: white; /* رنگ پس‌زمینه برای کامپوننت خطا */
-    padding: 20px; /* فاصله داخلی */
-    border-radius: 8px; /* گرد کردن گوشه‌ها */
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); /* سایه برای زیبایی */
 }
 </style>

@@ -1,5 +1,5 @@
 <template>
-    <div class="flex flex-col justify-center items-center gap-7 p-6 w-[400px] bg-white rounded-lg">
+    <div class="flex flex-col justify-center items-center gap-7 pb-6 p-6 w-full sm:w-[400px] bg-white rounded-lg">
         <img src="/img/Frame 579 (1).png" alt="confirm">
 
         <div class="flex flex-col justify-center items-center gap-6">
