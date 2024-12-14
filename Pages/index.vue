@@ -247,7 +247,7 @@ const closeForms = () => {
 
 
         <div v-if="showForm" class="overlay" @click="closeForms">
-            <div class="rounded-lg" @click.stop> <!-- جلوگیری از بستن هنگام کلیک روی کامپوننت خطا -->
+            <div class="error-container rounded-lg" @click.stop> <!-- جلوگیری از بستن هنگام کلیک روی کامپوننت خطا -->
                 <RequestConsulting :closeForm="closeForms"/>
             </div>
         </div>
@@ -281,5 +281,12 @@ const closeForms = () => {
     align-items: center; /* مرکز کردن عمودی */
     z-index: 1000; /* بالاتر از سایر محتوا */
     backdrop-filter: blur(8px);
+}
+
+@media screen and (max-width:640px) {
+  .error-container {
+    position: fixed;
+    bottom: 0;
+  }
 }
 </style>

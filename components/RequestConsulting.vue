@@ -23,7 +23,7 @@ const handleCheckboxChange = () => {
 </script>
 
 <template>
-    <div class="flex flex-col justify-center items-center w-[488px] rounded-lg">
+    <div class="flex flex-col justify-center items-center w-full sm:w-[488px] rounded-lg">
         <div class="flex justify-between items-start w-full bg-Bg/3 p-5 rounded-t-lg ">
             <div class="flex flex-col justify-start items-start gap-2 text-right">
                 <h6 class="text-[18px] leading-[140%] text-txt1">درخواست مشاوره رایگان</h6>
@@ -66,7 +66,7 @@ const handleCheckboxChange = () => {
         </div>
 
         <div class="flex justify-end items-start w-full bg-Bg/3 p-5 rounded-b-lg border-none">
-            <div class="flex justify-end items-start gap-4">
+            <div class="flex justify-center w-full sm:w-auto sm:justify-end items-start gap-4 text-[14px]">
                 <button class="px-6 py-2 text-txt1 rounded-lg bg-Bg/3 border-2 border-btn3" @click="closeForm">انصراف</button>
                 <button class="px-6 py-2 text-white rounded-lg bg-txt4">ثبت درخواست</button>
             </div>
