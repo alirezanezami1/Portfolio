@@ -52,9 +52,11 @@ onBeforeUnmount(() => {
             <HeaderMenuMobile></HeaderMenuMobile>
         </div>
 
-        <div>
-            <Logo></Logo>
-        </div>
+      <div>
+        <NuxtLink to="/">
+        <Logo></Logo>
+       </NuxtLink>
+      </div>
 
 
     </div>

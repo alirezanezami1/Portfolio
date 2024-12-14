@@ -38,11 +38,11 @@ const submitForm = async () => {
     }
 
     const formData = {
-        firstName: firstName.value,
-        lastName: lastName.value,
-        phoneNumber: phoneNumber.value,
-        email: email.value,
-        message: message.value,
+      Name: firstName.value,
+      last_name: lastName.value,
+      phone: Number(phoneNumber.value),
+      email: email.value,
+      person_text: message.value,
     };
 
     try {
