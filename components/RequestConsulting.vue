@@ -49,20 +49,20 @@ const showError = ref(false); // وضعیت نمایش کامپوننت خطا
 const showConfirm = ref(false); // وضعیت نمایش کامپوننت خطا
 
 const triggerError = () => {
-    showError.value = true; // نمایش کامپوننت خطا
+    showError.value = true; 
 };
 
 const triggerConfirm = () => {
-  showConfirm.value = true; // نمایش کامپوننت خطا
+  showConfirm.value = true; 
 };
 
 
 const closeError = () => {
-    showError.value = false; // پنهان کردن کامپوننت خطا
+    showError.value = false; 
 };
 
 const closeConfirm = () => {
-  showConfirm.value = false; // پنهان کردن کامپوننت خطا
+  showConfirm.value = false; 
 };
 
 </script>
