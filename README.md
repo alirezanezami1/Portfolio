@@ -95,13 +95,13 @@ Start the development server on http://localhost:3000:
 
 ## FAQ
 
-#### Does this project have a backend?
+### Does this project have a backend?
 
-Yes, the backend of this project is built with Django.
+-Yes, the backend of this project is built with Django.
 
-#### This project does not have a login/ sign up, how did you do admin authentication?
+### This project does not have a login/ sign up, how did you do admin authentication?
 
-Using jwt
+-Using jwt
 
 
 ## Feedback
