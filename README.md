@@ -53,13 +53,14 @@ Personal website (SSR) built for an SEO expert with nuxt and tailwind
 ![Section 1](https://github.com/user-attachments/assets/e62a8380-735f-4432-8a10-16be6bd90e3d)
 
 
-## dependencies
+**⚙️ dependencies:**
 
     -@formkit/auto-animate
     -@formkit/nuxt
     -@headlessui/vue
     -@mdi/font
     -@nuxt/image
+    -nuxt
     -axios
     -keen-slider
     -nuxt-swiper
