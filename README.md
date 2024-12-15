@@ -1,75 +1,78 @@
-# Nuxt Minimal Starter
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+# Portfolio
 
-## Setup
+Personal website built for an SEO expert with nuxt and tailwind
 
-Make sure to install dependencies:
 
-```bash
-# npm
-npm install
+![Logo](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/th5xamgrr6se0x5ro4g6.png)
 
-# pnpm
-pnpm install
 
-# yarn
-yarn install
+## Screenshots
 
-# bun
-bun install
-```
+![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
 
-## Development Server
+## Color Reference
 
-Start the development server on `http://localhost:3000`:
+| Color             | Hex                                                                |
+| ----------------- | ------------------------------------------------------------------ |
+| Example Color | ![#0a192f](https://via.placeholder.com/10/0a192f?text=+) #0a192f |
+| Example Color | ![#f8f8f8](https://via.placeholder.com/10/f8f8f8?text=+) #f8f8f8 |
+| Example Color | ![#00b48a](https://via.placeholder.com/10/00b48a?text=+) #00b48a |
+| Example Color | ![#00d1a0](https://via.placeholder.com/10/00b48a?text=+) #00d1a0 |
 
-```bash
-# npm
-npm run dev
 
-# pnpm
-pnpm dev
+## Features
 
-# yarn
-yarn dev
+- Light/dark mode toggle
+- Live previews
+- Fullscreen mode
+- Cross platform
 
-# bun
-bun run dev
-```
 
-## Production
+## Run Locally
 
-Build the application for production:
+Clone the project
 
 ```bash
-# npm
-npm run build
-
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
+  git clone https://link-to-project
 ```
 
-Locally preview production build:
+Go to the project directory
 
 ```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
+  cd my-project
 ```
 
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+Install dependencies
+
+```bash
+  npm install
+```
+
+Start the development server on http://localhost:3000:
+
+```bash
+  npm run start
+```
+
+
+## FAQ
+
+#### Question 1
+
+Answer 1
+
+#### Question 2
+
+Answer 2
+
+
+## Lessons Learned
+
+What did you learn while building this project? What challenges did you face and how did you overcome them?
+
+
+## Feedback
+
+If you have any feedback, please reach out to us at fake@fake.com
+
