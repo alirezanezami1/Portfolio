@@ -72,7 +72,7 @@ Personal website (SSR) built for an SEO expert with nuxt and tailwind
 Clone the project
 
 ```bash
-  git clone https://link-to-project
+  git clone https://github.com/alirezanezami1/Portfolio.git
 ```
 
 Go to the project directory
