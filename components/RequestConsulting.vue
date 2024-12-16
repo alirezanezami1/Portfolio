@@ -120,7 +120,7 @@ const closeConfirm = () => {
 
         <div v-if="showError || showConfirm" class="overlay" @click="() => {closeError() ; closeConfirm()}">
             <div class="error-container" @click.stop> <!-- جلوگیری از بستن هنگام کلیک روی کامپوننت خطا -->
-                <ErrorComponent v-if="showError" />
+                <ErrorComponent v-if="showError" :closeErr="closeError"/>
                 <Confirm v-if="showConfirm"></Confirm>
             </div>
         </div>

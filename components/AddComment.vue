@@ -151,7 +151,7 @@ const submitComment = async () => {
 
         <div v-if="showError || showConfirm" class="overlay" @click="closeError">
             <div class="error-container" @click.stop> <!-- جلوگیری از بستن هنگام کلیک روی کامپوننت خطا -->
-                <ErrorComponent v-if="showError" />
+                <ErrorComponent v-if="showError" :closeComment2="closeError"/>
                 <ConfirmComment v-if="showConfirm"></ConfirmComment>
             </div>
         </div>

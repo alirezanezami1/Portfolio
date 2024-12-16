@@ -1,3 +1,16 @@
+<script setup>
+const props = defineProps({
+    closeComment2: {
+        type: Function,
+        required: true
+    },
+    closeErr: {
+        type: Function,
+        required: true
+    }
+});
+</script>
+
 <template>
     <div class="flex flex-col justify-center items-center gap-7 pb-6 p-6 w-full sm:w-[400px] bg-white rounded-lg">
         <img src="../assets/icons/Frame 579 (1).png" alt="error">
@@ -9,7 +22,7 @@
             </div>
 
             <div class="flex justify-center items-center">
-                <NuxtLink to="/" class="flex justify-center text-txt4 border border-btn3 rounded-lg items-center gap-2 p-2 pr-4 cursor-pointer text-[14px] leading-[24%]">
+                <NuxtLink to="/" @click="closeComment2,closeErr" class="flex justify-center text-txt4 border border-btn3 rounded-lg items-center gap-2 p-2 pr-4 cursor-pointer text-[14px] leading-[24%]">
                     بازگشت به صفحه اصلی <IconsArrowLeft></IconsArrowLeft>
                 </NuxtLink>
             </div>
