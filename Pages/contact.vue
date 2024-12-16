@@ -1,6 +1,5 @@
 <script setup>
 import { ref } from 'vue';
-import axios from 'axios';
 
 const firstName = ref('');
 const phoneNumber = ref('');
