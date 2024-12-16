@@ -1,4 +1,5 @@
 <script setup>
+import axios from 'axios';
 const props = defineProps({
     closeComment: {
         type: Function,
@@ -32,40 +33,6 @@ const position = ref('')
 const message = ref('')
 
 
-const submitComment = async () => {
-
-    const formData = {
-        Title: firstName.value,
-      Company_name: position.value,
-      Comment: message.value,
-      Company_image : imageSrc.value
-    };
-
-   await fetch('http://127.0.0.1:8000/api/comments', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-    })
-    .then(response => {
-        if (!response.ok) {
-            throw new Error('Network response was not ok');
-        }
-        return response.json();
-    })
-    .then(data => {
-        Title.value= '',
-      Company_name.value = '',
-      Comment.value = '',
-      Company_image.value = ''
-        triggerConfirm()
-    })
-    .catch((error) => {
-      triggerError()
-    });
-};
-
 const showError = ref(false); // وضعیت نمایش کامپوننت خطا
 const showConfirm = ref(false); // وضعیت نمایش کامپوننت خطا
 
@@ -84,6 +51,44 @@ const closeError = () => {
 
 const closeConfirm = () => {
   showConfirm.value = false; // پنهان کردن کامپوننت خطا
+};
+
+
+const submitComment = async () => {
+
+    const formData = {
+        title: firstName.value,
+        company_name: position.value,
+      comment: message.value,
+      company_image : imageSrc.value,
+    //   users : 'alireza'
+    };
+
+   await fetch('http://127.0.0.1:8000/api/comments', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.json();
+    })
+    .then(data => {
+        title.value= '',
+        company_name.value = '',
+      comment.value = '',
+      company_image.value = ''
+        triggerConfirm()
+    })
+    .catch((error) => {
+      triggerError()
+    });
+
+    
 };
 
 </script>
