@@ -45,27 +45,48 @@ const submitForm = async () => {
       person_text: message.value,
     };
 
-
-    try {
-        const response = await axios.post('http://127.0.0.1:8000/api/forms', formData, {
-          headers: {
+   await fetch('http://127.0.0.1:8000/api/forms', {
+        method: 'POST',
+        headers: {
             'Content-Type': 'application/json',
-          }
-        });
-        console.log('Response:', response.data);
+        },
+        body: JSON.stringify(formData),
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.json();
+    })
+    .then(data => {
+        console.log('Success:', data);
+        // می‌توانید پیغام موفقیت را نمایش دهید
+    })
+    .catch((error) => {
+        console.error('Error:', error);
+        // می‌توانید پیغام خطا را نمایش دهید
+    });
+
+    // try {
+    //     const response = await axios.post('http://127.0.0.1:8000/api/forms', formData, {
+    //       headers: {
+    //         'Content-Type': 'application/json',
+    //       }
+    //     });
+    //     console.log('Response:', response.data);
         
-        // پاک کردن مقادیر فرم بعد از ارسال موفقیت‌آمیز
-        firstName.value = '';
-        lastName.value = '';
-        phoneNumber.value = '';
-        email.value = '';
-        message.value = '';
-        triggerConfirm()
+    //     // پاک کردن مقادیر فرم بعد از ارسال موفقیت‌آمیز
+    //     firstName.value = '';
+    //     lastName.value = '';
+    //     phoneNumber.value = '';
+    //     email.value = '';
+    //     message.value = '';
+    //     triggerConfirm()
         
-        // می‌توانید پیغام موفقیت نمایش دهید
-    } catch (error) {
-      triggerError()
-    }
+    //     // می‌توانید پیغام موفقیت نمایش دهید
+    // } catch (error) {
+    //   triggerError()
+    // }
 };
 
 const showError = ref(false); // وضعیت نمایش کامپوننت خطا
