@@ -27,8 +27,11 @@ const submitFreeForm = async () => {
     const formData = {
         name: firstName.value,
         phone: Number(phoneNumber.value),
-        choices_field: selectedOptions.value
+        choices_field: selectedOptions.value.join(', ')
     };
+
+    console.log(selectedOptions.value);
+    
 
     try {
         const response = await axios.post('http://127.0.0.1:8000/api/freeforms', formData);        

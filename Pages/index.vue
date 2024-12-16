@@ -1,4 +1,5 @@
-<script setup lang="ts">
+<script setup>
+import axios from 'axios';
 const slides = ArrayProject()
 const services = [
         {title : 'منتورینگ سئو', path: '/services/seo-mentoring' , description : 'اگه هنوز اعتماد به نفس گرفتن پروژه سئو نداری، حتما از یه منتورسئو کمک بگیر' , img : '/img/2.png'},
@@ -20,6 +21,33 @@ const showComments = ref(false)
 const closeComment = () => {
     showComments.value = false;
 }
+
+const loginAdmin = async (username, password) => {
+    try {
+        const response = await axios.post('http://127.0.0.1:8000/api/token/', {
+            username,
+            password
+        });
+        const token = response.data.token; // فرض بر این است که توکن در اینجا برگردانده می‌شود
+        localStorage.setItem('adminToken', token); // ذخیره توکن در localStorage
+        return token;
+    } catch (error) {
+        console.error('Login failed:', error);
+        throw error;
+    }
+};
+
+
+onMounted(async () => {
+  try {
+    const token = await loginAdmin('alireza', 'alireza'); // نام کاربری و رمز عبور ادمین را وارد کنید
+    console.log('Admin logged in, token:', token);
+    // می‌توانید توکن را ذخیره کنید یا سایر عملیات را انجام دهید
+  } catch (error) {
+    console.error('Login failed:', error);
+    // مدیریت خطا
+  }
+});
 
 </script>
 

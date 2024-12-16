@@ -21,8 +21,8 @@ const props = defineProps({
                 <p class="text-[14px] leading-[160%] text-txt6">متاسفانه درخواست شما با موفقیت ارسال نشد. لطفاً دوباره تلاش کنید. در صورت تداوم مشکل، با پشتیبانی در تماس باشید.</p>
             </div>
 
-            <div class="flex justify-center items-center">
-                <NuxtLink to="/" @click="closeComment2,closeErr" class="flex justify-center text-txt4 border border-btn3 rounded-lg items-center gap-2 p-2 pr-4 cursor-pointer text-[14px] leading-[24%]">
+            <div class="flex justify-center items-center" @click="closeErr">
+                <NuxtLink to="/" @click="closeComment2" class="flex justify-center text-txt4 border border-btn3 rounded-lg items-center gap-2 p-2 pr-4 cursor-pointer text-[14px] leading-[24%]">
                     بازگشت به صفحه اصلی <IconsArrowLeft></IconsArrowLeft>
                 </NuxtLink>
             </div>
