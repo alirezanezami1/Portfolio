@@ -59,34 +59,16 @@ const submitForm = async () => {
         return response.json();
     })
     .then(data => {
-        console.log('Success:', data);
-        // می‌توانید پیغام موفقیت را نمایش دهید
+      firstName.value = '';
+        lastName.value = '';
+        phoneNumber.value = '';
+        email.value = '';
+        message.value = '';
+        triggerConfirm()
     })
     .catch((error) => {
-        console.error('Error:', error);
-        // می‌توانید پیغام خطا را نمایش دهید
+      triggerError()
     });
-
-    // try {
-    //     const response = await axios.post('http://127.0.0.1:8000/api/forms', formData, {
-    //       headers: {
-    //         'Content-Type': 'application/json',
-    //       }
-    //     });
-    //     console.log('Response:', response.data);
-        
-    //     // پاک کردن مقادیر فرم بعد از ارسال موفقیت‌آمیز
-    //     firstName.value = '';
-    //     lastName.value = '';
-    //     phoneNumber.value = '';
-    //     email.value = '';
-    //     message.value = '';
-    //     triggerConfirm()
-        
-    //     // می‌توانید پیغام موفقیت نمایش دهید
-    // } catch (error) {
-    //   triggerError()
-    // }
 };
 
 const showError = ref(false); // وضعیت نمایش کامپوننت خطا

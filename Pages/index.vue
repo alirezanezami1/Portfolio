@@ -15,6 +15,12 @@ const closeForms = () => {
     showForm.value = false; // پنهان کردن کامپوننت خطا
 };
 
+const showComments = ref(true)
+
+const closeComment = () => {
+    showComments.value = false;
+}
+
 </script>
 
 <template>
@@ -245,6 +251,12 @@ const closeForms = () => {
         <div v-if="showForm" class="overlay" @click="closeForms">
             <div class="error-container rounded-lg" @click.stop> <!-- جلوگیری از بستن هنگام کلیک روی کامپوننت خطا -->
                 <RequestConsulting :closeForm="closeForms"/>
+            </div>
+        </div>
+
+        <div v-if="showComments" class="overlay" @click="closeComment">
+            <div class="error-container rounded-lg" @click.stop> <!-- جلوگیری از بستن هنگام کلیک روی کامپوننت خطا -->
+                <AddComment :closeComment="closeComment"/>
             </div>
         </div>
            
