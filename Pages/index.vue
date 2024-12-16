@@ -15,7 +15,7 @@ const closeForms = () => {
     showForm.value = false; // پنهان کردن کامپوننت خطا
 };
 
-const showComments = ref(true)
+const showComments = ref(false)
 
 const closeComment = () => {
     showComments.value = false;
@@ -209,7 +209,7 @@ const closeComment = () => {
                     </div>
 
                     <div>
-                        <button class="flex justify-center items-center gap-[5px] rounded-full bg-btn2 py-[6px] px-3 text-[14px] text-txt4"><img src="../assets/icons/Add Circle.svg">نظرات جدید</button>
+                        <button @click="showComments = true" class="flex justify-center items-center gap-[5px] rounded-full bg-btn2 py-[6px] px-3 text-[14px] text-txt4"><img src="../assets/icons/Add Circle.svg">نظرات جدید</button>
                     </div>
                 </div>
 
@@ -256,7 +256,7 @@ const closeComment = () => {
 
         <div v-if="showComments" class="overlay" @click="closeComment">
             <div class="error-container rounded-lg" @click.stop> <!-- جلوگیری از بستن هنگام کلیک روی کامپوننت خطا -->
-                <AddComment :closeComment="closeComment"/>
+                <AddComment :closeComment="closeComment" />
             </div>
         </div>
            
