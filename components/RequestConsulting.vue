@@ -29,8 +29,6 @@ const submitFreeForm = async () => {
         phone: Number(phoneNumber.value),
         choices_field: selectedOptions.value.join(', ')
     };
-
-    console.log(selectedOptions.value);
     
 
     try {
