@@ -22,30 +22,6 @@ const closeComment = () => {
     showComments.value = false;
 }
 
-const loginAdmin = async (username, password) => {
-    try {
-        const response = await axios.post('http://127.0.0.1:8000/api/token/', {
-            username,
-            password
-        });
-        
-        const token = response.data.access; // فرض بر این است که توکن در اینجا برگردانده می‌شود
-        localStorage.setItem('adminToken', token); // ذخیره توکن در localStorage
-        return token;
-    } catch (error) {
-        console.error('Login failed:', error);
-        throw error;
-    }
-};
-
-
-onMounted(async () => {
-  try {
-    const token = await loginAdmin('alireza', 'alireza'); // نام کاربری و رمز عبور ادمین را وارد کنید
-  } catch (error) {
-    console.error('Login failed:', error);
-  }
-});
 
 </script>
 
