@@ -20,6 +20,13 @@ const filteredSlides = computed(() => {
 const filterProjects = (type) => {
   selectedType.value = type;
 };
+
+const showNewProject = ref(true)
+
+const closeNewProject = () => {
+  showNewProject.value = false;
+}
+
 </script>
 
 <template>
@@ -73,6 +80,13 @@ const filterProjects = (type) => {
                 </ClientOnly>
         </div>
 
+
+        <div v-if="showNewProject" class="overlay" @click="closeNewProject">
+            <div class="error-container rounded-lg" @click.stop> <!-- جلوگیری از بستن هنگام کلیک روی کامپوننت خطا -->
+                <AddNewProject :closeNewProject="closeNewProject" />
+            </div>
+        </div>
+
     </div>
 </template>
 
@@ -95,5 +109,26 @@ const filterProjects = (type) => {
 .active {
   background-color: #13144E; /* رنگ پس‌زمینه فعال */
   color: white; /* رنگ متن فعال */
+}
+
+.overlay {
+    position: fixed; /* موقعیت ثابت */
+    bottom: 0; /* از بالای صفحه */
+    left: 0; /* از سمت چپ */
+    width: 100%; /* عرض کامل صفحه */
+    height: 100%; /* ارتفاع کامل صفحه */
+    background-color: rgba(0, 0, 0, 0.24); /* رنگ تار */
+    display: flex; /* استفاده از flexbox برای مرکز کردن */
+    justify-content: center; /* مرکز کردن افقی */
+    align-items: center; /* مرکز کردن عمودی */
+    z-index: 1000; /* بالاتر از سایر محتوا */
+    backdrop-filter: blur(8px);
+}
+
+@media screen and (max-width:640px) {
+  .error-container {
+    position: fixed;
+    bottom: 0;
+  }
 }
 </style>
