@@ -1,5 +1,4 @@
 <script setup>
-import axios from 'axios';
 const props = defineProps({
     closeComment: {
         type: Function,
@@ -9,20 +8,22 @@ const props = defineProps({
 
 
 const imageSrc = ref('/img/Avatar.png'); // آدرس عکس پیش‌فرض
-const imageFile = ref(null)
+// const imageFile = ref(null)
+const base64Image = ref(null);
 
-const onImageChange = (event) => {
+const onImageChange = async (event) => {
     const file = event.target.files[0];
+
     if (file) {
         const reader = new FileReader();
         reader.onload = (e) => {
-            imageSrc.value = e.target.result; // تغییر آدرس عکس به عکس انتخاب شده
+            // base64Image.value = e.target.result; // تغییر آدرس عکس به عکس انتخاب شده
+            imageSrc.value = e.target.result;
         };
+        base64Image.value = file
         reader.readAsDataURL(file);
-        imageFile.value = file
     } else {
         imageSrc.value = '/img/Avatar.png'; // اگر عکسی انتخاب نشود، به عکس پیش‌فرض برگردد
-        imageFile.value = null
     }
 };
 
@@ -56,6 +57,7 @@ const closeConfirm = () => {
   showConfirm.value = false; // پنهان کردن کامپوننت خطا
 };
 
+const token = ref(null)
 
 const submitComment = async (data) => {
 
@@ -63,21 +65,19 @@ const submitComment = async (data) => {
         title: firstName.value,
         company_name: position.value,
       comment: message.value,
-      company_image : imageFile.value,
+      company_image: base64Image.value,
       users : 1
     };
-    
-    const token = localStorage.getItem('adminToken'); // دریافت توکن از localStorage
-    console.log(token);
+
+    console.log(base64Image.value);
     
 
     try {
-        // ارسال درخواست به API
         const response = await fetch('http://127.0.0.1:8000/api/comments', {
             method: 'POST', // نوع درخواست
             headers: {
-                'Content-Type': 'application/json', // نوع محتوا
-                'Authorization': `Bearer ${token}` // اضافه کردن توکن به هدر
+                'Content-Type': 'multipart/form-data',
+                'Authorization': `Bearer ${token.value}` // اضافه کردن توکن به هدر
             },
             body: JSON.stringify(formData) // تبدیل داده‌ها به رشته JSON
         });
@@ -90,14 +90,21 @@ const submitComment = async (data) => {
         }
 
         const responseData = await response.json(); // تبدیل پاسخ به JSON
-        console.log('Data sent successfully:', responseData);
-        triggerConfirm()
+       
     } catch (error) {
         console.error('Error sending data:', error);
         triggerError()
     }
    
 };
+
+onMounted(async () => {
+     token.value = localStorage.getItem('adminToken');
+    console.log(token.value);
+    
+});
+
+
 
 </script>
 <template>

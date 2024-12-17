@@ -12,11 +12,7 @@ const formData = ref({
     title: '',
     description: ''
 });
-const handleFileUpload = (event) => {
-    // مدیریت بارگذاری عکس
-    const file = event.target.files[0];
-    console.log('Uploaded file:', file);
-};
+
 
 const submitForm = () => {
     // مدیریت ارسال فرم
@@ -53,6 +49,9 @@ const removeKeyword = (index) => {
 
 
 
+
+
+
 </script>
 <template>
     <div class="flex flex-col justify-center items-center w-full md:w-[707px] rounded-lg">
@@ -65,9 +64,9 @@ const removeKeyword = (index) => {
 
        <div class="flex justify-center items-center bg-white w-full p-6">
             <div v-if="currentStep === 1" class="step">
-                <h2>بارگذاری عکس</h2>
-                <input type="file" @change="handleFileUpload" />
+                <h2>بارگذاری تصاویر</h2>
             </div>
+
             <div v-if="currentStep === 2" class="step w-full">
                 <div class="grid gap-4 grid-cols-2 sm:grid-cols-10 sm:col-span-full">
                         <div class="sm:col-span-5 col-span-full grid gap-2">
@@ -130,7 +129,7 @@ const removeKeyword = (index) => {
             <div class="flex justify-center w-full sm:w-auto sm:justify-end items-start gap-4 text-[14px]">
                 <button v-if="currentStep > 1" class="px-6 py-2 text-txt1 rounded-lg bg-Bg/3 border-2 border-btn3" @click="prevStep">مرحله قبل</button>
                 <button v-if="currentStep === 1" class="px-6 py-2 text-txt1 rounded-lg bg-Bg/3 border-2 border-btn3" @click="closeNewProject">انصراف</button>
-                <button v-if="currentStep < 3" class="px-6 py-2 text-white rounded-lg flex justify-center items-center text-[14px] gap-2" @click="nextStep" :class="isDisabled ? 'bg-Bg/4' : 'bg-Bg/2'" :disabled="isDisabled">مرحله بعد<IconsArrowLeftWhite style="width: 24px;"></IconsArrowLeftWhite></button>
+                <button v-if="currentStep < 3" class="px-6 py-2 text-white rounded-lg flex justify-center items-center text-[14px] gap-2" @click="nextStep" :class="isDisabled ? 'bg-Bg/4' : 'bg-Bg/2'" :disabled="isDisabled" >مرحله بعد<IconsArrowLeftWhite style="width: 24px;"></IconsArrowLeftWhite></button>
                 <button v-if="currentStep === 3" class="px-6 py-2 text-white rounded-lg bg-txt4" >انتشار نمونه کار</button>
             </div>
         </div>

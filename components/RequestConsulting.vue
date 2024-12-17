@@ -26,8 +26,8 @@ const submitFreeForm = async () => {
 
     const formData = {
         name: firstName.value,
-        phone: Number(phoneNumber.value),
-        choices_field: selectedOptions.value.join('')
+        phone: String(phoneNumber.value),
+        choices_field: selectedOptions.value
     };
     
 
