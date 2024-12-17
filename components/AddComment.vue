@@ -9,6 +9,7 @@ const props = defineProps({
 
 
 const imageSrc = ref('/img/Avatar.png'); // آدرس عکس پیش‌فرض
+const imageFile = ref(null)
 
 const onImageChange = (event) => {
     const file = event.target.files[0];
@@ -18,8 +19,10 @@ const onImageChange = (event) => {
             imageSrc.value = e.target.result; // تغییر آدرس عکس به عکس انتخاب شده
         };
         reader.readAsDataURL(file);
+        imageFile.value = file
     } else {
         imageSrc.value = '/img/Avatar.png'; // اگر عکسی انتخاب نشود، به عکس پیش‌فرض برگردد
+        imageFile.value = null
     }
 };
 
@@ -54,41 +57,46 @@ const closeConfirm = () => {
 };
 
 
-const submitComment = async () => {
+const submitComment = async (data) => {
 
     const formData = {
         title: firstName.value,
         company_name: position.value,
       comment: message.value,
-      company_image : imageSrc.value,
-    //   users : 'alireza'
+      company_image : imageFile.value,
+      users : 1
     };
-
-   await fetch('http://127.0.0.1:8000/api/comments', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-    })
-    .then(response => {
-        if (!response.ok) {
-            throw new Error('Network response was not ok');
-        }
-        return response.json();
-    })
-    .then(data => {
-        title.value= '',
-        company_name.value = '',
-      comment.value = '',
-      company_image.value = ''
-        triggerConfirm()
-    })
-    .catch((error) => {
-      triggerError()
-    });
-
     
+    const token = localStorage.getItem('adminToken'); // دریافت توکن از localStorage
+    console.log(token);
+    
+
+    try {
+        // ارسال درخواست به API
+        const response = await fetch('http://127.0.0.1:8000/api/comments', {
+            method: 'POST', // نوع درخواست
+            headers: {
+                'Content-Type': 'application/json', // نوع محتوا
+                'Authorization': `Bearer ${token}` // اضافه کردن توکن به هدر
+            },
+            body: JSON.stringify(formData) // تبدیل داده‌ها به رشته JSON
+        });
+
+        // بررسی وضعیت پاسخ
+        if (!response.ok) {
+            const errorMessage = await response.text(); // دریافت متن خطا
+            console.error('Error response:', errorMessage); // لاگ کردن متن خطا
+            throw new Error(`Network response was not ok: ${response.status} ${response.statusText}`)
+        }
+
+        const responseData = await response.json(); // تبدیل پاسخ به JSON
+        console.log('Data sent successfully:', responseData);
+        triggerConfirm()
+    } catch (error) {
+        console.error('Error sending data:', error);
+        triggerError()
+    }
+   
 };
 
 </script>

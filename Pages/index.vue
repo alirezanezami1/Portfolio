@@ -28,7 +28,8 @@ const loginAdmin = async (username, password) => {
             username,
             password
         });
-        const token = response.data.token; // فرض بر این است که توکن در اینجا برگردانده می‌شود
+        
+        const token = response.data.access; // فرض بر این است که توکن در اینجا برگردانده می‌شود
         localStorage.setItem('adminToken', token); // ذخیره توکن در localStorage
         return token;
     } catch (error) {
@@ -41,11 +42,8 @@ const loginAdmin = async (username, password) => {
 onMounted(async () => {
   try {
     const token = await loginAdmin('alireza', 'alireza'); // نام کاربری و رمز عبور ادمین را وارد کنید
-    console.log('Admin logged in, token:', token);
-    // می‌توانید توکن را ذخیره کنید یا سایر عملیات را انجام دهید
   } catch (error) {
     console.error('Login failed:', error);
-    // مدیریت خطا
   }
 });
 
