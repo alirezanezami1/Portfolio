@@ -1,4 +1,6 @@
 <script setup>
+import Confirm from './Confirm.vue';
+
 const props = defineProps({
     closeNewProject: {
         type: Function,
@@ -103,6 +105,28 @@ const removeImage = (index) => {
 };
 
 
+const showError = ref(false); 
+const showConfirm = ref(false); 
+
+const triggerError = () => {
+    showError.value = true; 
+};
+
+const triggerConfirm = () => {
+  showConfirm.value = true; 
+};
+
+
+const closeError = () => {
+    showError.value = false;
+};
+
+const closeConfirm = () => {
+  showConfirm.value = false;
+};
+
+
+
 const publishProject = async () => {
     
     const formData = new FormData();
@@ -129,15 +153,11 @@ const publishProject = async () => {
             console.error('Error response:', errorMessage); 
             throw new Error(`Network response was not ok: ${response.status} ${response.statusText}`)
         }
-        const responseData = await response.json(); 
-        console.log(responseData);
-        
-        // triggerConfirm()
+        const responseData = await response.json();         
+        triggerConfirm()
        
     } catch (error) {
-        console.log(error);
-        
-        // triggerError()
+        triggerError()
     }
 
 
@@ -158,8 +178,8 @@ const publishProject = async () => {
                     <img src="/img/Group 132.png" class="w-full hidden sm:block">
                     <img src="/img/Group 149.png" class="w-full block sm:hidden">
                 </div>
-                <div class="flex flex-col justify-center gap-2 items-center">
-                    <div class="flex justify-center items-center gap-1 w-full">
+                <div class="flex flex-col justify-center gap-2 items-center w-full">
+                    <div class="flex justify-center items-center gap-1 w-full sm:pr-20">
                         <div class="w-full">
                         <input type="file" id="comment-image" @change="(e) => uploadImage(e, 1)" accept="image/*" class="hidden" />
                         <button @click="selectFile" class="bg-btn3 text-txt4 text-[14px] px-3 py-2 h-[48px] md:h-auto rounded-full"><span>عکس 1</span></button>
@@ -181,19 +201,19 @@ const publishProject = async () => {
                     <div class="grid grid-cols-2 justify-center items-center gap-2 flex-wrap">
                         <div class="image-wrapper" v-if="image1">
                             <img :src="image1" alt="Image 1"/>
-                            <button @click="removeImage(1)" class="remove-button">حذف</button>
+                            <button @click="removeImage(1)" class="remove-button">حذف<img src="../assets/icons/Icon pack - Linear.r.svg"></button>
                         </div>
                         <div class="image-wrapper" v-if="image2">
                             <img :src="image2" alt="Image 2"/>
-                            <button @click="removeImage(2)" class="remove-button">حذف</button>
+                            <button @click="removeImage(2)" class="remove-button">حذف<img src="../assets/icons/Icon pack - Linear.r.svg"></button>
                         </div>
                         <div class="image-wrapper" v-if="image3">
                             <img :src="image3" alt="Image 3"/>
-                            <button @click="removeImage(3)" class="remove-button">حذف</button>
+                            <button @click="removeImage(3)" class="remove-button">حذف<img src="../assets/icons/Icon pack - Linear.r.svg"></button>
                         </div>
                         <div class="image-wrapper" v-if="image4">
                             <img :src="image4" alt="Image 4"/>
-                            <button @click="removeImage(4)" class="remove-button">حذف</button>
+                            <button @click="removeImage(4)" class="remove-button">حذف<img src="../assets/icons/Icon pack - Linear.r.svg"></button>
                         </div>
                     </div>
                 </div>
@@ -278,6 +298,14 @@ const publishProject = async () => {
                 <button v-if="currentStep === 3" class="px-6 py-2 text-white rounded-lg bg-txt4" @click="publishProject">انتشار نمونه کار</button>
             </div>
         </div>
+
+        <div v-if="showError || showConfirm" class="overlay" @click="closeError">
+            <div class="error-container" @click.stop>
+                <ErrorComponent v-if="showError" :closeComment2="closeError"/>
+                <Confirm v-if="showConfirm" :closeNewProject="closeNewProject" :closeConfirm="closeConfirm"></Confirm>
+            </div>
+        </div>
+
     </div>
 </template>
 
@@ -296,19 +324,51 @@ const publishProject = async () => {
 }
 
 .remove-button {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: red;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    padding: 5px;
-    cursor: pointer;
-    display: none; /* مخفی کردن دکمه به طور پیش‌فرض */
+    display: none; 
+}
+.remove-button img {
+    width: 24px !important;
+    height: 24px !important;
 }
 
 .image-wrapper:hover .remove-button {
-    display: block; /* نمایش دکمه هنگام hover */
+    display: flex; 
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #13144E;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 8px;
+    cursor: pointer;
 }
+
+.overlay {
+    position: fixed; /* موقعیت ثابت */
+    bottom: 0; /* از بالای صفحه */
+    left: 0; /* از سمت چپ */
+    width: 100%; /* عرض کامل صفحه */
+    height: 100%; /* ارتفاع کامل صفحه */
+    background-color: rgba(0, 0, 0, 0.24); /* رنگ تار */
+    display: flex; /* استفاده از flexbox برای مرکز کردن */
+    justify-content: center; /* مرکز کردن افقی */
+    align-items: center; /* مرکز کردن عمودی */
+    z-index: 1000; /* بالاتر از سایر محتوا */
+    backdrop-filter: blur(8px);
+}
+
+@media screen and (max-width:640px) {
+  .error-container {
+    position: fixed;
+    bottom: 0;
+  }
+}
+
+.error-container {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); /* سایه برای زیبایی */
+}
+
 </style>

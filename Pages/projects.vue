@@ -21,7 +21,7 @@ const filterProjects = (type) => {
   selectedType.value = type;
 };
 
-const showNewProject = ref(true)
+const showNewProject = ref(false)
 
 const closeNewProject = () => {
   showNewProject.value = false;
@@ -56,7 +56,7 @@ const closeNewProject = () => {
                     </div>
 
                     <div>
-                        <button class="flex justify-center items-center gap-[5px] rounded-full bg-btn2 py-[6px] px-3 text-[14px] text-txt4"><img src="../assets/icons/Add Circle.svg">نمونه کار جدید</button>
+                        <button class="flex justify-center items-center gap-[5px] rounded-full bg-btn2 py-[6px] px-3 text-[14px] text-txt4" @click="showNewProject = true"><img src="../assets/icons/Add Circle.svg">نمونه کار جدید</button>
                     </div>
 
             </div>
