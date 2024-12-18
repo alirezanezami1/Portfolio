@@ -15,7 +15,6 @@ const formData = ref({
 
 
 const submitForm = () => {
-    // مدیریت ارسال فرم
     console.log('Form submitted:', formData.value);
     nextStep();
 };
@@ -33,18 +32,17 @@ const prevStep = () => {
 };
 
 const publishProject = () => {
-    // مدیریت انتشار نمونه کار
     console.log('Project published:', formData.value);
 };
 
-const keywords = ref(['']); // آرایه برای ذخیره کلمات کلیدی
+const keywords = ref(['']); 
 
 const addKeyword = () => {
-    keywords.value.push(''); // اضافه کردن یک input جدید
+    keywords.value.push(''); 
 };
 
 const removeKeyword = (index) => {
-    keywords.value.splice(index, 1); // حذف input با ایندکس مشخص
+    keywords.value.splice(index, 1); 
 };
 
 
