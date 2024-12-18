@@ -7,8 +7,7 @@ const props = defineProps({
 });
 
 
-const imageSrc = ref('/img/Avatar.png'); // آدرس عکس پیش‌فرض
-// const imageFile = ref(null)
+const imageSrc = ref('/img/Avatar.png'); 
 const base64Image = ref(null);
 
 const onImageChange = async (event) => {
@@ -17,19 +16,19 @@ const onImageChange = async (event) => {
     if (file) {
         const reader = new FileReader();
         reader.onload = (e) => {
-            // base64Image.value = e.target.result; // تغییر آدرس عکس به عکس انتخاب شده
+            // base64Image.value = e.target.result; 
             imageSrc.value = e.target.result;
         };
-        base64Image.value = file
         reader.readAsDataURL(file);
+        base64Image.value = file
     } else {
-        imageSrc.value = '/img/Avatar.png'; // اگر عکسی انتخاب نشود، به عکس پیش‌فرض برگردد
+        imageSrc.value = '/img/Avatar.png'; 
     }
 };
 
 const selectFile = () => {
     const fileInput = document.getElementById('comment-image');
-    fileInput.click(); // شبیه‌سازی کلیک بر روی ورودی فایل
+    fileInput.click(); 
 };
 
 const firstName = ref('')
@@ -37,59 +36,57 @@ const position = ref('')
 const message = ref('')
 
 
-const showError = ref(false); // وضعیت نمایش کامپوننت خطا
-const showConfirm = ref(false); // وضعیت نمایش کامپوننت خطا
+const showError = ref(false); 
+const showConfirm = ref(false); 
 
 const triggerError = () => {
-    showError.value = true; // نمایش کامپوننت خطا
+    showError.value = true; 
 };
 
 const triggerConfirm = () => {
-  showConfirm.value = true; // نمایش کامپوننت خطا
+  showConfirm.value = true; 
 };
 
 
 const closeError = () => {
-    showError.value = false; // پنهان کردن کامپوننت خطا
+    showError.value = false;
 };
 
 const closeConfirm = () => {
-  showConfirm.value = false; // پنهان کردن کامپوننت خطا
+  showConfirm.value = false;
 };
 
 const token = ref(null)
 
-const submitComment = async (data) => {
+const submitComment = async () => {
 
-    const formData = {
-        title: firstName.value,
-        company_name: position.value,
-      comment: message.value,
-      company_image: base64Image.value,
-      users : 1
-    };
+    const formData = new FormData();
+    formData.append('title', firstName.value);
+    formData.append('company_name', position.value);
+    formData.append('comment', message.value);
+    formData.append('company_image', base64Image.value);
+    formData.append('users', 1);
 
-    console.log(base64Image.value);
     
 
     try {
         const response = await fetch('http://127.0.0.1:8000/api/comments', {
-            method: 'POST', // نوع درخواست
+            method: 'POST', 
             headers: {
-                'Content-Type': 'multipart/form-data',
-                'Authorization': `Bearer ${token.value}` // اضافه کردن توکن به هدر
+                'Authorization': `Bearer ${token.value}`
             },
-            body: JSON.stringify(formData) // تبدیل داده‌ها به رشته JSON
+            body: formData 
         });
 
-        // بررسی وضعیت پاسخ
+        
         if (!response.ok) {
-            const errorMessage = await response.text(); // دریافت متن خطا
-            console.error('Error response:', errorMessage); // لاگ کردن متن خطا
+            const errorMessage = await response.text(); 
+            console.error('Error response:', errorMessage); 
             throw new Error(`Network response was not ok: ${response.status} ${response.statusText}`)
         }
 
-        const responseData = await response.json(); // تبدیل پاسخ به JSON
+        const responseData = await response.json(); 
+        triggerConfirm()
        
     } catch (error) {
         console.error('Error sending data:', error);
