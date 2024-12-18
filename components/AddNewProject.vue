@@ -5,19 +5,9 @@ const props = defineProps({
         required: true
     }
 });
-const isDisabled = ref(false);
+
 const currentStep = ref(1);
 
-const formData = ref({
-    title: '',
-    description: ''
-});
-
-
-const submitForm = () => {
-    console.log('Form submitted:', formData.value);
-    nextStep();
-};
 
 const nextStep = () => {
     if (currentStep.value < 3) {
@@ -31,11 +21,12 @@ const prevStep = () => {
     }
 };
 
-const publishProject = () => {
-    console.log('Project published:', formData.value);
-};
 
 const keywords = ref(['']); 
+const nameProject = ref('')
+const typeProject = ref('')
+const contextProject = ref('')
+const timeProject = ref('')
 
 const addKeyword = () => {
     keywords.value.push(''); 
@@ -111,6 +102,46 @@ const removeImage = (index) => {
     }
 };
 
+
+const publishProject = async () => {
+    
+    const formData = new FormData();
+    formData.append('image_one', file1.value);
+    formData.append('image_three', file2.value);
+    formData.append('image_four', file3.value);
+    formData.append('image_five', file4.value);
+    formData.append('project_name', nameProject.value);
+    formData.append('type_project', typeProject.value);
+    formData.append('timer_project', timeProject.value);
+    formData.append('field_project', contextProject.value);
+    formData.append('key_words', keywords.value.join(' '));
+
+
+    try {
+        const response = await fetch('http://127.0.0.1:8000/api/portfolio', {
+            method: 'POST', 
+            body: formData 
+        });
+
+        
+        if (!response.ok) {
+            const errorMessage = await response.text(); 
+            console.error('Error response:', errorMessage); 
+            throw new Error(`Network response was not ok: ${response.status} ${response.statusText}`)
+        }
+        const responseData = await response.json(); 
+        console.log(responseData);
+        
+        // triggerConfirm()
+       
+    } catch (error) {
+        console.log(error);
+        
+        // triggerError()
+    }
+
+
+};
 </script>
 <template>
     <div class="flex flex-col justify-center items-center w-full md:w-[707px] rounded-lg">
@@ -122,7 +153,11 @@ const removeImage = (index) => {
         </div>
 
        <div class="flex justify-center items-center bg-white w-full p-4">
-            <div v-if="currentStep === 1" class="step w-2/4">
+            <div v-if="currentStep === 1" class="step w-full flex flex-col justify-center items-center">
+                <div class="mb-8">
+                    <img src="/img/Group 132.png" class="w-full hidden sm:block">
+                    <img src="/img/Group 149.png" class="w-full block sm:hidden">
+                </div>
                 <div class="flex flex-col justify-center gap-2 items-center">
                     <div class="flex justify-center items-center gap-1 w-full">
                         <div class="w-full">
@@ -164,8 +199,12 @@ const removeImage = (index) => {
                 </div>
             </div>
 
-            <div v-if="currentStep === 2" class="step w-full">
-                <div class="grid gap-4 grid-cols-2 sm:grid-cols-10 sm:col-span-full">
+            <div v-if="currentStep === 2" class="step w-full flex flex-col justify-center items-center">
+                <div class="mb-8">
+                    <img src="/img/Group 132.2.png" class="w-full hidden sm:block">
+                    <img src="/img/Group 149.2.png" class="w-full block sm:hidden">
+                </div>
+                <div class="grid gap-4 grid-cols-2 w-full sm:grid-cols-10 sm:col-span-full">
                         <div class="sm:col-span-5 col-span-full grid gap-2">
                          <label for="name_Project" class="block text-[16px] leading-[160%] font-medium text-txt1">نام پروژه</label>
                          <div class="w-full">
@@ -213,10 +252,19 @@ const removeImage = (index) => {
                 </div>
             </div>
             
-            <div v-if="currentStep === 3" class="step">
-                    <h2>انتشار نمونه کار</h2>
-                    <p>آیا مطمئن هستید که می‌خواهید نمونه کار را منتشر کنید؟</p>
-                    <button @click="publishProject">انتشار نمونه کار</button>
+            <div v-if="currentStep === 3" class="step w-full flex flex-col justify-center items-center">
+                <div class="mb-8">
+                    <img src="/img/Group 132.3.png" class="w-full hidden sm:block">
+                    <img src="/img/Group 149.3.png" class="w-full block sm:hidden">
+                </div>
+
+                <div class="flex flex-col justify-center items-center gap-2 w-full">
+                    <img src="/img/Group 147.png">
+                    <div class="flex flex-col justify-center text-center items-center gap-3">
+                        <h6 class="text-[18px] leading-[140%] font-bold text-txt1">مراحل با موفقیت طی شدند! آماده انتشار نمونه کار خود هستید؟</h6>
+                        <p class="text-[14px] leading-[160%] text-txt6">مراحل قبلی با موفقیت طی شده‌اند. حالا فقط کافیست تأیید کنید تا پروژه شما به نمایش درآید و دیگران هم کار ارزشمندتان را ببینند.</p>
+                    </div>
+                </div>
             </div>
         </div>
                        
@@ -227,7 +275,7 @@ const removeImage = (index) => {
                 <button v-if="currentStep > 1" class="px-6 py-2 text-txt1 rounded-lg bg-Bg/3 border-2 border-btn3" @click="prevStep">مرحله قبل</button>
                 <button v-if="currentStep === 1" class="px-6 py-2 text-txt1 rounded-lg bg-Bg/3 border-2 border-btn3" @click="closeNewProject">انصراف</button>
                 <button v-if="currentStep < 3" class="px-6 py-2 text-white rounded-lg flex justify-center items-center text-[14px] gap-2 bg-Bg/2" @click="nextStep">مرحله بعد<IconsArrowLeftWhite style="width: 24px;"></IconsArrowLeftWhite></button>
-                <button v-if="currentStep === 3" class="px-6 py-2 text-white rounded-lg bg-txt4" >انتشار نمونه کار</button>
+                <button v-if="currentStep === 3" class="px-6 py-2 text-white rounded-lg bg-txt4" @click="publishProject">انتشار نمونه کار</button>
             </div>
         </div>
     </div>
