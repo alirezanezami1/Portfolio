@@ -45,10 +45,71 @@ const removeKeyword = (index) => {
     keywords.value.splice(index, 1); 
 };
 
+const image1 = ref(null);
+const file1 = ref(null)
 
+const image2 = ref(null);
+const file2 = ref(null)
 
+const image3 = ref(null);
+const file3 = ref(null)
 
+const image4 = ref(null);
+const file4 = ref(null)
 
+const uploadImage = (event, index) => {
+    const file = event.target.files[0];
+    const reader = new FileReader();
+    
+    reader.onload = (e) => {
+        if (index === 1) {
+            file1.value = file
+            image1.value = e.target.result;
+        } else if (index === 2) {
+            file2.value = file
+            image2.value = e.target.result;
+        } else if (index === 3) {
+            file3.value = file
+            image3.value = e.target.result;
+        } else if (index === 4) {
+            file4.value = file
+            image4.value = e.target.result;
+        }
+    };
+    
+    if (file) {
+        reader.readAsDataURL(file);
+    }
+};
+
+const selectFile = () => {
+    const fileInput = document.getElementById('comment-image');
+    fileInput.click(); 
+};
+const selectFile2 = () => {
+    const fileInput = document.getElementById('comment-image2');
+    fileInput.click(); 
+};
+const selectFile3 = () => {
+    const fileInput = document.getElementById('comment-image3');
+    fileInput.click(); 
+};
+const selectFile4 = () => {
+    const fileInput = document.getElementById('comment-image4');
+    fileInput.click(); 
+};
+
+const removeImage = (index) => {
+    if (index === 1) {
+        image1.value = null;
+    } else if (index === 2) {
+        image2.value = null;
+    } else if (index === 3) {
+        image3.value = null;
+    } else if (index === 4) {
+        image4.value = null;
+    }
+};
 
 </script>
 <template>
@@ -60,9 +121,47 @@ const removeKeyword = (index) => {
             </div>
         </div>
 
-       <div class="flex justify-center items-center bg-white w-full p-6">
-            <div v-if="currentStep === 1" class="step">
-                <h2>بارگذاری تصاویر</h2>
+       <div class="flex justify-center items-center bg-white w-full p-4">
+            <div v-if="currentStep === 1" class="step w-2/4">
+                <div class="flex flex-col justify-center gap-2 items-center">
+                    <div class="flex justify-center items-center gap-1 w-full">
+                        <div class="w-full">
+                        <input type="file" id="comment-image" @change="(e) => uploadImage(e, 1)" accept="image/*" class="hidden" />
+                        <button @click="selectFile" class="bg-btn3 text-txt4 text-[14px] px-3 py-2 h-[48px] md:h-auto rounded-full"><span>عکس 1</span></button>
+                        </div>
+                        <div class="w-full">
+                        <input type="file" id="comment-image2" @change="(e) => uploadImage(e, 2)" accept="image/*" class="hidden" />
+                        <button @click="selectFile2" class="bg-btn3 text-txt4 text-[14px] px-3 py-2 h-[48px] md:h-auto rounded-full"><span>عکس 2</span></button>
+                        </div>
+                        <div class="w-full">
+                        <input type="file" id="comment-image3" @change="(e) => uploadImage(e, 3)" accept="image/*" class="hidden" />
+                        <button @click="selectFile3" class="bg-btn3 text-txt4 text-[14px] px-3 py-2 h-[48px] md:h-auto rounded-full"><span>عکس 3</span></button>
+                        </div>
+                        <div class="w-full">
+                        <input type="file" id="comment-image4" @change="(e) => uploadImage(e, 4)" accept="image/*" class="hidden" />
+                        <button @click="selectFile4" class="bg-btn3 text-txt4 text-[14px] px-3 py-2 h-[48px] md:h-auto rounded-full"><span>عکس 4</span></button>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-2 justify-center items-center gap-2 flex-wrap">
+                        <div class="image-wrapper" v-if="image1">
+                            <img :src="image1" alt="Image 1"/>
+                            <button @click="removeImage(1)" class="remove-button">حذف</button>
+                        </div>
+                        <div class="image-wrapper" v-if="image2">
+                            <img :src="image2" alt="Image 2"/>
+                            <button @click="removeImage(2)" class="remove-button">حذف</button>
+                        </div>
+                        <div class="image-wrapper" v-if="image3">
+                            <img :src="image3" alt="Image 3"/>
+                            <button @click="removeImage(3)" class="remove-button">حذف</button>
+                        </div>
+                        <div class="image-wrapper" v-if="image4">
+                            <img :src="image4" alt="Image 4"/>
+                            <button @click="removeImage(4)" class="remove-button">حذف</button>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <div v-if="currentStep === 2" class="step w-full">
@@ -120,8 +219,6 @@ const removeKeyword = (index) => {
                     <button @click="publishProject">انتشار نمونه کار</button>
             </div>
         </div>
-
-        <!-- میخواهم در کامپوننت AddNewProject حداقل 1 عکس و حداکثر 4 عکس آپلود شود و هر کدام از عکس ها در یک ref جداگانه ذخیره شود و موقع ارسال کردن این عکس ها حتما باید عکس اول مقدار دهی شود و بقیه عکس ها اختیاری هستند راه حل چیست ؟ -->
                        
       
 
@@ -129,9 +226,41 @@ const removeKeyword = (index) => {
             <div class="flex justify-center w-full sm:w-auto sm:justify-end items-start gap-4 text-[14px]">
                 <button v-if="currentStep > 1" class="px-6 py-2 text-txt1 rounded-lg bg-Bg/3 border-2 border-btn3" @click="prevStep">مرحله قبل</button>
                 <button v-if="currentStep === 1" class="px-6 py-2 text-txt1 rounded-lg bg-Bg/3 border-2 border-btn3" @click="closeNewProject">انصراف</button>
-                <button v-if="currentStep < 3" class="px-6 py-2 text-white rounded-lg flex justify-center items-center text-[14px] gap-2" @click="nextStep" :class="isDisabled ? 'bg-Bg/4' : 'bg-Bg/2'" :disabled="isDisabled" >مرحله بعد<IconsArrowLeftWhite style="width: 24px;"></IconsArrowLeftWhite></button>
+                <button v-if="currentStep < 3" class="px-6 py-2 text-white rounded-lg flex justify-center items-center text-[14px] gap-2 bg-Bg/2" @click="nextStep">مرحله بعد<IconsArrowLeftWhite style="width: 24px;"></IconsArrowLeftWhite></button>
                 <button v-if="currentStep === 3" class="px-6 py-2 text-white rounded-lg bg-txt4" >انتشار نمونه کار</button>
             </div>
         </div>
     </div>
 </template>
+
+<style scoped>
+.image-wrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-wrapper img {
+    width: 150px; /* اندازه عکس */
+    height: 150px; /* اندازه عکس */
+    object-fit: cover; /* حفظ نسبت ابعاد */
+}
+
+.remove-button {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+    cursor: pointer;
+    display: none; /* مخفی کردن دکمه به طور پیش‌فرض */
+}
+
+.image-wrapper:hover .remove-button {
+    display: block; /* نمایش دکمه هنگام hover */
+}
+</style>
