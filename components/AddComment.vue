@@ -67,8 +67,6 @@ const submitComment = async () => {
     formData.append('company_image', base64Image.value);
     formData.append('users', 1);
 
-    
-
     try {
         const response = await fetch('http://127.0.0.1:8000/api/comments', {
             method: 'POST', 
@@ -84,15 +82,12 @@ const submitComment = async () => {
             console.error('Error response:', errorMessage); 
             throw new Error(`Network response was not ok: ${response.status} ${response.statusText}`)
         }
-
         const responseData = await response.json(); 
         triggerConfirm()
        
     } catch (error) {
-        console.error('Error sending data:', error);
         triggerError()
     }
-   
 };
 
 onMounted(async () => {
@@ -100,9 +95,6 @@ onMounted(async () => {
     console.log(token.value);
     
 });
-
-
-
 </script>
 <template>
     <div class="flex flex-col justify-center items-center w-full md:w-[672px] rounded-lg">
@@ -164,7 +156,7 @@ onMounted(async () => {
         <div v-if="showError || showConfirm" class="overlay" @click="closeError">
             <div class="error-container" @click.stop> <!-- جلوگیری از بستن هنگام کلیک روی کامپوننت خطا -->
                 <ErrorComponent v-if="showError" :closeComment2="closeError"/>
-                <ConfirmComment v-if="showConfirm"></ConfirmComment>
+                <ConfirmComment v-if="showConfirm" :closeConfirm="closeConfirm"></ConfirmComment>
             </div>
         </div>
     </div>
