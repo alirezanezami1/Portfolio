@@ -25,6 +25,7 @@
 <script>
 import { ref, computed } from 'vue';
 import { useKeenSlider } from 'keen-slider/vue';
+import axios from 'axios';
 
 export default {
   setup() {
@@ -38,9 +39,20 @@ export default {
       {comment : 'من از لحظه ای که کار سئو رو به شما دادم،با اطمینان تمام طی این دوسال تمام روند رودر سریعترین حالت ممکن طی کردید ،همیشه رتبه یک بودیم و تعهد ومسئولیت بالای شما ،نظم ودقت بالاتون برای من قابل تحسین بود. اینکه وقتی یک چالش پیش می اومد همگام با من دنبال ارائه راه حل وحل موضوع بودید وسر سری موضوع رو رد نمیکردیم واسم مهم بود. اینکه با افرادی در حوزه کارتون در ارتباط هستین که در سریعترین حالت خدمات مورد نظرم ون رو برای سایت اوکی میکنن خودش خیلی مهمه ودر وقت صرفه جویی میشه. حسی که دارم با آدم منصف ،خوش اخلاق وبا تجربه ودر مسیر پیشرفته دارم کار میکنم.' , employer : '7خانم بینایی ' , loc : 'مدیر سایت لبخند شاپ ', img : '/img/9.png'},
     ]);
 
+    const fetchComments = async () => {
+            try {
+                const response = await axios.get('http://127.0.0.1:8000/api/comments');
+                // comments.value = response.data;
+                console.log(response.data);
+                
+            } catch (error) {
+                console.error('Error fetching comments:', error);
+            }
+        };
+
     const currentSlide = ref(0);
 
-    // تقسیم کامنت‌ها به گروه‌های دو تایی
+    
     const chunkedComments = computed(() => {
       const chunkSize = 2;
       const chunks = [];
@@ -58,9 +70,13 @@ export default {
         origin : window.innerWidth < 768 ? 0.38 : 1.55
       },
       slideChanged(s) {
-        currentSlide.value = s.details().relativeSlide; // به روز رسانی وضعیت اسلاید فعلی
+        currentSlide.value = s.details().relativeSlide; 
       },
     });
+
+    onMounted(() => {
+            fetchComments();
+        });
 
     return { container, chunkedComments,currentSlide};
   },
@@ -70,8 +86,8 @@ export default {
 <style scoped>
 .keen-slider {
   display: flex;
-  justify-content: center; /* مرکز کردن اسلایدها */
-  align-items: start; /* مرکز کردن عمودی */
+  justify-content: center; 
+  align-items: start; 
   height: 100%;
 }
 @media screen and (max-width : 768px) {
@@ -79,25 +95,5 @@ export default {
   min-width: unset !important;
   width: 310px !important;
 }
-}
-.pagination {
-  display: flex;
-  justify-content: center; /* مرکز کردن دکمه‌ها */
-  margin-top: 20px; /* فاصله بالای دکمه‌ها */
-}
-
-.dot {
-  width: 12px; /* عرض دکمه */
-  height: 12px; /* ارتفاع دکمه */
-  border-radius: 50%; /* گرد کردن دکمه */
-  background-color: #ccc; /* رنگ پس‌زمینه عادی */
-  margin: 0 5px; /* فاصله بین دکمه‌ها */
-  border: none; /* حذف حاشیه */
-  cursor: pointer; /* نشانگر ماوس به شکل اشاره‌گر */
-  transition: background-color 0.3s; /* انیمیشن تغییر رنگ */
-}
-
-.dot.active {
-  background-color: #007bff; /* رنگ پس‌زمینه فعال */
 }
 </style>

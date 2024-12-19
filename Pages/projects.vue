@@ -1,14 +1,15 @@
 <script setup>
+import axios from 'axios';
 const slides = ArrayProject()
 const selectedType = ref('all');
 
-// محاسبه نوع‌های منحصر به فرد
+
 const uniqueTypes = computed(() => {
   const types = slides.map(slide => slide.type);
   return [...new Set(types)];
 });
 
-// فیلتر کردن پروژه‌ها
+
 const filteredSlides = computed(() => {
   if (selectedType.value === 'all') {
     return slides;
@@ -16,7 +17,7 @@ const filteredSlides = computed(() => {
   return slides.filter(slide => slide.type === selectedType.value);
 });
 
-// تابع فیلتر کردن
+
 const filterProjects = (type) => {
   selectedType.value = type;
 };
@@ -26,6 +27,22 @@ const showNewProject = ref(false)
 const closeNewProject = () => {
   showNewProject.value = false;
 }
+
+
+const fetchProjects = async () => {
+    try {
+        const response = await axios.get('http://127.0.0.1:8000/api/portfolio'); 
+        console.log(response.data);
+        
+        // slides.value = response.data;
+    } catch (error) {
+        console.error('Error fetching projects:', error);
+    }
+};
+
+onMounted(() => {
+    fetchProjects();
+});
 
 </script>
 
