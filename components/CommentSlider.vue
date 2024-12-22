@@ -1,5 +1,5 @@
 <template>
- <div class="flex flex-col justify-center items-center w-full">
+ <div class="flex flex-col justify-center items-center w-full my-16">
     <div ref="container" class="keen-slider">
       <div class="keen-slider__slide bg-Bg/3 rounded-xl gap-8" v-for="(comment, index) in comments" :key="index">
         <div class="flex justify-start items-center gap-4">
