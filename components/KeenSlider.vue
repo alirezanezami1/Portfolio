@@ -80,8 +80,6 @@ const [container, slider] = useKeenSlider({
 .keen-slider__slide {
     min-width: unset !important;
     max-width: none !important;
-    /* min-height: unset !important;
-    max-width: none !important; */
 }
 
 .keen-slider .socialImg {

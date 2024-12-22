@@ -215,7 +215,7 @@ const closeComment = () => {
                     </div>
                 </div>
 
-                <div>
+                <div class="w-full">
                     <ClientOnly>
                         <CommentSlider></CommentSlider>
                     </ClientOnly>
