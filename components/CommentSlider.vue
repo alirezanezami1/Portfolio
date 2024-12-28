@@ -7,9 +7,7 @@ const comments = ref([]);
 const fetchComments = async () => {
   try {
             const response = await axios.get('http://127.0.0.1:8000/api/comments');
-            comments.value = response.data;
-            console.log(response.data);
-            
+            comments.value = response.data;            
         } catch (error) {
             console.error('Error fetching comments:', error);
         }    
@@ -18,7 +16,8 @@ const fetchComments = async () => {
 const [container, slider] = useKeenSlider({
   loop: true,
   slides: {
-    perView: 1.2,
+    number: null,
+    perView: 1.5,
     // origin: 'center',
     spacing: 10,
   },

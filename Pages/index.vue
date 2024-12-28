@@ -198,7 +198,7 @@ const closeComment = () => {
             </div>
 
             <!-- //// کامنت ها  -->
-            <div class="flex flex-col justify-center items-center gap-8 m-20" id="commentsContainer">
+            <div class="flex flex-col justify-center items-center gap-8 m-20 w-full" id="commentsContainer">
 
                 <div class="flex flex-col justify-center items-center text-center gap-6 w-[328px] md:w-[753px]">
                     <div class="flex gap-[5px] justify-center items-center px-3 py-2 rounded-full bg-Bg/3">
