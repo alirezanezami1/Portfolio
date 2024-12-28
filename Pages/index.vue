@@ -10,10 +10,10 @@ const services = [
         {title : 'تدوین استراتژی محتوا' , path : '/services/seo-strategy' , description : 'اگه نمیدونی معماری و چیدمان صفحات سایتت چطور باید باشه، نیاز به تدوین استراتژی داری' , img : '/img/3.png'}
 ]
 
-const showForm = ref(false); // وضعیت نمایش کامپوننت خطا
+const showForm = ref(false); 
 
 const closeForms = () => {
-    showForm.value = false; // پنهان کردن کامپوننت خطا
+    showForm.value = false; 
 };
 
 const showComments = ref(false)
@@ -280,16 +280,16 @@ const closeComment = () => {
 }
 
 .overlay {
-    position: fixed; /* موقعیت ثابت */
-    bottom: 0; /* از بالای صفحه */
-    left: 0; /* از سمت چپ */
-    width: 100%; /* عرض کامل صفحه */
-    height: 100%; /* ارتفاع کامل صفحه */
-    background-color: rgba(0, 0, 0, 0.24); /* رنگ تار */
-    display: flex; /* استفاده از flexbox برای مرکز کردن */
-    justify-content: center; /* مرکز کردن افقی */
-    align-items: center; /* مرکز کردن عمودی */
-    z-index: 1000; /* بالاتر از سایر محتوا */
+    position: fixed; 
+    bottom: 0;
+    left: 0;
+    width: 100%; 
+    height: 100%; 
+    background-color: rgba(0, 0, 0, 0.24); 
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    z-index: 1000; 
     backdrop-filter: blur(8px);
 }
 
