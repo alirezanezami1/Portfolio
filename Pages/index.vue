@@ -251,13 +251,13 @@ const closeComment = () => {
 
 
         <div v-if="showForm" class="overlay" @click="closeForms">
-            <div class="error-container rounded-lg" @click.stop> <!-- جلوگیری از بستن هنگام کلیک روی کامپوننت خطا -->
+            <div class="error-container rounded-lg" @click.stop> 
                 <RequestConsulting :closeForm="closeForms"/>
             </div>
         </div>
 
         <div v-if="showComments" class="overlay" @click="closeComment">
-            <div class="error-container rounded-lg" @click.stop> <!-- جلوگیری از بستن هنگام کلیک روی کامپوننت خطا -->
+            <div class="error-container rounded-lg" @click.stop> 
                 <AddComment :closeComment="closeComment" />
             </div>
         </div>
@@ -275,7 +275,6 @@ const closeComment = () => {
   top: -.65%;
   left: -5%;
   width: 100vw;
-  /* height: 200px !important; */
   z-index: -1000 ; 
 }
 
