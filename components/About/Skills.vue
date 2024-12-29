@@ -26,8 +26,15 @@ const displayedItemsAbout = ref(skills.slice(0,skills.length));
 const [container, slider] = useKeenSlider({
   loop: true,
   mode: "free",
+  breakpoints: {
+    "(max-width: 1000px)": {
+      slides : {
+        perView : 2
+      }
+    }
+  },
   slides: {
-    perView: window.innerWidth < 1000 ? 2 : 3,
+    perView: 3,
     spacing: 25,
     origin  : 3
   },
@@ -35,11 +42,6 @@ const [container, slider] = useKeenSlider({
       slideChanged: (s) => {
         currentAbout.value = s.track.details.rel
       },
-});
-
-window.addEventListener('resize', () => {
-  isMobile.value = window.innerWidth < 768;
-  slider.update(); // به‌روزرسانی اسلایدر
 });
 </script>
 

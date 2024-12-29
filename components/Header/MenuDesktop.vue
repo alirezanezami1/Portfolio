@@ -1,5 +1,6 @@
 <script setup>
 import { ref, onMounted, onBeforeUnmount} from 'vue';
+// import { useRoute } from 'vue-router';
 const list = ArrayMenu()
 const servicesList = [
   {title : '- انجام پروژه سئو' , path: '/services/seo'},
@@ -10,17 +11,17 @@ const servicesList = [
   {title : '- طراحی سایت ' , path: '/services/website-design'},
 ]
 
-const activePage = ref('home'); // صفحه فعال پیش‌فرض
+const activePage = ref('home');
 const showDropdown = ref(false);
+// const route = useRoute();
 
-// تابع برای تنظیم صفحه فعال
 const setActive = (page) => {
-  activePage.value = page; // تنظیم صفحه فعال
+  activePage.value = page;
   showDropdown.value = false; 
 };
 
 const toggleDropdown = () => {
-  showDropdown.value = !showDropdown.value; // تغییر وضعیت نمایش منوی کشویی
+  showDropdown.value = !showDropdown.value;
 };
 
 const closeDropdown = () => {
@@ -39,11 +40,19 @@ onMounted(() => {
   document.addEventListener('click', handleClickOutside);
 });
 
-// حذف رویداد در زمان تخریب کامپوننت
 onBeforeUnmount(() => {
   document.removeEventListener('click', handleClickOutside);
 });
 
+// onMounted(() => {
+//   const currentPath = route.path;
+//   console.log(currentPath);
+  
+//   const foundItem = list.find(item => item.path === currentPath);
+//   if (foundItem) {
+//     activePage.value = foundItem.name;
+//   }
+// });
 </script>
 
 <template>

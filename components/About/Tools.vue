@@ -9,8 +9,6 @@ const tools = [
 const currentTools = ref(0)
 const displayedItemsTools = ref(tools.slice(0,tools.length));
 
-const isMobile = ref(window.innerWidth < 768);
-
 const [container1, slider1] = useKeenSlider({
   loop: true,
   mode: "free",
@@ -23,11 +21,6 @@ const [container1, slider1] = useKeenSlider({
       slideChanged: (s) => {
         currentTools.value = s.track.details.rel
       },
-});
-
-window.addEventListener('resize', () => {
-  isMobile.value = window.innerWidth < 768;
-  slider1.update(); // به‌روزرسانی اسلایدر
 });
 
 </script>
