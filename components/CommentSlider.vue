@@ -1,5 +1,4 @@
 <script setup>
-// import { useKeenSlider } from 'keen-slider/vue';
 import axios from 'axios';
 
 const comments = ref([]);
@@ -33,9 +32,9 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="flex flex-col justify-center items-center w-full my-16">
+  <div class="flex flex-col justify-center items-center w-full my-20">
     <ClientOnly>
-      <swiper-container ref="containerRefComment" class="keen-slider" :spaceBetween="10" :slidesPerView="1" :centered-slides="true">
+      <swiper-container ref="containerRefComment" class="keen-slider" :spaceBetween="10" :slidesPerView="1" :centered-slides="true" :autoplay="{ delay: 2500, disableOnInteraction: false }">
         <swiper-slide class="keen-slider__slide bg-Bg/3 rounded-xl grid gap-5" v-for="(comment, index) in comments" :key="index">
           <div class="flex justify-start items-center gap-8">
             <img :src="comment.company_image" class="w-[58px] h-[58px] object-cover rounded-full">
