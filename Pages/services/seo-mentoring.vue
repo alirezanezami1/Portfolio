@@ -8,7 +8,6 @@ const currentTime = ref(0);
 const duration = ref(0);
 const isFullscreen = ref(false); 
 
-// تابع برای پخش و توقف ویدیو
 const togglePlaySeo = () => {
   if (isPlayingSeoVideo.value) {
     videoPlayer.value.pause();
@@ -18,7 +17,6 @@ const togglePlaySeo = () => {
   isPlayingSeoVideo.value = !isPlayingSeoVideo.value;
 };
 
-// تابع برای بازنشانی وضعیت ویدیو
 const resetVideo = () => {
     isPlayingSeoVideo.value = false; // Reset the play state when the video ends
   currentTime.value = 0; // Reset the current time

@@ -128,12 +128,11 @@ onMounted(async () => {
 @media (max-width: 640px) {
     .swiper-slide {
         width: 100% !important;
-        height: auto !important; /* یا ارتفاع مشخص */
+        height: auto !important; 
     }
     .sliderContainer {
         width: 328px;
         overflow: hidden;
-        /* z-index: -100; */
     }
 }
 </style>

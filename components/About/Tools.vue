@@ -68,18 +68,18 @@ const [container1, slider1] = useKeenSlider({
 <style scoped>
 .keen-slider {
   display: flex;
-  justify-content: center; /* مرکز کردن اسلایدها */
-  align-items: center; /* مرکز کردن عمودی */
-  overflow: hidden; /* جلوگیری از محو شدن اسلایدها */
+  justify-content: center; 
+  align-items: center; 
+  overflow: hidden; 
   width: 100%;
 }
 
 .keen-slider__slide {
-  min-width: 308px; /* اطمینان از اینکه هر اسلاید تمام عرض را بپوشاند */
+  min-width: 308px; 
   max-width: 308px;
   display: flex;
-  justify-content: center; /* مرکز کردن محتوا در اسلاید */
-  align-items: center; /* مرکز کردن عمودی محتوا */
+  justify-content: center; 
+  align-items: center; 
 }
 
 .dots {

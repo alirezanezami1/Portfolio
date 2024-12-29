@@ -165,16 +165,16 @@ onMounted(async () => {
 <style scoped>
 
 .overlay {
-    position: fixed; /* موقعیت ثابت */
-    bottom: 0; /* از بالای صفحه */
-    left: 0; /* از سمت چپ */
-    width: 100%; /* عرض کامل صفحه */
-    height: 100%; /* ارتفاع کامل صفحه */
-    background-color: rgba(0, 0, 0, 0.24); /* رنگ تار */
-    display: flex; /* استفاده از flexbox برای مرکز کردن */
-    justify-content: center; /* مرکز کردن افقی */
-    align-items: center; /* مرکز کردن عمودی */
-    z-index: 1000; /* بالاتر از سایر محتوا */
+    position: fixed; 
+    bottom: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%; 
+    background-color: rgba(0, 0, 0, 0.24); 
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
     backdrop-filter: blur(8px);
 }
 
@@ -186,6 +186,6 @@ onMounted(async () => {
 }
 
 .error-container {
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); /* سایه برای زیبایی */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 </style>

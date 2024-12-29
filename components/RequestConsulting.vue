@@ -9,7 +9,7 @@ const props = defineProps({
     }
 });
 
-const selectedOptions = ref([]); // برای ذخیره گزینه‌های انتخاب شده
+const selectedOptions = ref([]);
 const options = ref([
     { value: 'انجام پروژه سئو', text: 'انجام پروژه سئو' },
     { value: 'گوگل ادز', text: 'گوگل ادز' },
@@ -33,21 +33,18 @@ const submitFreeForm = async () => {
 
     try {
         const response = await axios.post('http://127.0.0.1:8000/api/freeforms', formData);        
-        // پاک کردن مقادیر فرم بعد از ارسال موفقیت‌آمیز
         firstName.value = '';
         phoneNumber.value = '';
         selectedOptions.value = []
         triggerConfirm()
-        
-        // می‌توانید پیغام موفقیت نمایش دهید
     } catch (error) {
       triggerError()
     }
 };
 
 
-const showError = ref(false); // وضعیت نمایش کامپوننت خطا
-const showConfirm = ref(false); // وضعیت نمایش کامپوننت خطا
+const showError = ref(false); 
+const showConfirm = ref(false);
 
 const triggerError = () => {
     showError.value = true; 
@@ -132,20 +129,20 @@ const closeConfirm = () => {
 
 .custom-checkbox {
     display: flex;
-    align-items: center; /* مرکز کردن عمودی */
+    align-items: center; 
     gap: 12px;
-    margin-bottom: 10px; /* فاصله بین چک باکس‌ها */
+    margin-bottom: 10px; 
 }
 
 .custom-checkbox input[type="checkbox"] {
-    display: none; /* پنهان کردن چک باکس پیش‌فرض */
+    display: none; 
 }
 
 .checkbox-label {
     position: relative;
-    padding-left: 30px; /* فاصله برای ایجاد فضای چک باکس */
-    cursor: pointer; /* نشانگر ماوس به شکل اشاره‌گر */
-    user-select: none; /* جلوگیری از انتخاب متن */
+    padding-left: 30px; 
+    cursor: pointer;
+    user-select: none; 
 }
 
 .checkbox-label::before {
@@ -154,39 +151,39 @@ const closeConfirm = () => {
     left: 0;
     top: 50%;
     transform: translateY(-50%);
-    width: 20px; /* عرض چک باکس */
-    height: 20px; /* ارتفاع چک باکس */
-    border: 2px solid #ccc; /* حاشیه */
-    border-radius: 4px; /* گرد کردن گوشه‌ها */
-    background-color: white; /* رنگ پس‌زمینه */
+    width: 20px; 
+    height: 20px;
+    border: 2px solid #ccc; 
+    border-radius: 4px; 
+    background-color: white; 
 }
 
 .custom-checkbox input[type="checkbox"]:checked + .checkbox-label::before {
-    background-color: #13144E; /* رنگ پس‌زمینه چک باکس انتخاب شده */
-    border-color: #13144E; /* تغییر رنگ حاشیه */
+    background-color: #13144E; 
+    border-color: #13144E; 
 }
 
 .custom-checkbox input[type="checkbox"]:checked + .checkbox-label::after {
-    content: '✔'; /* علامت تیک */
+    content: '✔'; 
     position: absolute;
-    left: 4px; /* موقعیت علامت تیک */
+    left: 4px;
     top: 52%;
     transform: translateY(-50%);
-    color: white; /* رنگ علامت تیک */
-    font-size: 16px; /* اندازه علامت تیک */
+    color: white; 
+    font-size: 16px; 
 }
 
 .overlay {
-    position: fixed; /* موقعیت ثابت */
-    bottom: 0; /* از بالای صفحه */
-    left: 0; /* از سمت چپ */
-    width: 100%; /* عرض کامل صفحه */
-    height: 100%; /* ارتفاع کامل صفحه */
-    background-color: rgba(0, 0, 0, 0.24); /* رنگ تار */
-    display: flex; /* استفاده از flexbox برای مرکز کردن */
-    justify-content: center; /* مرکز کردن افقی */
-    align-items: center; /* مرکز کردن عمودی */
-    z-index: 1000; /* بالاتر از سایر محتوا */
+    position: fixed; 
+    bottom: 0;
+    left: 0; 
+    width: 100%; 
+    height: 100%; 
+    background-color: rgba(0, 0, 0, 0.24); 
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    z-index: 1000; 
     backdrop-filter: blur(8px);
 }
 
@@ -198,6 +195,6 @@ const closeConfirm = () => {
 }
 
 .error-container {
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); /* سایه برای زیبایی */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 </style>

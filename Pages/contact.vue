@@ -6,34 +6,32 @@ const phoneNumber = ref('');
 const lastName = ref('');
 const email = ref('');
 const message = ref('');
-const errors = ref({}); // برای ذخیره خطاها
+const errors = ref({});
 
 const validateForm = () => {
-    errors.value = {}; // پاک کردن خطاها
+    errors.value = {}; 
 
-    // اعتبارسنجی شماره تلفن
-    const phoneRegex = /^[0-9]{10,15}$/; // الگوی شماره تلفن (10 تا 15 رقم)
+    const phoneRegex = /^[0-9]{10,15}$/;
     if (!phoneRegex.test(phoneNumber.value)) {
         errors.value.phoneNumber = 'شماره تلفن نامعتبر است.';
     }
 
-    // اعتبارسنجی ایمیل
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // الگوی ایمیل
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email.value)) {
         errors.value.email = 'ایمیل نامعتبر است.';
     }
 
-    return Object.keys(errors.value).length === 0; // اگر هیچ خطایی وجود نداشت
+    return Object.keys(errors.value).length === 0;
 };
 
 const clearErrors = () => {
-    errors.value = {}; // پاک کردن خطاها
+    errors.value = {}; 
 };
 
 const submitForm = async () => {
     if (!validateForm()) {
       setTimeout(clearErrors, 3000)
-        return; // اگر اعتبارسنجی ناموفق بود، ارسال فرم متوقف می‌شود
+        return;
     }
 
     const formData = {
@@ -70,29 +68,28 @@ const submitForm = async () => {
     });
 };
 
-const showError = ref(false); // وضعیت نمایش کامپوننت خطا
-const showConfirm = ref(false); // وضعیت نمایش کامپوننت خطا
+const showError = ref(false); 
+const showConfirm = ref(false); 
 
 const triggerError = () => {
-    showError.value = true; // نمایش کامپوننت خطا
+    showError.value = true; 
 };
 
 const triggerConfirm = () => {
-  showConfirm.value = true; // نمایش کامپوننت خطا
+  showConfirm.value = true;
 };
 
 
 const closeError = () => {
-    showError.value = false; // پنهان کردن کامپوننت خطا
+    showError.value = false; 
 };
 
 const closeConfirm = () => {
-  showConfirm.value = false; // پنهان کردن کامپوننت خطا
+  showConfirm.value = false; 
 };
 
 const handleClickOutside = (event) => {
   const dropdown = document.getElementsByClassName('overlay');
-  // const servicesLink = document.getElementById('services-link1');
   if (dropdown) {
     closeError();
     closeConfirm()
@@ -103,7 +100,6 @@ onMounted(() => {
   document.addEventListener('click', handleClickOutside);
 });
 
-// حذف رویداد در زمان تخریب کامپوننت
 onBeforeUnmount(() => {
   document.removeEventListener('click', handleClickOutside);
 });
@@ -207,7 +203,7 @@ onBeforeUnmount(() => {
         </div>
 
         <div v-if="showError || showConfirm" class="overlay" @click="closeError">
-            <div class="error-container" @click.stop> <!-- جلوگیری از بستن هنگام کلیک روی کامپوننت خطا -->
+            <div class="error-container" @click.stop> 
                 <ErrorComponent v-if="showError" />
                 <Confirm v-if="showConfirm"></Confirm>
             </div>
@@ -218,8 +214,8 @@ onBeforeUnmount(() => {
 <style scoped>
 input:focus,
 textarea:focus {
-    outline: none; /* حذف outline پیش‌فرض */
-    border: 0px solid transparent; /* یا رنگ دلخواه خود را اینجا قرار دهید */
+    outline: none; 
+    border: 0px solid transparent; 
 }
 
 .background {
@@ -229,21 +225,20 @@ textarea:focus {
   top: 1.5%;
   left: -6%;
   width: 100vw;
-  /* height: 200px !important; */
   z-index: -1000 ; 
 }
 
 .overlay {
-    position: fixed; /* موقعیت ثابت */
-    bottom: 0; /* از بالای صفحه */
-    left: 0; /* از سمت چپ */
-    width: 100%; /* عرض کامل صفحه */
-    height: 100%; /* ارتفاع کامل صفحه */
-    background-color: rgba(0, 0, 0, 0.24); /* رنگ تار */
-    display: flex; /* استفاده از flexbox برای مرکز کردن */
-    justify-content: center; /* مرکز کردن افقی */
-    align-items: center; /* مرکز کردن عمودی */
-    z-index: 1000; /* بالاتر از سایر محتوا */
+    position: fixed;
+    bottom: 0;
+    left: 0; 
+    width: 100%; 
+    height: 100%; 
+    background-color: rgba(0, 0, 0, 0.24); 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    z-index: 1000; 
     backdrop-filter: blur(8px);
 }
 
@@ -255,6 +250,6 @@ textarea:focus {
 }
 
 .error-container {
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); /* سایه برای زیبایی */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 </style>
