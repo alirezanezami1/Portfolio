@@ -1,6 +1,18 @@
 <script setup>
 import axios from 'axios';
-const slides = ArrayProject()
+const slides = ref([])
+
+const fetchProjects = async () => {
+    try {
+        const response = await axios.get('http://127.0.0.1:8000/api/portfolio'); 
+        console.log(response.data);
+        
+        slides.value = response.data;
+    } catch (error) {
+        console.error('Error fetching projects:', error);
+    }
+};
+
 const services = [
         {title : 'منتورینگ سئو', path: '/services/seo-mentoring' , description : 'اگه هنوز اعتماد به نفس گرفتن پروژه سئو نداری، حتما از یه منتورسئو کمک بگیر' , img : '/img/2.png'},
         {title : 'مشاوره سئو' , path: '/services/seo-consulting' , description : 'با گرفتن مشاوره سئو، عیب و ایرادهای فعلی سایتت رو برطرف کن' , img : '/img/4.png'},
@@ -24,7 +36,8 @@ const closeComment = () => {
 
 let checkUser = ref('')
 
-onMounted(() => {
+onMounted(async() => {
+    await fetchProjects()
     const getItem = localStorage.getItem('adminToken')
     if(getItem){
         checkUser.value = getItem
@@ -187,7 +200,7 @@ onMounted(() => {
                 </div>
 
 
-                <ProjectsComponente :showCount="3" :slides="slides"></ProjectsComponente>
+                <ProjectsComponent :showCount="3" :slides="slides"></ProjectsComponent>
 
                 <div>
                     <NuxtLink to="/projects">

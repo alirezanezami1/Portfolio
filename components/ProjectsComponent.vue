@@ -1,6 +1,19 @@
 <script setup>
 import { defineProps, ref } from 'vue';
-const slides = ArrayProject()
+import axios from 'axios';
+const slides = ref([])
+
+const fetchProjects = async () => {
+    try {
+        const response = await axios.get('http://127.0.0.1:8000/api/portfolio'); 
+
+        console.log(response.data[0].key_words.split(','));
+        
+        slides.value = response.data;
+    } catch (error) {
+        console.error('Error fetching projects:', error);
+    }
+};
 
 const props = defineProps({
   showCount: {
@@ -26,6 +39,10 @@ const projectsToShow = computed(() => {
   return props.slides.slice(0, props.showCount);
 });
 
+onMounted(async () => {
+    await fetchProjects()
+})
+
 </script>
 
 <template>
@@ -44,14 +61,14 @@ const projectsToShow = computed(() => {
                                     </div>
                                 
                                     <div class="flex flex-col gap-1">
-                                        <p class="text-[16px] min-[1303px]:text-[20px] leading-[160%] font-medium">نام پروژه: {{ slide.title }}</p>
-                                        <p class="text-[14px] min-[1303px]:text-[16px] leading-[160%] font-light text-txt2 hidden min-[1303px]:block">زمینه فعالیت : {{ slide.field }}</p>
+                                        <p class="text-[16px] min-[1303px]:text-[20px] leading-[160%] font-medium">نام پروژه: {{ slide.type_name }}</p>
+                                        <p class="text-[14px] min-[1303px]:text-[16px] leading-[160%] font-light text-txt2 hidden min-[1303px]:block">زمینه فعالیت : {{ slide.field_project }}</p>
                                     </div>
                                 
                                 </div>
                             
                                 <div class="justify-center items-center gap-[10px] px-6 py-3 rounded-full border-2 border-Bg/2 text-txt4 hidden min-[1303px]:flex">
-                                    نوع پروژه : <span>{{ slide.type }}</span>
+                                    نوع پروژه : <span>{{ slide.type_project }}</span>
                                 </div>
 
                             </div>
@@ -68,28 +85,28 @@ const projectsToShow = computed(() => {
 
                         <div class="flex flex-col gap-6 justify-center items-start w-[328px] min-[1303px]:w-full px-4 min-[1303px]:px-20 pt-2 pb-6 " v-if="accordionOpen === index">
 
-                            <p class="text-[14px] min-[1303px]:text-[16px] leading-[160%] font-light text-txt2 block min-[1303px]:hidden ">زمینه فعالیت : {{ slide.field }}</p>
+                            <p class="text-[14px] min-[1303px]:text-[16px] leading-[160%] font-light text-txt2 block min-[1303px]:hidden ">زمینه فعالیت : {{ slide.field_project }}</p>
 
                             <div class="flex gap-2 text-[14px] min-[1303px]:text-[16px] leading-[160%] font-light text-txt2 text-start min-[1303px]:hidden">
-                                نوع پروژه : <span>{{ slide.type }}</span>
+                                نوع پروژه : <span>{{ slide.type_project }}</span>
                             </div>
 
                             <div class="flex gap-2 text-[14px] min-[1303px]:text-[16px] leading-[160%] font-light text-txt2 text-start">
                                 <img src="../assets/icons/Clock Circle.svg" alt="time">
-                                <p>مدت زمان : <span>{{ slide.time }}</span></p>
+                                <p>مدت زمان : <span>{{ slide.timer_project }}</span></p>
                             </div>
 
                             <div class="w-[328px] min-[1303px]:w-[1121px] h-full sliderContainer">
                                             <ClientOnly>
                                                 <swiper-container ref="containerRefTwo" :spaceBetween="20" :slidesPerView="1.2"  >
                                                   <swiper-slide
-                                                    v-for="(img, idx) in slide.images"
+                                                    v-for="(img, idx) in slide.image"
                                                     :key="idx"
                                                   >
                                                     <div class="flex flex-col gap-4">
-                                                        <img :src="img" class="w-fit h-[318px] min-[1303px]:h-auto min-[1303px]:w-[600px] object-cover rounded-xl"  style="width: 100%; height: auto;">
-                                                        <div class="text-[16px] leading-[160%] font-thin text-txt1">
-                                                            <p>{{ slide.subtitle }}</p>
+                                                        <img :src="`http://127.0.0.1:8000/${img}`" class="w-fit h-[318px] min-[1303px]:h-auto min-[1303px]:w-[600px] object-cover rounded-xl"  style="width: 100%; height: auto;">
+                                                        <div class="text-[16px] leading-[160%] font-thin text-txt1" v-for="word , index in slide.key_words.split(',')" :key="index">
+                                                            <p>{{ word }}</p>
                                                         </div>
                                                     </div>
                                                   </swiper-slide>

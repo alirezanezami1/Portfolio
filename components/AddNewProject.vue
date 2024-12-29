@@ -138,8 +138,7 @@ const publishProject = async () => {
     formData.append('type_project', typeProject.value);
     formData.append('timer_project', timeProject.value);
     formData.append('field_project', contextProject.value);
-    formData.append('key_words', keywords.value.join(' '));
-
+    formData.append('key_words', keywords.value.join(','));    
 
     try {
         const response = await fetch('http://127.0.0.1:8000/api/portfolio', {

@@ -1,20 +1,31 @@
 <script setup>
 import axios from 'axios';
-const slides = ArrayProject()
+
+const slides = ref([])
+
+const fetchProjects = async () => {
+    try {
+        const response = await axios.get('http://127.0.0.1:8000/api/portfolio'); 
+        slides.value = response.data;
+    } catch (error) {
+        console.error('Error fetching projects:', error);
+    }
+};
+
 const selectedType = ref('all');
 
 
 const uniqueTypes = computed(() => {
-  const types = slides.map(slide => slide.type);
+  const types = slides.value.map(slide => slide.type_project);
   return [...new Set(types)];
 });
 
 
 const filteredSlides = computed(() => {
   if (selectedType.value === 'all') {
-    return slides;
+    return slides.value;
   }
-  return slides.filter(slide => slide.type === selectedType.value);
+  return slides.value.filter(slide => slide.type_project === selectedType.value);
 });
 
 
@@ -28,27 +39,15 @@ const closeNewProject = () => {
   showNewProject.value = false;
 }
 
-
-const fetchProjects = async () => {
-    try {
-        const response = await axios.get('http://127.0.0.1:8000/api/portfolio'); 
-        console.log(response.data);
-        
-        // slides.value = response.data;
-    } catch (error) {
-        console.error('Error fetching projects:', error);
-    }
-};
-
 let checkUser = ref('')
 
-onMounted(() => {
-    fetchProjects();
+onMounted(async () => {
+    await fetchProjects();
 
     const getItem = localStorage.getItem('adminToken')
     if(getItem){
         checkUser.value = getItem
-        }
+    }
 });
 </script>
 
@@ -91,7 +90,7 @@ onMounted(() => {
                 </button>
             </div>
 
-            <ProjectsComponente :showCount="slides.length" :slides="filteredSlides"></ProjectsComponente>
+            <ProjectsComponent :showCount="slides.length" :slides="filteredSlides"></ProjectsComponent>
 
 
         </div>
