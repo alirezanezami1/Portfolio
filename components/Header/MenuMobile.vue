@@ -1,6 +1,6 @@
 <script setup>
 import { ref, onMounted, onBeforeUnmount} from 'vue';
-// const route = useRoute();
+import { useRoute } from 'vue-router';
 const list = ArrayMenu()
 const servicesList = [
   {title : '- انجام پروژه سئو' , path: '/services/seo'},
@@ -13,22 +13,22 @@ const servicesList = [
 
 const SocialImg = [
     { url : 'https://www.linkedin.com/in/r-ranjbari/' , img : '/img/Linkedin.png'},
-    { url : '//api.whatsapp.com/send?phone=+989380286230MOBILE_NUMBER&text=WHATEVER_LINK_OR_TEXT_YOU_WANT_TO_SEND' , img : '/img/Whatsapp.png'},
+    { url : '//api.whatsapp.com/send?phone=+989380286230MOBILE_NUMBER&text=سلام' , img : '/img/Whatsapp.png'},
     { url : 'https://www.instagram.com/ranjbari.seo/' , img : '/img/Instagram (1).png'},
     { url : 'https://t.me/Ranjbari67' , img : '/img/Telegram.png'},
 ]
 
-const activePage = ref('home'); // صفحه فعال پیش‌فرض
+const activePage = ref('home');
 const showDropdown1 = ref(false);
+const route = useRoute();
 
-// تابع برای تنظیم صفحه فعال
 const setActive = (page) => {
-  activePage.value = page; // تنظیم صفحه فعال
+  activePage.value = page;
   showDropdown1.value = false; 
 };
 
 const toggleDropdown1 = () => {
-  showDropdown1.value = !showDropdown1.value; // تغییر وضعیت نمایش منوی کشویی
+  showDropdown1.value = !showDropdown1.value;
 };
 
 const closeDropdown = () => {
@@ -47,11 +47,19 @@ onMounted(() => {
   document.addEventListener('click', handleClickOutside);
 });
 
-// حذف رویداد در زمان تخریب کامپوننت
 onBeforeUnmount(() => {
   document.removeEventListener('click', handleClickOutside);
 });
 
+watch(() => route.path, () => {
+  const currentPath = route.path;  
+  const foundItem = list.find(item => item.path === currentPath);
+  if (foundItem) {
+    activePage.value = foundItem.name;
+  } else {
+    activePage.value = '';
+  }
+});
 </script>
 
 <template>
@@ -87,7 +95,7 @@ onBeforeUnmount(() => {
                 </NuxtLink>
             
                 <div v-if="showDropdown1" id="dropdown-menu1" class="absolute left-16 mt-[68px] bg-Bg/6 shadow-lg grid gap-2 rounded-xl text-txt2 py-3 px-4">
-                    <NuxtLink v-for="item in servicesList" :key="item" :to="item.path" class="block cursor-pointer text-[12px] leading-[160%]">{{ item.title }}</NuxtLink>
+                    <NuxtLink v-for="item in servicesList" :key="item" :to="item.path" @click="showDropdown1 = false" class="block cursor-pointer text-[12px] leading-[160%]">{{ item.title }}</NuxtLink>
                 </div>
             </div>
         </div>

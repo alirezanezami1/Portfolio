@@ -6,9 +6,7 @@ const comments = ref([]);
 const fetchComments = async () => {
   try {
     const response = await axios.get('http://127.0.0.1:8000/api/comments');
-    comments.value = response.data;
-    console.log(comments.value);
-             
+    comments.value = response.data;             
   } catch (error) {
     console.error('Error fetching comments:', error);
   }    
@@ -40,11 +38,11 @@ onMounted(() => {
             <img :src="comment.company_image" class="w-[58px] h-[58px] object-cover rounded-full">
             <div class="flex flex-col justify-start gap-1 items-start ">
               <h5 class="text-txt1 text-[20px] leading-[140%] font-bold">{{ comment.title }}</h5>
-              <p class="text-txt5 text-[16px] leading-[160%]">{{ comment.company_name }}</p>
+              <p class="text-txt2 text-[16px] leading-[160%]">{{ comment.company_name }}</p>
             </div>
           </div>
           <div>
-            <p class="text-txt5 text-[14px] leading-[160%]">{{ comment.comment }}</p>
+            <p class="text-txt2 text-[14px] leading-[160%]">{{ comment.comment }}</p>
           </div>
         </swiper-slide>
       </swiper-container>

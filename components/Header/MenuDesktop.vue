@@ -1,6 +1,6 @@
 <script setup>
 import { ref, onMounted, onBeforeUnmount} from 'vue';
-// import { useRoute } from 'vue-router';
+import { useRoute } from 'vue-router';
 const list = ArrayMenu()
 const servicesList = [
   {title : '- انجام پروژه سئو' , path: '/services/seo'},
@@ -11,9 +11,9 @@ const servicesList = [
   {title : '- طراحی سایت ' , path: '/services/website-design'},
 ]
 
-const activePage = ref('home');
+const activePage = ref('');
 const showDropdown = ref(false);
-// const route = useRoute();
+const route = useRoute();
 
 const setActive = (page) => {
   activePage.value = page;
@@ -44,15 +44,15 @@ onBeforeUnmount(() => {
   document.removeEventListener('click', handleClickOutside);
 });
 
-// onMounted(() => {
-//   const currentPath = route.path;
-//   console.log(currentPath);
-  
-//   const foundItem = list.find(item => item.path === currentPath);
-//   if (foundItem) {
-//     activePage.value = foundItem.name;
-//   }
-// });
+watch(() => route.path, () => {
+  const currentPath = route.path;  
+  const foundItem = list.find(item => item.path === currentPath);
+  if (foundItem) {
+    activePage.value = foundItem.name;
+  } else {
+    activePage.value = '';
+  }
+});
 </script>
 
 <template>
@@ -72,7 +72,7 @@ onBeforeUnmount(() => {
     </NuxtLink>
 
     <div v-if="showDropdown" id="dropdown-menu" class="absolute left-64 mt-56 bg-Bg/6 shadow-lg grid gap-2 z-10 rounded-xl text-txt2 py-3 px-4">
-        <NuxtLink v-for="item in servicesList" :key="item" :to="item.path" class="block cursor-pointer text-[12px] leading-[160%]">{{ item.title }}</NuxtLink>
+        <NuxtLink v-for="item in servicesList" :key="item" @click="showDropdown = false" :to="item.path" class="block cursor-pointer text-[12px] leading-[160%]">{{ item.title }}</NuxtLink>
     </div>
 </div>
 

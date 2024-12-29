@@ -3,7 +3,7 @@ export const ArrayMenu = () => {
         {
             title : "صفحه اصلی",
             path : "/",
-            name : 'home'
+            name : '/'
         } ,
         {
             title : "خدمات",
