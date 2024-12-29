@@ -23,4 +23,5 @@ export default defineNuxtConfig({
       isCustomElement: (tag) => tag.startsWith('media-'),
     },
   },
+  ssr: true
 })
