@@ -35,9 +35,9 @@ onMounted(() => {
 <template>
   <div class="flex flex-col justify-center items-center w-full my-16">
     <ClientOnly>
-      <swiper-container ref="containerRefComment" class="keen-slider" :spaceBetween="10" :slidesPerView="1">
-        <swiper-slide class="keen-slider__slide bg-Bg/3 rounded-xl gap-8" v-for="(comment, index) in comments" :key="index">
-          <div class="flex justify-start items-center gap-4">
+      <swiper-container ref="containerRefComment" class="keen-slider" :spaceBetween="10" :slidesPerView="1" :centered-slides="true">
+        <swiper-slide class="keen-slider__slide bg-Bg/3 rounded-xl grid gap-5" v-for="(comment, index) in comments" :key="index">
+          <div class="flex justify-start items-center gap-8">
             <img :src="comment.company_image" class="w-[58px] h-[58px] object-cover rounded-full">
             <div class="flex flex-col justify-start gap-1 items-start ">
               <h5 class="text-txt1 text-[20px] leading-[140%] font-bold">{{ comment.title }}</h5>
@@ -60,27 +60,18 @@ onMounted(() => {
   display: flex;
   justify-content: center; 
   align-items: start; 
-  height: 35vh;
   width: 90vw;
 }
 .keen-slider__slide {
-  width: 50% !important; 
+  width: 100% !important; 
   height: 100%;
   padding: 24px;
 }
 @media screen and (max-width: 768px) {
-  .keen-slider {
-    height: 50vh;
-  }
   .keen-slider__slide {
     width: 100% !important;
     height: 100%;
   padding: 24px;
-  }
-}
-@media screen and (max-width: 500px) {
-  .keen-slider {
-    height: 65vh;
   }
 }
 
