@@ -5,10 +5,7 @@ const slides = ref([])
 
 const fetchProjects = async () => {
     try {
-        const response = await axios.get('http://127.0.0.1:8000/api/portfolio'); 
-
-        console.log(response.data[0].key_words.split(','));
-        
+        const response = await axios.get('http://127.0.0.1:8000/api/portfolio');         
         slides.value = response.data;
     } catch (error) {
         console.error('Error fetching projects:', error);
@@ -61,7 +58,7 @@ onMounted(async () => {
                                     </div>
                                 
                                     <div class="flex flex-col gap-1">
-                                        <p class="text-[16px] min-[1303px]:text-[20px] leading-[160%] font-medium">نام پروژه: {{ slide.type_name }}</p>
+                                        <p class="text-[16px] min-[1303px]:text-[20px] leading-[160%] font-medium">نام پروژه: {{ slide.project_name }}</p>
                                         <p class="text-[14px] min-[1303px]:text-[16px] leading-[160%] font-light text-txt2 hidden min-[1303px]:block">زمینه فعالیت : {{ slide.field_project }}</p>
                                     </div>
                                 
@@ -101,12 +98,12 @@ onMounted(async () => {
                                                 <swiper-container ref="containerRefTwo" :spaceBetween="20" :slidesPerView="1.2"  >
                                                   <swiper-slide
                                                     v-for="(img, idx) in slide.image"
-                                                    :key="idx"
+                                                    :key="idx" 
                                                   >
                                                     <div class="flex flex-col gap-4">
                                                         <img :src="`http://127.0.0.1:8000/${img}`" class="w-fit h-[318px] min-[1303px]:h-auto min-[1303px]:w-[600px] object-cover rounded-xl"  style="width: 100%; height: auto;">
-                                                        <div class="text-[16px] leading-[160%] font-thin text-txt1" v-for="word , index in slide.key_words.split(',')" :key="index">
-                                                            <p>{{ word }}</p>
+                                                        <div class="text-[16px] leading-[160%] font-thin text-txt1">
+                                                            <p>{{ slide.key_words.split(',')[idx]?.trim() }}</p>
                                                         </div>
                                                     </div>
                                                   </swiper-slide>
