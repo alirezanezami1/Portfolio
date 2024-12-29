@@ -10,10 +10,10 @@ const loginAdmin = async (username, password) => {
             password
         });
         
-        const token = response.data.access; // فرض بر این است که توکن در اینجا برگردانده می‌شود
+        const token = response.data.access;
         console.log(response.data);
         
-        localStorage.setItem('adminToken', token); // ذخیره توکن در localStorage
+        localStorage.setItem('adminTokenLogin', token);
         localStorage.setItem('idUser' , response.data.id)
         localStorage.setItem('userName' , response.data.username)
         return token;
