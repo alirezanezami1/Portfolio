@@ -1,7 +1,7 @@
 <script setup>
 const socialMediaList = [
     {name : 'لینکدین' , url : 'https://www.linkedin.com/in/r-ranjbari/' , img : '/img/Linkedin.png' , ellipse : '/img/Ellipse 8 (1).svg'},
-    {name : 'واتساپ' , url : '//api.whatsapp.com/send?phone=+989380286230MOBILE_NUMBER&text=WHATEVER_LINK_OR_TEXT_YOU_WANT_TO_SEND' , img : '/img/Whatsapp.png' , ellipse : '/img/Ellipse 8 (3).svg'},
+    {name : 'واتساپ' , url : '//api.whatsapp.com/send?phone=+989380286230MOBILE_NUMBER&text=سلام' , img : '/img/Whatsapp.png' , ellipse : '/img/Ellipse 8 (3).svg'},
     {name : 'اینستاگرام' , url : 'https://www.instagram.com/ranjbari.seo/' , img : '/img/Instagram (1).png' , ellipse : '/img/Ellipse 8 (2).svg'},
     {name : 'تلگرام' , url : 'https://t.me/Ranjbari67' , img : '/img/Telegram.png' , ellipse : '/img/Ellipse 8.svg'},
 ]
