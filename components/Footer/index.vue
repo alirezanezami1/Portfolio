@@ -1,7 +1,7 @@
 <script setup>
 const SocialImg = [
     { url : 'https://www.linkedin.com/in/r-ranjbari/' , img : '/img/Linkedin.png'},
-    { url : '//api.whatsapp.com/send?phone=+989380286230MOBILE_NUMBER&text=WHATEVER_LINK_OR_TEXT_YOU_WANT_TO_SEND' , img : '/img/Whatsapp.png'},
+    { url : '//api.whatsapp.com/send?phone=+989380286230MOBILE_NUMBER&text=سلام' , img : '/img/Whatsapp.png'},
     { url : 'https://www.instagram.com/ranjbari.seo/' , img : '/img/Instagram (1).png'},
     { url : 'https://t.me/Ranjbari67' , img : '/img/Telegram.png'},
 ]

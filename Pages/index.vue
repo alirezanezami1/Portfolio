@@ -22,6 +22,14 @@ const closeComment = () => {
     showComments.value = false;
 }
 
+let checkUser = ref('')
+
+onMounted(() => {
+    const getItem = localStorage.getItem('adminToken')
+    if(getItem){
+        checkUser.value = getItem
+        }
+})
 
 </script>
 
@@ -211,7 +219,7 @@ const closeComment = () => {
                     </div>
 
                     <div>
-                        <button @click="showComments = true" class="flex justify-center items-center gap-[5px] rounded-full bg-btn2 py-[6px] px-3 text-[14px] text-txt4"><img src="../assets/icons/Add Circle.svg">نظرات جدید</button>
+                        <button @click="showComments = true" v-if="checkUser" class="flex justify-center items-center gap-[5px] rounded-full bg-btn2 py-[6px] px-3 text-[14px] text-txt4"><img src="../assets/icons/Add Circle.svg">نظرات جدید</button>
                     </div>
                 </div>
 
@@ -225,7 +233,7 @@ const closeComment = () => {
 
 
             <!-- //// faq -->
-             <div class="flex flex-col gap-16 justify-center items-center my-20 mx-5 lg:mx-20">
+             <div class="flex flex-col gap-20 justify-center items-center my-20 mb-24 mx-5 lg:mx-20">
 
                 <div class="flex flex-col justify-center items-center gap-6 w-[328px] md:w-[753px]">
                     <div class="flex gap-[5px] justify-center items-center px-3 py-2 rounded-full bg-Bg/3">
@@ -272,7 +280,7 @@ const closeComment = () => {
   position: absolute;
   background-size: cover; 
   background-position: center; 
-  top: -.65%;
+  top: -.70%;
   left: -5%;
   width: 100vw;
   z-index: -1000 ; 

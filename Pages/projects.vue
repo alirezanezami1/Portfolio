@@ -40,10 +40,16 @@ const fetchProjects = async () => {
     }
 };
 
+let checkUser = ref('')
+
 onMounted(() => {
     fetchProjects();
-});
 
+    const getItem = localStorage.getItem('adminToken')
+    if(getItem){
+        checkUser.value = getItem
+        }
+});
 </script>
 
 <template>
@@ -73,7 +79,7 @@ onMounted(() => {
                     </div>
 
                     <div>
-                        <button class="flex justify-center items-center gap-[5px] rounded-full bg-btn2 py-[6px] px-3 text-[14px] text-txt4" @click="showNewProject = true"><img src="../assets/icons/Add Circle.svg">نمونه کار جدید</button>
+                        <button class="flex justify-center items-center gap-[5px] rounded-full bg-btn2 py-[6px] px-3 text-[14px] text-txt4" v-if="checkUser" @click="showNewProject = true"><img src="../assets/icons/Add Circle.svg">نمونه کار جدید</button>
                     </div>
 
             </div>
