@@ -238,7 +238,7 @@ watch(currentTime, (newTime) => {
   -webkit-appearance: none;
   width: 100%;
   height: 8px;
-  background: #707076; /* رنگ پس‌زمینه نوار */
+  background: #707076; 
   border-radius: 5px;
   outline: none;
 }
@@ -246,62 +246,62 @@ watch(currentTime, (newTime) => {
 .custom-range::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
-  width: 16px; /* عرض دکمه */
-  height: 16px; /* ارتفاع دکمه */
+  width: 16px;
+  height: 16px;
   border-radius: 50%;
-  background: #707076; /* رنگ دکمه */
+  background: #707076;
   cursor: pointer;
   box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
 }
 
 .custom-range::-moz-range-thumb {
-  width: 16px; /* عرض دکمه */
-  height: 16px; /* ارتفاع دکمه */
+  width: 16px; 
+  height: 16px; 
   border-radius: 50%;
-  background: #707076; /* رنگ دکمه */
+  background: #707076;
   cursor: pointer;
   box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
 }
 
 .custom-range::-ms-thumb {
-  width: 16px; /* عرض دکمه */
-  height: 16px; /* ارتفاع دکمه */
+  width: 16px; 
+  height: 16px;
   border-radius: 50%;
-  background: #707076; /* رنگ دکمه */
+  background: #707076; 
   cursor: pointer;
   box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
 }
 
 .custom-range::-webkit-slider-runnable-track {
-  background: rgba(0,0, 0, .14); /* رنگ پس‌زمینه نوار */
+  background: rgba(0,0, 0, .14); 
   border-radius: 5px;
 }
 
 .custom-range::-moz-range-track {
-  background: rgba(0,0, 0, .14); /* رنگ پس‌زمینه نوار */
+  background: rgba(0,0, 0, .14); 
   border-radius: 5px;
 }
 
 .custom-range::-ms-track {
-  background: rgba(0,0, 0, .14); /* رنگ پس‌زمینه نوار */
+  background: rgba(0,0, 0, .14); 
   border-radius: 5px;
   height: 8px;
 }
 
 .custom-range:focus {
-  outline: none; /* حذف حاشیه هنگام تمرکز */
+  outline: none; 
 }
 
 .custom-range:focus::-webkit-slider-thumb {
-  background: #707076; /* رنگ دکمه در حالت تمرکز */
+  background: #707076; 
 }
 
 .custom-range:focus::-moz-range-thumb {
-  background: #707076; /* رنگ دکمه در حالت تمرکز */
+  background: #707076; 
 }
 
 .custom-range:focus::-ms-thumb {
-  background: #707076; /* رنگ دکمه در حالت تمرکز */
+  background: #707076; 
 }
 
 .progress-container {
@@ -313,36 +313,36 @@ watch(currentTime, (newTime) => {
   -webkit-appearance: none;
   width: 100%;
   height: 8px;
-  background: transparent; /* پس‌زمینه شفاف برای نوار */
+  background: transparent; 
   outline: none;
   position: relative;
   cursor: pointer;
-  z-index: 2; /* قرار دادن نوار پیشرفت بالای پس‌زمینه */
+  z-index: 2; 
 }
 
 .progress-bar::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
-  width: 0px; /* عرض دکمه */
-  height: 12px; /* ارتفاع دکمه */
+  width: 0px;
+  height: 12px;
   border-radius: 50%;
-  background: #707076; /* رنگ دکمه */
+  background: #707076; 
   cursor: pointer;
   position: relative;
   right: -2px;
-  z-index: 10; /* قرار دادن دکمه بالای نوار */
+  z-index: 10;
 }
 
 .progress-filled {
   position: absolute;
-  height: 12px; /* ارتفاع نوار */
-  background: #707076; /* رنگ سبز برای زمان سپری شده */
+  height: 12px; 
+  background: #707076; 
   top: 50%;
   transform: translateY(-50%);
   border-radius: 5px;
   right: 0;
-  z-index: 1; /* قرار دادن پس‌زمینه زیر دکمه */
-  transition: width 0.1s; /* انیمیشن برای تغییر عرض */
+  z-index: 1; 
+  transition: width 0.1s; 
 }
 
 .timeLine {
@@ -374,27 +374,27 @@ watch(currentTime, (newTime) => {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 65px; /* اندازه موج */
-  height: 65px; /* اندازه موج */
-  background: rgba(19, 20, 78, 1); /* رنگ موج */
-  border-radius: 50%; /* گرد کردن موج */
-  transform: translate(-50%, -50%); /* مرکز کردن موج */
-  animation: wave 1.8s infinite; /* انیمیشن موج */
-  opacity: 0; /* مخفی کردن موج */
+  width: 65px;
+  height: 65px;
+  background: rgba(19, 20, 78, 1); 
+  border-radius: 50%;
+  transform: translate(-50%, -50%); 
+  animation: wave 1.8s infinite; 
+  opacity: 0;
 }
 
 @keyframes wave {
   0% {
-    transform: translate(-50%, -50%) scale(0.5); /* شروع با اندازه کوچک */
-    opacity: 1; /* شروع با وضوح کامل */
+    transform: translate(-50%, -50%) scale(0.5); 
+    opacity: 1;
   }
   50% {
-    transform: translate(-50%, -50%) scale(1); /* بزرگ شدن */
-    opacity: 0; /* محو شدن */
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0; 
   }
   100% {
-    transform: translate(-50%, -50%) scale(0.5); /* بازگشت به اندازه کوچک */
-    opacity: 0; /* محو شدن */
+    transform: translate(-50%, -50%) scale(0.5); 
+    opacity: 0;
   }
 }
 </style>
