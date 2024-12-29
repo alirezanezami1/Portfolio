@@ -11,7 +11,7 @@ const servicesList = [
   {title : '- طراحی سایت ' , path: '/services/website-design'},
 ]
 
-const activePage = ref('');
+const activePage = ref('/');
 const showDropdown = ref(false);
 const route = useRoute();
 
