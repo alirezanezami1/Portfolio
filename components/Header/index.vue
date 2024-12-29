@@ -1,36 +1,30 @@
 <script setup>
 import { ref, onMounted, onBeforeUnmount } from 'vue';
-import HeaderMenuMobile from './MenuMobile.vue'; // اطمینان حاصل کنید که مسیر درست است
+import HeaderMenuMobile from './MenuMobile.vue'; 
 
-const openMenu = ref(false); // متغیر برای کنترل نمایش منوی موبایل
+const openMenu = ref(false); 
 
-// تابع برای باز کردن و بستن منوی موبایل
 const toggleMenu = () => {
   openMenu.value = !openMenu.value;
 };
 
-// تابع برای بستن منوی موبایل
 const closeMenu = () => {
   openMenu.value = false;
 };
 
-// اضافه کردن رویداد کلیک به کل صفحه
 const handleClickOutside = (event) => {
   const menu = document.getElementById('mobile-menu');
   const menuIcon = document.getElementById('menu-icon');
 
-  // بررسی اینکه آیا کلیک در خارج از منوی موبایل و آیکون منو است
   if (menu && !menu.contains(event.target) && !menuIcon.contains(event.target)) {
     closeMenu();
   }
 };
 
-// ثبت رویداد در زمان بارگذاری کامپوننت
 onMounted(() => {
   document.addEventListener('click', handleClickOutside);
 });
 
-// حذف رویداد در زمان تخریب کامپوننت
 onBeforeUnmount(() => {
   document.removeEventListener('click', handleClickOutside);
 });
@@ -64,16 +58,15 @@ onBeforeUnmount(() => {
 
 <style scoped>
 .mobile-menu {
-  position: fixed; /* موقعیت ثابت */
-  top: 0; /* از بالای صفحه */
-  right: 0; /* از سمت راست */
-  width: 240px; /* عرض منو */
-  height: 100%; /* ارتفاع کامل صفحه */
-  background-color: white; /* رنگ پس‌زمینه */
-  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5); /* سایه برای زیبایی */
-  z-index: 1000; /* بالاتر از سایر محتوا */
-  transition: transform 0.3s ease; /* انیمیشن برای باز و بسته شدن */
-  /* transform: translateX(100%); مخفی کردن منو در سمت راست */
+  position: fixed;
+  top: 0; 
+  right: 0; 
+  width: 240px; 
+  height: 100%; 
+  background-color:white; 
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  transition: transform 0.3s ease;
 }
 
 
