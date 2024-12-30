@@ -4,7 +4,7 @@ Personal website (SSR) built for an SEO expert with nuxt and tailwind
 
 
 
-  <img src="/assets/8.png" style="width:250px">
+  <img src="/assets/8.jpg" style="width:250px">
 
 
 
